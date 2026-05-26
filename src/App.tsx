@@ -336,7 +336,7 @@ export default function App() {
 
           {/* Aspirational emotional copy */}
           <p className="font-sans text-neutral-300 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed mb-10 text-neutral-300/95 font-medium">
-            Supera la rompiente más agresiva. Vuela hasta <span className="text-white font-bold border-b border-[#ff4d00]">1.5 km continuos</span>, localiza los pozos de pesca en tiempo real y coloca tu plomo donde las especies más codiciadas se alimentan. El drone marino sumergible líder absoluto de la industria.
+            Conquista la rompiente más salvaje. Lleva tu anzuelo hasta <span className="text-white font-bold border-b border-[#ff4d00]">1.5 km mar adentro</span>, localiza los mejores pozos en vivo y captura las especies más grandes desde la orilla. El único drone de pesca 100% sumergible y resistente al mar peruano.
           </p>
 
           {/* Principal Call to Action */}
