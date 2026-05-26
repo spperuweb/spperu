@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Product } from "../types";
-import { Check, ArrowRight, RotateCcw } from "lucide-react";
+import { Check, ArrowRight, RotateCcw, Sparkles, Navigation, Anchor } from "lucide-react";
 
 interface SelectionAssistantProps {
   products: Product[];
@@ -16,7 +16,7 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
     if (step < 3) {
       setStep((prev) => prev + 1);
     } else {
-      setStep(4); // Result screen
+      setStep(4); // Pantalla de resultado
     }
   };
 
@@ -24,7 +24,10 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
     const budget = answers.budget;
     const priority = answers.priority;
 
-    // High level logic
+    // SplashDrone 4 Plus routing: camera priority + premium/max investment
+    if (priority === "camera" && (budget === "premium" || budget === "max")) {
+      return products.find((p) => p.id === "sd4-plus") || products.find((p) => p.id === "fd3") || products[2];
+    }
     if (budget === "basic") {
       return products.find((p) => p.id === "fd1") || products[0];
     }
@@ -35,8 +38,7 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
       return products.find((p) => p.id === "fd2-max") || products[1];
     }
 
-    // Fallbacks
-    return products[1]; // Fisherman Max FD2 default
+    return products[1]; // Fisherman Max FD2 por defecto
   };
 
   const resetQuiz = () => {
@@ -46,64 +48,104 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
 
   const recommendedProduct = getRecommendation();
 
-  // Custom text per path
   const getCustomRecommendationDescription = () => {
-    const activity = answers.activity === "beach" ? "desde la orilla" : answers.activity === "boat" ? "desde embarcaciones" : "en diversos terrenos de altura";
-    const priorityText = answers.priority === "accuracy" ? "lanzamientos precisos a gran distancia" : answers.priority === "camera" ? "un monitoreo en vivo de alta definición sobre el agua" : "capacidad de soltar carnadas de peso considerable";
+    const activity = 
+      answers.activity === "beach" 
+        ? "desde la orilla de nuestras playas" 
+        : answers.activity === "boat" 
+        ? "desde embarcaciones, botes o kayak" 
+        : "desde peñas, acantilados o muelles elevados";
+        
+    const priorityText = 
+      answers.priority === "accuracy" 
+        ? "hacer lanzamientos precisos y de larga distancia superando la rompiente" 
+        : answers.priority === "camera" 
+        ? "monitorear el fondo marino en vivo y con absoluto detalle con transmisión 4K" 
+        : "remolcar carnadas vivas y plomadas masivas que ningún otro equipo soporta";
 
-    return `Basado en tu preferencia de pesca ${activity} y tu prioridad de contar con ${priorityText}, el ${recommendedProduct.name} es tu herramienta definitiva bajo el respaldo oficial de SwellPro Perú.`;
+    return `Para tu estilo de pesca ${activity} y tu gran prioridad de ${priorityText}, el ${recommendedProduct.name} es exactamente la herramienta que cambiará tus jornadas para siempre. Diseñado con tecnología marina premium y respaldado localmente por nuestro equipo oficial en Lima.`;
   };
 
   return (
-    <div className="bg-white border border-gray-150 rounded-2xl shadow-xl overflow-hidden max-w-2xl mx-auto">
+    <div className="bg-white border border-neutral-200/90 rounded-3xl shadow-xl shadow-neutral-100 overflow-hidden max-w-2xl mx-auto transition-all duration-300">
+      
       {/* Quiz Header */}
-      <div className="bg-black text-white p-6 relative">
-        <div className="absolute top-0 right-0 h-full w-1/3 bg-[#ff4d00]/10 skew-x-12 transform origin-top-right"></div>
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-[#ff4d00] text-xs font-semibold tracking-widest uppercase">
-            Asistente Interactivo
+      <div className="bg-neutral-950 text-white p-8 relative overflow-hidden border-b border-neutral-900">
+        <div className="absolute -top-12 -right-12 h-44 w-44 bg-[#ff4d00]/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div className="absolute -bottom-16 -left-16 h-36 w-36 bg-red-600/5 rounded-full blur-2xl pointer-events-none"></div>
+        
+        <div className="flex justify-between items-center mb-3 relative z-10">
+          <span className="text-[#ff4d00] text-[10px] font-bold tracking-widest uppercase flex items-center gap-1.5 bg-[#ff4d00]/10 px-3 py-1 rounded-full border border-[#ff4d00]/20">
+            <Sparkles className="w-3.5 h-3.5 text-[#ff4d00]" /> Guía de Compra Exclusiva
           </span>
           {step <= 3 && (
-            <span className="text-gray-400 text-xs font-medium">
-              Pregunta {step} de 3
+            <span className="text-neutral-400 text-xs font-semibold uppercase tracking-wider">
+              Paso {step} de 3
             </span>
           )}
         </div>
-        <h3 className="font-display text-2xl font-bold tracking-tight">
-          ¿No sabes cuál elegir? En 3 preguntas te decimos cuál es tu drone ideal.
+        
+        <h3 className="font-display text-2xl md:text-3xl font-bold tracking-tight uppercase leading-tight relative z-10">
+          Encuentra tu compañero de costa perfecto
         </h3>
+        <p className="text-neutral-400 text-xs md:text-sm font-sans mt-2 leading-relaxed max-w-lg relative z-10">
+          Responde estas 3 breves sugerencias basadas en cómo pescas en el mar peruano y nuestro sistema te recomendará el drone preciso para ti.
+        </p>
         
         {/* Progress bar */}
-        <div className="w-full bg-gray-800 h-1 mt-4 rounded-full overflow-hidden">
+        <div className="w-full bg-neutral-900 h-1 mt-6 rounded-full overflow-hidden relative z-10">
           <div 
-            className="bg-[#ff4d00] h-full transition-all duration-300"
+            className="bg-[#ff4d00] h-full transition-all duration-500 rounded-full"
             style={{ width: `${(step / 3) * 100}%` }}
           />
         </div>
       </div>
 
       {/* Quiz Body */}
-      <div className="p-8 min-h-[300px] flex flex-col justify-between">
+      <div className="p-6 md:p-8 min-h-[340px] flex flex-col justify-between bg-[#FDFDFD]">
+        
         {step === 1 && (
-          <div className="space-y-6">
-            <h4 className="text-gray-900 font-bold text-lg md:text-xl flex items-center gap-2">
-              <span className="flex items-center justify-center bg-[#ff4d00]/10 text-[#ff4d00] w-8 h-8 rounded-full text-sm font-bold">1</span>
-              ¿Cómo pescas normalmente o dónde planeas operar el drone?
+          <div className="space-y-6 animate-fade-in">
+            <h4 className="text-neutral-900 font-display font-bold text-lg md:text-xl flex items-start gap-3 leading-snug">
+              <span className="flex items-center justify-center bg-[#ff4d00] text-white w-7 h-7 rounded-lg text-sm font-bold shrink-0 mt-0.5 shadow-md shadow-[#ff4d00]/20">
+                1
+              </span>
+              ¿En qué tipo de escenario o geografía peruana lanzas tu línea habitualmente?
             </h4>
-            <div className="grid gap-3 sm:grid-cols-1">
+            
+            <div className="grid gap-3.5 sm:grid-cols-1">
               {[
-                { label: "🎣 Desde la orilla o la playa", value: "beach" },
-                { label: "⛵ Desde kayak, bote o embarcación pequeña", value: "boat" },
-                { label: "🏔️ En ríos, lagunas o zonas de altura", value: "heights" }
+                { 
+                  label: "🎣 Playas de arena abiertas (superar orilla y rompientes fuertes)", 
+                  value: "beach",
+                  desc: "Ideal para pescar lenguado, corvina o chita de tamaño mediano a grande."
+                },
+                { 
+                  label: "🌊 Peñas altas, acantilados escarpados o estructuras de muelle", 
+                  value: "heights",
+                  desc: "Zonas de altura donde se necesita vencer vientos cruzados y olas de impacto."
+                },
+                { 
+                  label: "⛵ Embarcado (desde botes, kayak de pesca o lanchas en alta mar)", 
+                  value: "boat",
+                  desc: "Para adentrarse y buscar profundidad con máxima flotabilidad de seguridad."
+                }
               ].map((opt) => (
                 <button
                   key={opt.value}
                   onClick={() => handleSelect("activity", opt.value)}
-                  className="w-full text-left p-4 rounded-xl border border-gray-200 hover:border-[#ff4d00] hover:bg-orange-brand/5 transition duration-200 flex justify-between items-center group cursor-pointer"
+                  className="w-full text-left p-4 rounded-2xl border border-neutral-200 hover:border-[#ff4d00] hover:bg-neutral-50/50 transition-all duration-200 flex justify-between items-center group cursor-pointer hover:shadow-md hover:shadow-neutral-100"
                 >
-                  <span className="text-gray-800 font-medium group-hover:text-black">{opt.label}</span>
-                  <div className="w-6 h-6 rounded-full border border-gray-300 group-hover:border-[#ff4d00] flex items-center justify-center text-[#ff4d00]">
-                    <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="pr-4">
+                    <span className="text-neutral-800 font-semibold group-hover:text-neutral-950 block text-sm md:text-base">
+                      {opt.label}
+                    </span>
+                    <span className="text-neutral-400 text-xs block mt-0.5 group-hover:text-neutral-550 font-normal">
+                      {opt.desc}
+                    </span>
+                  </div>
+                  <div className="w-8 h-8 rounded-full border border-neutral-200 group-hover:border-[#ff4d00] flex items-center justify-center text-[#ff4d00] bg-white group-hover:bg-[#ff4d00]/5 shrink-0 transition-colors">
+                    <ArrowRight size={16} className="opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
                   </div>
                 </button>
               ))}
@@ -112,132 +154,187 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
         )}
 
         {step === 2 && (
-          <div className="space-y-6">
-            <h4 className="text-gray-900 font-bold text-lg md:text-xl flex items-center gap-2">
-              <span className="flex items-center justify-center bg-[#ff4d00]/10 text-[#ff4d00] w-8 h-8 rounded-full text-sm font-bold">2</span>
-              ¿Qué es lo más importante en tus jornadas de pesca?
+          <div className="space-y-6 animate-fade-in">
+            <h4 className="text-neutral-900 font-display font-bold text-lg md:text-xl flex items-start gap-3 leading-snug">
+              <span className="flex items-center justify-center bg-[#ff4d00] text-white w-7 h-7 rounded-lg text-sm font-bold shrink-0 mt-0.5 shadow-md shadow-[#ff4d00]/20">
+                2
+              </span>
+              ¿Cuál es tu prioridad principal al volar un drone en tus jornadas?
             </h4>
-            <div className="grid gap-3 sm:grid-cols-1">
+            
+            <div className="grid gap-3.5 sm:grid-cols-1">
               {[
-                { label: "🎯 Lanzar la línea lo más lejos posible con precisión", value: "accuracy" },
-                { label: "📷 Ver el fondo marino, detectar cardúmenes y grabar en vivo", value: "camera" },
-                { label: "💪 Cargar mucho peso de carnada y carnadas pesadas", value: "weight" }
+                { 
+                  label: "🎯 Superar récords personales de distancia con plomo pesado", 
+                  value: "accuracy",
+                  desc: "Estabilidad de vuelo puro para soltar de forma segura y consistente."
+                },
+                { 
+                  label: "📷 Descubrir el canal de alimentación en vivo y grabar la jornada", 
+                  value: "camera",
+                  desc: "Cámara 4K en tiempo real para rastear cardúmenes desde tu control."
+                },
+                { 
+                  label: "💪 Remolcar carnadas masivas o vivas sin forzar los motores", 
+                  value: "weight",
+                  desc: "Máxima potencia física de carga certificada para presas pesadas mar adentro."
+                }
               ].map((opt) => (
                 <button
                   key={opt.value}
                   onClick={() => handleSelect("priority", opt.value)}
-                  className="w-full text-left p-4 rounded-xl border border-gray-200 hover:border-[#ff4d00] hover:bg-orange-brand/5 transition duration-200 flex justify-between items-center group cursor-pointer"
+                  className="w-full text-left p-4 rounded-2xl border border-neutral-200 hover:border-[#ff4d00] hover:bg-neutral-50/50 transition-all duration-200 flex justify-between items-center group cursor-pointer hover:shadow-md hover:shadow-neutral-100"
                 >
-                  <span className="text-gray-800 font-medium group-hover:text-black">{opt.label}</span>
-                  <div className="w-6 h-6 rounded-full border border-gray-300 group-hover:border-[#ff4d00] flex items-center justify-center text-[#ff4d00]">
-                    <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="pr-4">
+                    <span className="text-neutral-800 font-semibold group-hover:text-neutral-950 block text-sm md:text-base">
+                      {opt.label}
+                    </span>
+                    <span className="text-neutral-400 text-xs block mt-0.5 group-hover:text-neutral-550 font-normal">
+                      {opt.desc}
+                    </span>
+                  </div>
+                  <div className="w-8 h-8 rounded-full border border-neutral-200 group-hover:border-[#ff4d00] flex items-center justify-center text-[#ff4d00] bg-white group-hover:bg-[#ff4d00]/5 shrink-0 transition-colors">
+                    <ArrowRight size={16} className="opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
                   </div>
                 </button>
               ))}
             </div>
+            
             <button
               onClick={() => setStep(1)}
-              className="text-gray-500 hover:text-[#ff4d00] text-sm flex items-center gap-1 mt-4 cursor-pointer"
+              className="text-neutral-400 hover:text-black text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 mt-4 transition-colors cursor-pointer"
             >
-              ← Ir a la pregunta anterior
+              ← Pregunta anterior
             </button>
           </div>
         )}
 
         {step === 3 && (
-          <div className="space-y-6">
-            <h4 className="text-gray-900 font-bold text-lg md:text-xl flex items-center gap-2">
-              <span className="flex items-center justify-center bg-[#ff4d00]/10 text-[#ff4d00] w-8 h-8 rounded-full text-sm font-bold">3</span>
-              ¿Cuánto buscas invertir en tu equipo de pesca inteligente?
+          <div className="space-y-6 animate-fade-in">
+            <h4 className="text-neutral-900 font-display font-bold text-lg md:text-xl flex items-start gap-3 leading-snug">
+              <span className="flex items-center justify-center bg-[#ff4d00] text-white w-7 h-7 rounded-lg text-sm font-bold shrink-0 mt-0.5 shadow-md shadow-[#ff4d00]/20">
+                3
+              </span>
+              ¿Cuál es tu enfoque de inversión para este nuevo equipamiento premium?
             </h4>
-            <div className="grid gap-3 sm:grid-cols-1">
+            
+            <div className="grid gap-3.5 sm:grid-cols-1">
               {[
-                { label: "🟢 Empezar con lo esencial (Resistente, simple y sin cámara)", value: "basic" },
-                { label: "🟡 Invertir en tecnología equilibrada (Gps avanzado + Cámara 4K)", value: "premium" },
-                { label: "🔴 Quiero el tope de línea (Cámara 4K, GPS 9.0 y carga extrema de 3.5kg)", value: "max" }
+                { 
+                  label: "🟢 Valoro la simpleza robusta (Poder táctico sin cámara)", 
+                  value: "basic",
+                  desc: "Diseño simple sin cámaras integradas para concentrarse totalmente en el plomo y caña."
+                },
+                { 
+                  label: "🟡 Busco tecnología balanceada (GPS superior y vista aérea)", 
+                  value: "premium",
+                  desc: "Quiero una cámara sumergible estabilizada 4K con retorno autónomo de precisión milimétrica."
+                },
+                { 
+                  label: "🔴 Busco lo absoluto: el buque de fuerza extremo en el mar", 
+                  value: "max",
+                  desc: "Capacidad límite de hasta 3.5kg reales e inigualable resistencia al oleaje y tormenta."
+                }
               ].map((opt) => (
                 <button
                   key={opt.value}
                   onClick={() => handleSelect("budget", opt.value)}
-                  className="w-full text-left p-4 rounded-xl border border-gray-200 hover:border-[#ff4d00] hover:bg-orange-brand/5 transition duration-200 flex justify-between items-center group cursor-pointer"
+                  className="w-full text-left p-4 rounded-2xl border border-neutral-200 hover:border-[#ff4d00] hover:bg-neutral-50/50 transition-all duration-200 flex justify-between items-center group cursor-pointer hover:shadow-md hover:shadow-neutral-100"
                 >
-                  <span className="text-gray-800 font-medium group-hover:text-black">{opt.label}</span>
-                  <div className="w-6 h-6 rounded-full border border-gray-300 group-hover:border-[#ff4d00] flex items-center justify-center text-[#ff4d00]">
-                    <Check size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="pr-4">
+                    <span className="text-neutral-800 font-semibold group-hover:text-neutral-950 block text-sm md:text-base">
+                      {opt.label}
+                    </span>
+                    <span className="text-neutral-400 text-xs block mt-0.5 group-hover:text-neutral-550 font-normal">
+                      {opt.desc}
+                    </span>
+                  </div>
+                  <div className="w-8 h-8 rounded-full border border-neutral-200 group-hover:border-[#ff4d00] flex items-center justify-center text-[#ff4d00] bg-white group-hover:bg-[#ff4d00]/5 shrink-0 transition-colors">
+                    <Check size={16} className="opacity-40 group-hover:opacity-100 transition-all" />
                   </div>
                 </button>
               ))}
             </div>
+            
             <button
               onClick={() => setStep(2)}
-              className="text-gray-500 hover:text-[#ff4d00] text-sm flex items-center gap-1 mt-4 cursor-pointer"
+              className="text-neutral-400 hover:text-black text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 mt-4 transition-colors cursor-pointer"
             >
-              ← Ir a la pregunta anterior
+              ← Pregunta anterior
             </button>
           </div>
         )}
 
         {step === 4 && (
-          <div className="space-y-6 animate-fade-in-up">
-            <div className="text-center pb-4 border-b border-gray-100">
-              <div className="inline-flex items-center gap-2 bg-[#ff4d00]/10 text-[#ff4d00] font-bold px-4 py-1.5 rounded-full text-sm mb-3">
-                🎯 Resultado del Diagnóstico
-              </div>
-              <h4 className="font-display text-3xl font-bold tracking-tight text-gray-900">
-                Tu Drone Ideal es el {recommendedProduct.name}
+          <div className="space-y-8 animate-fade-in">
+            <div className="text-center pb-6 border-b border-neutral-100">
+              <span className="inline-flex items-center gap-1.5 bg-[#ff4d00]/10 text-[#ff4d00] font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider mb-3">
+                <Navigation className="w-3.5 h-3.5" /> Recomendación de Experto
+              </span>
+              <h4 className="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-900 uppercase">
+                {recommendedProduct.name}
               </h4>
+              <p className="text-[#ff4d00] text-xs font-bold tracking-widest uppercase mt-1">
+                Disponible con Garantía Local y Soporte 24/7 en Perú
+              </p>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center gap-6 py-2">
-              <div className="md:w-1/3 flex justify-center">
+            <div className="flex flex-col md:flex-row items-center gap-8 py-2">
+              <div className="md:w-5/12 flex flex-col justify-center items-center relative py-6 bg-neutral-50/70 rounded-2xl border border-neutral-100 overflow-hidden w-full">
+                {/* Soft glow background */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white rounded-full opacity-90 blur-xl pointer-events-none z-0"></div>
+                {/* Visual ground shadow pedestal for 3D realism */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-36 h-2 bg-black/[0.05] rounded-full blur-md pointer-events-none z-0"></div>
+                
                 <img
                   src={recommendedProduct.image}
                   alt={recommendedProduct.name}
                   width="180"
                   height="180"
                   loading="lazy"
-                  className="object-contain hover:scale-105 transition-transform duration-300"
+                  className="max-h-36 max-w-[85%] object-contain select-none hover:scale-105 transition-transform duration-500 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.03)] relative z-10"
                 />
               </div>
-              <div className="md:w-2/3 space-y-4">
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <div className="md:w-7/12 space-y-5">
+                <p className="text-neutral-600 text-sm md:text-base leading-relaxed">
                   {getCustomRecommendationDescription()}
                 </p>
                 
                 {/* Visual specs pill board */}
-                <div className="grid grid-cols-3 gap-2 text-center">
-                  <div className="bg-gray-50 p-2 rounded-lg border border-gray-100">
-                    <span className="block text-[10px] text-gray-500 uppercase tracking-widest">Alcance</span>
-                    <span className="text-xs font-bold text-gray-800">{recommendedProduct.specs.reach}</span>
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div className="bg-neutral-50 p-2.5 rounded-xl border border-neutral-200/60 shadow-xs">
+                    <span className="block text-[9px] text-neutral-400 uppercase tracking-widest font-semibold">Alcance</span>
+                    <span className="text-xs font-bold text-neutral-800">{recommendedProduct.specs.reach}</span>
                   </div>
-                  <div className="bg-gray-50 p-2 rounded-lg border border-gray-100">
-                    <span className="block text-[10px] text-gray-500 uppercase tracking-widest">Capacidad</span>
+                  <div className="bg-neutral-50 p-2.5 rounded-xl border border-[#ff4d00]/15 shadow-xs">
+                    <span className="block text-[9px] text-[#ff4d00] uppercase tracking-widest font-semibold">Carga útil</span>
                     <span className="text-xs font-bold text-[#ff4d00]">{recommendedProduct.specs.payload}</span>
                   </div>
-                  <div className="bg-gray-50 p-2 rounded-lg border border-gray-100">
-                    <span className="block text-[10px] text-gray-500 uppercase tracking-widest">Cámara</span>
-                    <span className="text-xs font-bold text-gray-800">{recommendedProduct.specs.camera}</span>
+                  <div className="bg-neutral-50 p-2.5 rounded-xl border border-neutral-200/60 shadow-xs">
+                    <span className="block text-[9px] text-neutral-400 uppercase tracking-widest font-semibold">Cámara</span>
+                    <span className="text-xs font-bold text-neutral-800">{recommendedProduct.specs.camera}</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-100">
+            {/* CTA panel */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-neutral-100">
               <a
                 href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-                  `Hola, realicé el diagnóstico interactivo en tu web y me recomendó el Drone ${recommendedProduct.name}. Me gustaría recibir detalles sobre este equipo.`
+                  `Hola SwellPro Perú. Completé el recomendador interactivo en su web y mi modelo ideal resultó el *${recommendedProduct.name}*. Me gustaría recibir información de stock, precio actual con descuento exclusivo y coordinar detalles sobre la asesoría y capacitación en campo.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-[#ff4d00] hover:bg-[#e04400] text-white text-center font-semibold py-4 px-6 rounded-xl transition shadow-lg shadow-orange-brand/20 flex items-center justify-center gap-2 cursor-pointer"
+                className="flex-3 bg-[#ff4d00] hover:bg-[#e04400] text-white text-center font-bold text-sm uppercase tracking-wider py-4.5 px-6 rounded-2xl transition-all duration-200 shadow-xl shadow-orange-brand/20 flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
               >
-                Solicitar Cotización Asistida por WhatsApp →
+                <Anchor className="w-4 h-4" /> Solicitar este equipo por WhatsApp →
               </a>
               <button
                 onClick={resetQuiz}
-                className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-4 px-6 rounded-xl transition flex items-center justify-center gap-2 cursor-pointer"
+                className="flex-1 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 font-bold text-xs uppercase tracking-wider py-4.5 px-5 rounded-2xl transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer"
               >
-                <RotateCcw size={16} /> Volver a Empezar
+                <RotateCcw size={14} /> Reintentar
               </button>
             </div>
           </div>
