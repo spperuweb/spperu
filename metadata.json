@@ -1,0 +1,6 @@
+{
+  "name": "SwellPro Perú",
+  "description": "Landing page premium de alta conversión para SwellPro Perú, representante oficial de drones de pesca SwellPro en el Perú.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

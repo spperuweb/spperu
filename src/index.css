@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Oswald", sans-serif;
+  
+  --color-orange-brand: #ff4d00;
+  --color-peru-red: #c0392b;
+  --color-dark-bg: #0a0a0a;
+  --color-dark-gray: #1a1a1a;
+  --color-warm-light: #f5f3f0;
+}
+
+/* Custom scroll reveal styling */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle Peru Red-White-Red line decoration */
+.peru-line {
+  position: relative;
+  height: 2px;
+  width: 40px;
+  background: linear-gradient(to right, #c0392b 33.3%, #ffffff 33.3%, #ffffff 66.6%, #c0392b 66.6%);
+}
+
+.card-peru-border {
+  position: relative;
+}
+.card-peru-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, #c0392b 33.3%, #ffffff 33.3%, #ffffff 66.6%, #c0392b 66.6%);
+}
+
+/* Floating WhatsApp button styling */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50px;
+  padding: 14px 20px 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: pulse-whatsapp 2.5s infinite;
+}
+.whatsapp-float:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+}
+@keyframes pulse-whatsapp {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 4px 32px rgba(37, 211, 102, 0.7); }
+}
+@media (max-width: 480px) {
+  .whatsapp-float { bottom: 16px; right: 16px; padding: 14px 16px; }
+  .whatsapp-label { display: none; }
+}
+
