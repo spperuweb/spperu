@@ -52,56 +52,75 @@ export default function App() {
   const products: Product[] = [
     {
       id: "fd1",
-      name: "Fisherman FD1+",
-      badge: "Táctico & Sencillo",
+      name: "Fisherman FD1S",
+      badge: "El más fácil de usar",
+      tagline: "Tú pescas, él vuela. Así de simple.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816470/swellpro-fisherman-fd1-plus-drone-thumnail_z9ytsb.png",
       specs: {
-        reach: "1.3 km de alcance",
-        payload: "2.2 kg de pura carnada",
-        camera: "Vuelo visual táctico",
+        reach: "1.3 Kilómetros",
+        payload: "2.2 Kilogramos",
+        camera: "Sensor ToF + Batería Inteligente",
       },
-      description: "Tu tanque de guerra para el mar. Sencillo, robusto y 100% libre de complicaciones. Hecho para arrastrar tus mejores líneas mar adentro sin rodeos de pantallas ni distracciones.",
-      statusMessage: "Hola, me interesa recibir asesoría y programar cotización del Fisherman FD1+ con garantía local",
+      description: "Sin configuración compleja. Sin rituales de calibración. Conecta la batería y al agua. El FD1S mantiene tus manos libres y tu carnada segura, con aterrizaje ToF suave.",
+      statusMessage: "Hola, quiero info del Fisherman FD1S",
     },
     {
       id: "fd2-max",
       name: "Fisherman Max FD2",
-      badge: "Carga Extrema + Cámara 4K",
+      badge: "Máxima carga",
       isPopular: true,
+      tagline: "Carnadas pesadas. Vientos fuertes. Sin excusas.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816471/fisherman-max-fd2-drone-thumbnail_k1yona.png",
       specs: {
-        reach: "1.5 km de alcance",
-        payload: "3.5 kg de carga extrema",
-        camera: "Cámara Marina 4K en vivo",
+        reach: "1.2 Kilómetros",
+        payload: "3.5 Kilogramos (Máxima de la línea)",
+        camera: "Gimbal 4K, 12 MP, 1/2.3\" CMOS",
       },
-      description: "La bestia absoluta de la costa sudamericana. Sujeta vientos cruzados brutales y remolca carnadas vivas o plomadas masivas de hasta 3.5 kg, observando el fondo en vivo en tu control para dar en la zona exacta.",
-      statusMessage: "Hola, quiero información del Fisherman Max FD2, precios disponibles y agenda de inducción gratis",
+      description: "Construido resistente para la pesca diaria. Levanta hasta 3.5 kg, lleva carnadas grandes a aguas profundas resistiendo vientos nivel 7 y estado del mar 5.",
+      statusMessage: "Hola, quiero info del Fisherman FD2 Max",
     },
     {
       id: "fd3",
       name: "Fisherman FD3",
-      badge: "Precisión & Alta Gama",
+      badge: "Cámara + Precisión",
+      tagline: "Ve la estructura. Apunta a la captura.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816471/swellpro-fisherman-fd3-drone-thumnail_mdxsb2.png",
       specs: {
-        reach: "1.3 km de alcance",
-        payload: "2 kg de carga máxima",
-        camera: "Cámara 4K + Súper GPS 9.0",
+        reach: "1.2 Kilómetros",
+        payload: "2.0 Kilogramos",
+        camera: "Gimbal 4K en vivo, 12 MP, 1/2.3\" CMOS",
       },
-      description: "La armonía perfecta entre ingeniería marina y control de precisión. Su nuevo módulo con doble GPS 9.0 te asegura retornos autónomos quirúrgicos al punto de despegue y estabilidad total frente a corrientes de aire.",
-      statusMessage: "Hola, me gustaría recibir especificaciones detalladas del Fisherman FD3 y facilidades de pago",
+      description: "La cámara del FD3 te da ojos sobre el agua: explora el punto, revisa la corriente y lanza tu carnada con precisión y confianza mar adentro.",
+      statusMessage: "Hola, quiero info del Fisherman FD3",
+    },
+    {
+      id: "sd4",
+      name: "SplashDrone 4",
+      badge: "Lo más avanzado",
+      tagline: "El drone marino profesional. Para el que no negocia.",
+      image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/new-waterproof-drone-splashrone-4-plus_1570x_fgdu3n.webp",
+      specs: {
+        reach: "7.0 Kilómetros",
+        payload: "2.0 Kilogramos",
+        camera: "Sony 4K 60fps, 48 MP, Zoom 8x",
+      },
+      description: "Sony 4K, 7 km de alcance, 29 minutos de vuelo (hasta 7 lanzamientos) y la plataforma waterproof más completa con IP67 completo.",
+      statusMessage: "Hola, quiero info del SplashDrone 4",
     },
     {
       id: "sd4-plus",
       name: "SplashDrone 4 Plus",
-      badge: "Impermeable Híbrido",
+      badge: "SOLD OUT — Próximo ingreso",
+      isSoldOut: true,
+      tagline: "El gigante de la versatilidad sumergible.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/new-waterproof-drone-splashrone-4-plus_1570x_fgdu3n.webp",
       specs: {
-        reach: "2.0 km de alcance",
-        payload: "2.0 kg de suelta rápida",
-        camera: "Gimbal 4K de 3 ejes",
+        reach: "7.0 Kilómetros",
+        payload: "2.0 Kilogramos",
+        camera: "Sony 4K 60fps, 5.7K UHD",
       },
-      description: "La cumbre de la versatilidad sumergible. Equipado con gimbal estabilizado de tres ejes y cámara 4K de alta velocidad. El equipo definitivo para creadores de contenido marinos y pesca táctica de precisión.",
-      statusMessage: "Hola, me interesa recibir más detalles técnicos y cotización especial del SplashDrone 4 Plus con repuestos oficiales",
+      description: "La cumbre de la versatilidad sumergible con gimbal estabilizado de 3 ejes. Próximo ingreso. ¡Separa el tuyo ahora!",
+      statusMessage: "Hola, avísame cuando llegue el SplashDrone 4 Plus",
     }
   ];
 
@@ -537,9 +556,11 @@ export default function App() {
             </p>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch mb-14">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 items-stretch mb-14">
             {products.map((product) => {
-              const borderClass = product.isPopular
+              const borderClass = product.isSoldOut
+                ? "border-neutral-200 bg-neutral-50/50 opacity-90"
+                : product.isPopular
                 ? "border-[#ff4d00] shadow-2xl shadow-[#ff4d00]/10 ring-2 ring-[#ff4d00]/10"
                 : "border-neutral-200/95 shadow-md shadow-neutral-100 hover:shadow-xl hover:border-neutral-300";
 
@@ -552,14 +573,16 @@ export default function App() {
                   {/* Badges */}
                   <div className="absolute top-4 left-4 z-10 flex flex-col gap-1.5">
                     <span className={`text-[8.5px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full ${
-                      product.isPopular
+                      product.isSoldOut
+                        ? "bg-red-700 text-white"
+                        : product.isPopular
                         ? "bg-[#ff4d00] text-white shadow-md shadow-[#ff4d00]/20"
                         : "bg-neutral-950 text-white"
                     }`}>
                       {product.badge}
                     </span>
                     
-                    {product.isPopular && (
+                    {product.isPopular && !product.isSoldOut && (
                       <span className="bg-neutral-900 text-white text-[8px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border border-neutral-800 w-fit">
                         🔥 Popular
                       </span>
@@ -585,10 +608,17 @@ export default function App() {
                   <div className="p-6 flex-1 flex flex-col justify-between">
                     <div>
                       {/* Name */}
-                      <h3 className="text-xl md:text-2xl font-display font-extrabold text-neutral-950 uppercase mb-2 flex items-center gap-1">
+                      <h3 className="text-xl md:text-2xl font-display font-extrabold text-neutral-950 uppercase mb-1 flex items-center gap-1">
                         {product.name}
                         {product.isPopular && <span className="text-[#ff4d00]">★</span>}
                       </h3>
+
+                      {/* Tagline */}
+                      {product.tagline && (
+                        <span className="text-neutral-500 font-medium italic text-xs block mb-3 leading-tight font-sans">
+                          "{product.tagline}"
+                        </span>
+                      )}
 
                       {/* Description */}
                       <p className="text-neutral-550 text-xs leading-relaxed mb-5 font-sans h-24 overflow-hidden">
@@ -624,12 +654,14 @@ export default function App() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`w-full text-center font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-2xl transition duration-250 block ${
-                        product.isPopular
+                        product.isSoldOut
+                          ? "bg-neutral-200 hover:bg-neutral-300 text-neutral-650 border border-neutral-300"
+                          : product.isPopular
                           ? "bg-[#ff4d00] hover:bg-[#e04400] text-white shadow-lg shadow-orange-brand/25"
                           : "bg-neutral-950 hover:bg-neutral-900 text-white"
                       }`}
                     >
-                      Preguntar precio y stock →
+                      {product.isSoldOut ? "Avísame cuando llegue → WhatsApp" : "Preguntar precio y stock →"}
                     </a>
                   </div>
 
@@ -749,48 +781,78 @@ export default function App() {
             <table className="w-full text-left border-collapse min-w-[700px]">
               <thead>
                 <tr className="bg-neutral-950 text-white font-display text-xs tracking-widest uppercase border-b border-neutral-900">
-                  <th className="p-6">Especificaciones</th>
-                  <th className="p-6">Fisherman FD1+</th>
-                  <th className="p-6 bg-[#ff4d00] text-center text-white">FD2 Max (Recomendado)</th>
-                  <th className="p-6">Fisherman FD3</th>
+                  <th className="p-5">Característica</th>
+                  <th className="p-5">FD1S</th>
+                  <th className="p-5 bg-[#ff4d00]/10 text-center text-[#ff4d00] font-bold">FD2 Max (Recomendado)</th>
+                  <th className="p-5">FD3</th>
+                  <th className="p-5">SD4</th>
+                  <th className="p-5 text-neutral-400">SD4 Plus (Sold Out)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-150 text-xs md:text-sm text-neutral-700 font-sans">
                 <tr className="hover:bg-neutral-50/50">
-                  <td className="p-5 font-bold text-neutral-950">Perfil Ideal</td>
-                  <td className="p-5">Pescador práctico, puro arrastre</td>
-                  <td className="p-5 bg-[#ff4d00]/5 text-center font-bold text-neutral-900">Fuerza brutal, oleaje y grandes presas</td>
-                  <td className="p-5">Asistente multimedia de última generación</td>
+                  <td className="p-4 font-bold text-neutral-950">Para quién</td>
+                  <td className="p-4">Empezar bien</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center font-bold text-neutral-900">Máxima carga</td>
+                  <td className="p-4">Precisión + cámara</td>
+                  <td className="p-4">Lo mejor sin límites</td>
+                  <td className="p-4 text-neutral-450">Lo más premium, próximo ingreso</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
-                  <td className="p-5 font-bold text-neutral-950">Alcance de Radio</td>
-                  <td className="p-5">1.3 Kilómetros</td>
-                  <td className="p-5 bg-[#ff4d00]/5 text-[#ff4d00] text-center font-bold">1.5 Kilómetros</td>
-                  <td className="p-5">1.3 Kilómetros</td>
+                  <td className="p-4 font-bold text-neutral-950">Alcance</td>
+                  <td className="p-4">1.3 km</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-[#ff4d00] text-center font-bold">1.2 km</td>
+                  <td className="p-4">1.2 km</td>
+                  <td className="p-4">7 km</td>
+                  <td className="p-4 text-neutral-450">7 km</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
-                  <td className="p-5 font-bold text-neutral-950">Carga Certificada</td>
-                  <td className="p-5">2.2 Kilogramos</td>
-                  <td className="p-5 bg-[#ff4d00]/5 text-[#ff4d00] text-center font-bold">3.5 Kilogramos</td>
-                  <td className="p-5 font-semibold text-neutral-800">2.0 Kilogramos</td>
+                  <td className="p-4 font-bold text-neutral-950">Carga máx</td>
+                  <td className="p-4">2.2 kg</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-[#ff4d00] text-center font-bold">3.5 kg</td>
+                  <td className="p-4">2 kg</td>
+                  <td className="p-4">2 kg</td>
+                  <td className="p-4 text-neutral-450">2 kg</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
-                  <td className="p-5 font-bold text-neutral-950">Transmisión de Cámara</td>
-                  <td className="p-5 text-neutral-400">Arrojo ciego (sin cámara)</td>
-                  <td className="p-5 bg-[#ff4d00]/5 text-center font-bold text-neutral-900">Cámara 4K en vivo para rastreo</td>
-                  <td className="p-5">Cámara 4K en vivo + GPS Inteligente</td>
+                  <td className="p-4 font-bold text-neutral-950">Cámara</td>
+                  <td className="p-4">No</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900">4K 12MP</td>
+                  <td className="p-4">4K 12MP</td>
+                  <td className="p-4">Sony 4K 60fps</td>
+                  <td className="p-4 text-neutral-450">Sony 4K 60fps, 5.7K UHD</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
-                  <td className="p-5 font-bold text-neutral-950">Resistencia IP</td>
-                  <td className="p-5">Sumergible IP67 completo</td>
-                  <td className="p-5 bg-[#ff4d00]/5 text-center text-neutral-900 font-semibold">Sumergible IP67 completo</td>
-                  <td className="p-5">Sumergible IP67 completo</td>
+                  <td className="p-4 font-bold text-neutral-950">Video en vivo</td>
+                  <td className="p-4">No</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900 font-bold">Sí</td>
+                  <td className="p-4">Sí</td>
+                  <td className="p-4">Sí</td>
+                  <td className="p-4 text-neutral-450">Sí</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
-                  <td className="p-5 font-bold text-neutral-950">Nivel de Navegación GPS</td>
-                  <td className="p-5">Básico Estándar</td>
-                  <td className="p-5 bg-[#ff4d00]/5 text-center font-semibold text-neutral-900">Súper GPS 9.0 Pro Avanzado</td>
-                  <td className="p-5">Súper GPS 9.0 Pro Avanzado</td>
+                  <td className="p-4 font-bold text-neutral-950">Batería</td>
+                  <td className="p-4">27 min</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900">27 min</td>
+                  <td className="p-4">27 min</td>
+                  <td className="p-4 font-semibold">29 min</td>
+                  <td className="p-4 text-neutral-450">29 min</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="p-4 font-bold text-neutral-950">IP Waterproof</td>
+                  <td className="p-4">IP67</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900">IP67</td>
+                  <td className="p-4">IP67</td>
+                  <td className="p-4">IP67</td>
+                  <td className="p-4 text-neutral-450">IP67</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="p-4 font-bold text-neutral-950">Disponibilidad</td>
+                  <td className="p-4">✅ Disponible</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center font-bold text-green-700">✅ Disponible</td>
+                  <td className="p-4">✅ Disponible</td>
+                  <td className="p-4">✅ Disponible</td>
+                  <td className="p-4 text-red-600 font-semibold">🔴 Sold Out — Próximo ingreso</td>
                 </tr>
               </tbody>
             </table>
@@ -977,6 +1039,133 @@ export default function App() {
               </div>
             </div>
           </div>
+
+        </div>
+      </section>
+
+
+      {/* NUEVA SECCIÓN — LA MARCA DETRÁS DEL DRONE */}
+      <section className="py-28 bg-[#0a0a0a] text-white relative overflow-hidden border-t border-b border-neutral-900">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff4d00]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#ff4d00]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
+          
+          <ScrollReveal className="text-center mb-20 max-w-3xl mx-auto">
+            <span className="text-[#ff4d00] text-xs font-bold tracking-widest uppercase block mb-3 bg-[#ff4d00]/10 px-3 py-1.5 rounded-full w-fit mx-auto border border-[#ff4d00]/20">
+              Autoridad e Innovación Global
+            </span>
+            <h2 className="text-3xl md:text-5xl font-display font-extrabold uppercase tracking-tight leading-none mb-4">
+              Más de 10 años siendo los mejores en esto
+            </h2>
+            <div className="w-14 h-1 bg-[#ff4d00] mx-auto mt-5 rounded-full"></div>
+            <p className="text-neutral-400 text-sm md:text-base mt-4 font-sans max-w-xl mx-auto leading-relaxed">
+              SwellPro no es una marca de drones improvisada. Somos los pioneros globales absolutos en tecnología de drones sumergibles para la pesca comercial y deportiva.
+            </p>
+          </ScrollReveal>
+
+          {/* Estadísticas Globales */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8 items-stretch mb-20">
+            {[
+              { num: "10+", label: "Años de Innovación", desc: "Fundada en 2014, liderando la tecnología waterproof." },
+              { num: "60", label: "Países", desc: "Presencia sólida global en los entornos marítimos más hostiles." },
+              { num: "1M+", label: "Drones Vendidos", desc: "Más de un millón de unidades operando activamente en el mundo." },
+              { num: "100+", label: "Distribuidores", desc: "Soporte internacional de la mano de centros oficiales autorizados." },
+              { num: "2015", label: "Hito Histórico", desc: "Lanzamos el primer sistema de liberación de carga del planeta." },
+            ].map((stat, idx) => (
+              <ScrollReveal 
+                key={idx}
+                className="bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6 hover:border-[#ff4d00]/30 transition-all text-center flex flex-col justify-between"
+              >
+                <div>
+                  <div className="font-display font-black text-4xl md:text-5xl text-[#ff4d00] mb-2">
+                    {stat.num}
+                  </div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-white mb-2 font-display">
+                    {stat.label}
+                  </div>
+                </div>
+                <p className="text-neutral-400 text-[11px] leading-relaxed font-sans">
+                  {stat.desc}
+                </p>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Timeline de Innovación */}
+          <div className="mb-24">
+            <ScrollReveal className="text-center mb-12">
+              <h3 className="font-display font-bold text-xl md:text-2xl uppercase tracking-wider text-neutral-300">
+                Línea de tiempo de nuestra tecnología
+              </h3>
+            </ScrollReveal>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-7 gap-4 relative">
+              {[
+                { year: "2014", title: "GoPro Waterproof", desc: "Primer drone del mundo waterproof adaptado para cámaras GoPro." },
+                { year: "2015", title: "Lanzamiento de Carga", desc: "Primer drone con mecanismo de liberación de carga del mercado." },
+                { year: "2017", title: "Cámara 4K Sumergible", desc: "Primer drone waterproof con cámara UHD integrada y estabilizada." },
+                { year: "2021", title: "Línea Fisherman", desc: "Lanzamiento del primer drone diseñado 100% para pescadores (FD1)." },
+                { year: "2023", title: "FD2 Max Pro", desc: "La bestia con 3.5 kg de carga, el máximo nivel de fuerza costera." },
+                { year: "2024", title: "SplashDrone 4+", desc: "La plataforma waterproof híbrida profesional más avanzada del mercado." },
+                { year: "2025", title: "Máxima Integración", desc: "Sistemas súper integrados de última generación para operaciones complejas." },
+              ].map((item, idx) => (
+                <ScrollReveal 
+                  key={idx}
+                  className="bg-neutral-950 border border-neutral-900 p-5 rounded-2xl flex flex-col justify-between hover:border-neutral-800 transition shadow-lg relative group animate-none"
+                >
+                  <div className="absolute top-0 left-0 w-full h-[2px] bg-neutral-800 group-hover:bg-[#ff4d00] transition-colors"></div>
+                  <div>
+                    <span className="font-display font-black text-[#ff4d00] text-xl md:text-2xl block mb-1">
+                      {item.year}
+                    </span>
+                    <h4 className="text-white font-bold text-xs uppercase tracking-tight mb-2 font-display leading-tight group-hover:text-[#ff4d00] transition-colors">
+                      {item.title}
+                    </h4>
+                  </div>
+                  <p className="text-neutral-400 text-[10px] leading-relaxed font-sans">
+                    {item.desc}
+                  </p>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+
+          {/* Medios que lo mencionaron */}
+          <div className="border-t border-neutral-900 pt-16 text-center">
+            <ScrollReveal className="mb-8">
+              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-neutral-400 font-display font-black tracking-widest text-lg sm:text-2xl opacity-60">
+                <span>The Guardian</span>
+                <span className="text-[#ff4d00]/10">•</span>
+                <span>CNN</span>
+                <span className="text-[#ff4d00]/10">•</span>
+                <span>NBC</span>
+                <span className="text-[#ff4d00]/10">•</span>
+                <span>Fox News</span>
+                <span className="text-[#ff4d00]/10">•</span>
+                <span>ABC</span>
+                <span className="text-[#ff4d00]/10">•</span>
+                <span>CBS News</span>
+                <span className="text-[#ff4d00]/10">•</span>
+                <span>Yahoo</span>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* Copy de cierre de sección & CTA */}
+          <ScrollReveal className="mt-16 text-center max-w-2xl mx-auto border-t border-neutral-900 pt-12">
+            <p className="text-neutral-300 text-sm md:text-base leading-relaxed mb-6 font-medium font-sans">
+              Y ahora, con representación oficial en Perú, puedes tener todo ese respaldo tecnológico con soporte real aquí mismo.
+            </p>
+            <a
+              href={getWhatsAppUrl("Quiero asesoría por WhatsApp de SwellPro Perú")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#ff4d00] hover:bg-[#e04400] text-white font-bold text-xs uppercase tracking-widest py-4.5 px-8 rounded-2xl transition duration-150 inline-block shadow-lg shadow-[#ff4d00]/20"
+            >
+              Quiero asesoría por WhatsApp
+            </a>
+          </ScrollReveal>
 
         </div>
       </section>

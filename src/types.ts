@@ -3,6 +3,8 @@ export interface Product {
   name: string;
   badge: string;
   isPopular?: boolean;
+  isSoldOut?: boolean;
+  tagline?: string;
   image: string;
   specs: {
     reach: string;

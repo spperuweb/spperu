@@ -221,9 +221,9 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
             <div className="grid gap-3.5 sm:grid-cols-1">
               {[
                 { 
-                  label: "🟢 Valoro la simpleza robusta (Poder táctico sin cámara)", 
+                  label: "🟢 Valoro la simpleza del FD1S: El más fácil de usar, sin calibraciones complejas", 
                   value: "basic",
-                  desc: "Diseño simple sin cámaras integradas para concentrarse totalmente en el plomo y caña."
+                  desc: "Diseño intuitivo para conectar la batería y lanzar al agua de inmediato."
                 },
                 { 
                   label: "🟡 Busco tecnología balanceada (GPS superior y vista aérea)", 
