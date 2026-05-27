@@ -1131,26 +1131,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Medios que lo mencionaron */}
-          <div className="border-t border-neutral-900 pt-16 text-center">
-            <ScrollReveal className="mb-8">
-              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-neutral-400 font-display font-black tracking-widest text-lg sm:text-2xl opacity-60">
-                <span>The Guardian</span>
-                <span className="text-[#ff4d00]/10">•</span>
-                <span>CNN</span>
-                <span className="text-[#ff4d00]/10">•</span>
-                <span>NBC</span>
-                <span className="text-[#ff4d00]/10">•</span>
-                <span>Fox News</span>
-                <span className="text-[#ff4d00]/10">•</span>
-                <span>ABC</span>
-                <span className="text-[#ff4d00]/10">•</span>
-                <span>CBS News</span>
-                <span className="text-[#ff4d00]/10">•</span>
-                <span>Yahoo</span>
-              </div>
-            </ScrollReveal>
-          </div>
+
 
           {/* Copy de cierre de sección & CTA */}
           <ScrollReveal className="mt-16 text-center max-w-2xl mx-auto border-t border-neutral-900 pt-12">
