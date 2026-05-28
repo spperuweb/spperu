@@ -42,100 +42,100 @@ const fd2GalleryImages: GalleryItem[] = [
   {
     id: "fd2-galeria-capturas-01",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936854/fd2-image-14_ehirnu.jpg",
-    tag: "Operaciones de Costa",
-    title: "Preparación del Calado",
-    desc: "Alineación de aparejo y verificación de línea asistida sobre la arena de la costa peruana antes del despegue."
+    tag: "Foto de Estudio",
+    title: "Vista General del FD2 Max",
+    desc: "Inspección detallada del cuerpo principal del drone en superficie plana, mostrando su terminación de fábrica y estructura de alta resistencia."
   },
   {
     id: "fd2-galeria-capturas-02",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936853/fd2-image-13_jfeh6h.jpg",
-    tag: "Entregas Exclusivas",
-    title: "Cliente recibe el Fisherman Max FD2",
-    desc: "Un pescador local recibe su equipo para calados masivos y pesados directos a los pozos costeros."
+    tag: "Detalle Técnico",
+    title: "Vista Frontal y Sellos",
+    desc: "Primer plano de los componentes frontales del drone, donde se observan sus acabados estancos y ensamble de precisión."
   },
   {
     id: "fd2-galeria-capturas-03",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936852/fd2-image-02_cvikgc.jpg",
-    tag: "Prueba de Vuelo",
-    title: "Estabilidad del FD2 Max Frente al Mar",
-    desc: "Mantiene un vuelo de precisión gracias al barómetro reforzado y la resistencia a ráfagas costeras de invierno."
+    tag: "Chasis Casero",
+    title: "Estructura de Motores Brushless",
+    desc: "Detalle tomado de cerca para apreciar el sistema de anclaje de motores y la robusta fibra del brazo que soporta la potencia de vuelo."
   },
   {
     id: "fd2-galeria-capturas-04",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936851/fd2-image-01_k6qmjs.jpg",
-    tag: "Unboxing de Campo",
-    title: "Maletín Oficial Hermético Rígido",
-    desc: "Maletín súper resistente a golpes y aislamiento de humedad para el cuidado premium permanente de la máquina."
+    tag: "Maletín de Campo",
+    title: "Almacenaje en Caja de Transporte",
+    desc: "El sistema de embalaje y cuidado con el que se resguarda el equipo. Espuma densa con corte exacto para cada accesorio."
   },
   {
     id: "fd2-galeria-capturas-05",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936849/fd2-image-05_lms8bf.jpg",
-    tag: "Ingeniería Anticorrosión",
-    title: "Estructura Robusta de Motores",
-    desc: "Hélices de alto rendimiento aseguradas para soportar la constante brisa marina cargada de salitre."
+    tag: "Diseño Estanco",
+    title: "Compuerta de Batería Inteligente",
+    desc: "Fotografía del compartimiento que resalta la compuerta posterior de alimentación marina con empaquetaduras de silicona reforzada."
   },
   {
     id: "fd2-galeria-capturas-06",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936848/fd2-image-11_gcznor.jpg",
-    tag: "Acompañamiento Técnico",
-    title: "Clase de Inducción Práctica Profesional",
-    desc: "Nuestro soporte oficial instruyendo paso a paso en costa para asegurar operaciones impecables."
+    tag: "Control Remoto",
+    title: "Mando Impermeable con Pantalla",
+    desc: "Primer plano del transmisor con antena de gran alcance y grips ergonómicos diseñados para operar cómodamente."
   },
   {
     id: "fd2-galeria-capturas-07",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936847/fd2-image-12_ygllt9.jpg",
-    tag: "Evidencia de Pesca",
-    title: "Logros Reales de Lenguado en Playa",
-    desc: "Resultado exitoso tras calar la plomada en la rampa exacta gracias al rango de vuelo extendido de 1.2km."
+    tag: "Accesorios Cargador",
+    title: "Cables y Cargador de Balance",
+    desc: "Detalle de los cables de carga rápida, conectores oficiales y fusibles incluidos de fábrica para la puesta a punto."
   },
   {
     id: "fd2-galeria-capturas-08",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936846/fd2-image-08_hlhda4.jpg",
-    tag: "Dureza del Chasis",
-    title: "Confiabilidad en Entornos Complejos",
-    desc: "Fibra de ingeniería con sellos SeaShield para una protección total IP67 contra salpicaduras pesadas."
+    tag: "Servo y Gancho",
+    title: "Mecanismo de Liberación Rápida",
+    desc: "Fotografía del gancho de suelta electromecánico y de la cámara FPV, resguardados por un domo rígido de policarbonato."
   },
   {
     id: "fd2-galeria-capturas-09",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936845/fd2-image-09_e1exa9.jpg",
-    tag: "Poder de Arrastre",
-    title: "Detalle de Gancho de Liberación",
-    desc: "Tracción constante garantizada. Soporta el lanzamiento de carnadas masivas y plomos de araña."
+    tag: "Kit de Herramientas",
+    title: "Accesorios Menores de Ensamble",
+    desc: "Herramientas de mano oficiales y repuestos de hélice en inspección casera sobre mesa de pruebas."
   },
   {
     id: "fd2-galeria-capturas-10",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936845/fd2-image-10_f07vps.jpg",
-    tag: "Feed de Video digital",
-    title: "Control Remoto Impermeable con Pantalla",
-    desc: "Muestra la altitud, rumbos satelitales GPS y video UHD de la rompiente con claridad total de cara al sol."
+    tag: "Mandos de Vuelo",
+    title: "Controles Físicos del Transmisor",
+    desc: "Detalle de los joysticks de dirección de alta sensibilidad y los potenciómetros superiores para la inclinación de la cámara."
   },
   {
     id: "fd2-galeria-capturas-11",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936843/fd2-image-07_c1bgzj.jpg",
-    tag: "Sensores ToF",
-    title: "Estación de Vuelo con Sensores Inteligentes",
-    desc: "Equipado con medidores de rebote para prevenir roces contra laderas rocosas u dunas imprevistas."
+    tag: "Amortiguadores",
+    title: "Base del Tren de Aterrizaje",
+    desc: "Acercamiento a las patas inferiores de goma que absorben los impactos pequeños y evitan derrapes en superficies irregulares."
   },
   {
     id: "fd2-galeria-capturas-12",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936842/fd2-image-06_wnpcam.jpg",
-    tag: "Taller en Lima",
-    title: "Alineación e Inspección de Estanqueidad",
-    desc: "Mantenimiento especializado en nuestro taller propio de atención inmediata con repuestos originales."
+    tag: "Hélices Desmontables",
+    title: "Palas de Propulsión de Fibra",
+    desc: "Muestra de las hélices rígidas de acople rápido optimizadas para resistir la flexión mecánica durante calados pesados."
   },
   {
     id: "fd2-galeria-capturas-13",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936842/fd2-image-03_zurk9e.jpg",
-    tag: "Resinas Marinas",
-    title: "Detalle de Brazo Estanco de Torsión",
-    desc: "Estructura que resiste la fatiga mecánica de arrastres prolongados de carnada de volumen extremo."
+    tag: "Brazo Mecánico",
+    title: "Detalle de Soporte y Torsión",
+    desc: "Plano cerrado que resalta el sellado exterior y los tornillos de fijación para mantener la integridad en condiciones de viento fuerte."
   },
   {
     id: "fd2-galeria-capturas-14",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936841/fd2-image-04_mvxodh.jpg",
-    tag: "Control de Calado",
-    title: "Suelto Inmediato de Aparejo en Poza",
-    desc: "Permite liberar plomos pesados a control remoto exactamente en la fosa de alimentación tranquila."
+    tag: "Case Hermético",
+    title: "Presentación del Maletín por Fuera",
+    desc: "Diseño exterior de caja hermética reforzada con asa ergonómica pesada, listo para ser transportado a cualquier playa peruana."
   }
 ];
 
