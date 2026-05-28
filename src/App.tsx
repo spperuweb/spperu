@@ -18,7 +18,12 @@ import {
   HelpCircle,
   ShieldCheck,
   Zap,
-  PhoneCall
+  PhoneCall,
+  Play,
+  Pause,
+  Eye,
+  Video,
+  Sparkles
 } from "lucide-react";
 import { Product, FAQItem } from "./types";
 import SelectionAssistant from "./components/SelectionAssistant";
@@ -28,9 +33,183 @@ import ScrollReveal from "./components/ScrollReveal";
 // CONFIGURACIÓN DE WHATSAPP
 const WHATSAPP_NUMBER = "51991664146"; // Representante de SwellPro Perú
 
+// GALERÍA REAL PREMIUM SWELLPRO PERÚ (Datos Reales de Campo)
+const galleryItems = [
+  // 1. CAPTURAS REALES (Bloque: capturas)
+  {
+    id: "captura-1",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779929017/swellpro-peru-capturas-07_qqsxbk.jpg",
+    type: "image",
+    category: "capturas",
+    tag: "Cliente real",
+    title: "Gran captura obtenida desde la orilla",
+    desc: "Nuestros clientes demuestran que llegar a pozos inaccesibles se traduce en capturas históricas sin pescar desde bote."
+  },
+  {
+    id: "captura-2",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779929016/swellpro-peru-capturas-05_nudwmc.jpg",
+    type: "image",
+    category: "capturas",
+    tag: "Captura real",
+    title: "Doble captura logrativa mar adentro",
+    desc: "Calado profundo con plomada pesada y múltiples anzuelos utilizando el Fisherman Max FD2."
+  },
+  {
+    id: "captura-3",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779929016/swellpro-peru-capturas-08_iiawap.jpg",
+    type: "image",
+    category: "capturas",
+    tag: "Captura real",
+    title: "Imponente pieza lograda en la costa centro",
+    desc: "SwellPro te permite colocar el cebo justo detrás de la rompiente donde se alimentan los grandes ejemplares."
+  },
+  {
+    id: "captura-4",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779929015/swellpro-peru-capturas-03_dqlamh.jpg",
+    type: "image",
+    category: "capturas",
+    tag: "Captura real",
+    title: "Pescador deportivo con su captura del día",
+    desc: "Resultados reales que cambian para siempre la forma de vivir la pesca recreativa en el litoral."
+  },
+  {
+    id: "captura-5",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779929016/swellpro-peru-capturas-06_dz6kns.jpg",
+    type: "image",
+    category: "capturas",
+    tag: "Cliente real",
+    title: "Pescador satisfecho con su SwellPro de alta gama",
+    desc: "Clientes reales que avalan la potencia y confiabilidad de nuestra tecnología en cada salida."
+  },
+
+  // 2. EN ACCIÓN (Bloque: accion)
+  {
+    id: "action-1",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929029/swellpro-peru-captura-11_sxhqph.mp4",
+    type: "video",
+    category: "accion",
+    tag: "En acción",
+    title: "Lanzamiento y arrastre de línea marina",
+    desc: "Mira cómo trabaja el sistema de liberación rápida electromecánica sobre las olas o peñas costeras."
+  },
+  {
+    id: "action-2",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929021/swellpro-peru-en-accion-06_bfdwc8.mp4",
+    type: "video",
+    category: "accion",
+    tag: "Prueba en playa",
+    title: "Despegue vertical contra ráfagas costeras",
+    desc: "Vuelos estables con resistencia al viento de nivel 7 (hasta 61 km/h) en el litoral peruano."
+  },
+  {
+    id: "action-3",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929020/swellpro-peru-en-capturas-10_t4voqt.mp4",
+    type: "video",
+    category: "accion",
+    tag: "Cliente real",
+    title: "Reacción instantánea del soltador",
+    desc: "Liberación controlada a voluntad desde el mando a distancia para posicionar la carnada a más de 1 km."
+  },
+  {
+    id: "action-4",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929020/swellpro-peru-en-accion-05_og8bk4.mp4",
+    type: "video",
+    category: "accion",
+    tag: "Prueba en playa",
+    title: "Vuelo táctico estable para calar carnada",
+    desc: "La cámara transmite en tiempo real en la pantalla del control permitiendo leer las corrientes marinas."
+  },
+  {
+    id: "action-5",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929019/swellpro-peru-en-accion-04_ytab2c.mp4",
+    type: "video",
+    category: "accion",
+    tag: "En acción",
+    title: "Pruebas de flote seguro en el fuerte oleaje",
+    desc: "Estructura hermética militar IP67. Si cae al mar, flota infinitamente y puede auto-voltearse de inmediato."
+  },
+  {
+    id: "action-6",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929018/swellpro-peru-en-accion-02_xrvn1s.mp4",
+    type: "video",
+    category: "accion",
+    tag: "Prueba en playa",
+    title: "Retorno autónomo confiable a tus manos",
+    desc: "La función Home Lock retorna el drone de forma automática guiado por GPS en caso de baja batería o pérdida de señal."
+  },
+  {
+    id: "action-7",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929017/swellpro-peru-en-accion-03_jnotdx.mp4",
+    type: "video",
+    category: "accion",
+    tag: "En acción",
+    title: "Estabilidad del drone en condiciones extremas",
+    desc: "Vuela con tranquilidad de espíritu sabiendo que los controladores de vuelo corrigen las ráfagas en milisegundos."
+  },
+  {
+    id: "action-8",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929017/swellpro-peru-en-accion-01_j7e8zn.mp4",
+    type: "video",
+    category: "accion",
+    tag: "Prueba en playa",
+    title: "Maniobrabilidad y precisión milimétrica",
+    desc: "Giroscopios avanzados garantizan mantener estabilidad sin derivas molestas durante el calado."
+  },
+  {
+    id: "action-9",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929016/swellpro-peru-capturas-09_f0vzod.mp4",
+    type: "video",
+    category: "accion",
+    tag: "Captura real",
+    title: "Gran captura en directo desde la costa",
+    desc: "La tensión y adrenalina de la captura en vivo retratada por nuestros usuarios en playa."
+  },
+
+  // 3. DRONE Y EQUIPO (Bloque: equipo)
+  {
+    id: "dron-1",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779929016/swellpro-peru-dron-01_uvvj5z.jpg",
+    type: "image",
+    category: "equipo",
+    tag: "Drone real",
+    title: "Un chasis blindado contra la corrosión marina",
+    desc: "Sellados herméticos de teflón, tornillería marina de acero inoxidable y materiales ultra-resistentes."
+  },
+  {
+    id: "dron-2",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779929015/swellpro-peru-dron_jhkqhb.jpg",
+    type: "image",
+    category: "equipo",
+    tag: "Drone real",
+    title: "Mecanismo de liberación electromecánico",
+    desc: "Clip reforzado para liberar hasta 3.5 kg de carga pesada con absoluta seguridad mediante comando radial."
+  },
+  {
+    id: "dron-3",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779929015/swellpro-peru-capturas-04_horizontal_c9ylzz.jpg",
+    type: "image",
+    category: "equipo",
+    tag: "Prueba en playa",
+    title: "Pescadores operando el drone en peñas costeras",
+    desc: "Capacitación práctica presencial incluida. Te enseñamos a despegar y lanzar con paciencia y método táctico."
+  },
+  {
+    id: "dron-4",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779929016/swellpro-peru-capturas-02_usflmo.jpg",
+    type: "image",
+    category: "equipo",
+    tag: "Cliente real",
+    title: "Preparación del equipo previo a calar",
+    desc: "La tecnología oficial se une con el conocimiento playero para otorgarte la experiencia definitiva de pesca."
+  }
+];
+
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [galleryFilter, setGalleryFilter] = useState<'todo' | 'capturas' | 'accion' | 'equipo'>('todo');
+  const [selectedMedia, setSelectedMedia] = useState<typeof galleryItems[0] | null>(null);
+  const [showAllMedia, setShowAllMedia] = useState(false);
 
   // Monitor scroll to add style to Navbar
   useEffect(() => {
@@ -200,6 +379,37 @@ export default function App() {
       desc: "Acceso a un grupo activo de WhatsApp donde compartimos capturas, mejores playas, estados del viento del litoral y consejos."
     }
   ];
+
+  const getFilterHeader = () => {
+    switch (galleryFilter) {
+      case 'capturas':
+        return {
+          tag: "Capturas Reales",
+          title: "Capturas reales. Resultados reales.",
+          desc: "Nuestros pescadores demuestran que llegar a pozos inaccesibles se traduce en capturas históricas sin pescar desde bote."
+        };
+      case 'accion':
+        return {
+          tag: "Drones Especiales en Acción",
+          title: "Así se ve SwellPro Perú en acción.",
+          desc: "Mira cómo trabaja el hardware sobre las peñas costeras, playas abiertas y oleajes bravíos del Pacífico."
+        };
+      case 'equipo':
+        return {
+          tag: "Ingeniería de Mar",
+          title: "El equipo que está detrás de la captura.",
+          desc: "Chasis estancos herméticos militares IP67 armados con resinas anticorrosión para toda la vida."
+        };
+      default:
+        return {
+          tag: "Prueba de Campo Real",
+          title: "Pruebas reales, no promesas.",
+          desc: "Cuando ves capturas, videos y equipos reales, entiendes por qué SwellPro Perú no vende solo drones: vende resultados con respaldo."
+        };
+    }
+  };
+
+  const currentHeader = getFilterHeader();
 
   return (
     <div className="min-h-screen flex flex-col relative w-full overflow-x-hidden bg-white">
@@ -938,126 +1148,166 @@ export default function App() {
           </div>
 
         </div>
-      </section>
+      </section>      {/* SECTION 8 — REAL SOCIAL PROOF / LOCAL TESTIMONIALS (No placeholders!) */}
+      <section id="evidencia" className="py-28 bg-neutral-50/40 border-t border-b border-neutral-200/60 relative overflow-hidden">
+        
+        {/* Subtle decorative glowing background for a high-end feel */}
+        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-neutral-200/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-12 right-12 w-[350px] h-[350px] bg-[#ff4d00]/5 rounded-full blur-3xl pointer-events-none"></div>
 
-
-      {/* SECTION 8 — REAL SOCIAL PROOF / LOCAL TESTIMONIALS (No placeholders!) */}
-      <section className="py-28 bg-white border-t border-b border-neutral-150">
-        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
           
-          <ScrollReveal className="text-center mb-20 max-w-2xl mx-auto">
-            <span className="text-xs font-bold text-[#ff4d00] uppercase tracking-widest block mb-2">
-              Prueba de Campo Real
+          {/* Main heading section */}
+          <ScrollReveal className="text-center mb-12 max-w-3xl mx-auto">
+            <span className="text-xs font-bold text-[#ff4d00] uppercase tracking-widest block mb-3 bg-[#ff4d00]/5 px-3 py-1.5 rounded-full w-fit mx-auto border border-[#ff4d00]/10">
+              {currentHeader.tag}
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-extrabold text-neutral-900 tracking-tight uppercase leading-none">
-              Drones en acción en el litoral peruano
+            <h2 className="text-3xl md:text-5xl font-display font-extrabold text-neutral-900 tracking-tight uppercase leading-none transition-all duration-300">
+              {currentHeader.title}
             </h2>
-            <div className="w-12 h-1 bg-red-700 mx-auto mt-4 rounded-full"></div>
-            <p className="text-neutral-500 mt-4 text-sm md:text-base font-sans leading-relaxed max-w-lg mx-auto">
-              Nuestra mayor garantía es ver a pescadores apasionados logrando capturas previamente inalcanzables gracias a SwellPro.
+            <div className="w-12 h-1 bg-[#ff4d00] mx-auto mt-4 rounded-full"></div>
+            <p className="text-neutral-550 mt-4 text-sm md:text-base font-sans leading-relaxed max-w-2xl mx-auto h-auto transition-all duration-300">
+              {currentHeader.desc}
             </p>
+            <div className="text-neutral-450 italic text-xs font-bold font-sans tracking-widest mt-4 uppercase">
+              “No te lo contamos. Te lo mostramos.”
+            </div>
           </ScrollReveal>
 
-          {/* Picture Grid Section (No generic placeholders) */}
-          <div className="grid md:grid-cols-3 gap-8 items-start max-w-5xl mx-auto mb-20">
-            
-            {/* National Deploy Board */}
-            <ScrollReveal className="bg-neutral-950 text-white p-8 rounded-2xl md:col-span-1 shadow-lg border border-neutral-900 self-stretch flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2 text-[#ff4d00] text-xs font-bold tracking-widest uppercase mb-4">
-                  <MapPin className="w-4 h-4" /> Despliegue Nacional
-                </div>
-                <h3 className="font-display text-2xl font-bold uppercase tracking-tight leading-none mb-4">
-                  Zonas donde ya operamos
-                </h3>
-                <p className="text-neutral-400 text-xs md:text-sm leading-relaxed mb-6 font-sans">
-                  Nuestros pescadores operan desde las fuertes brisas del norte peruano hasta las gélidas peñas y acantilados del sur.
-                </p>
-              </div>
-
-              <div className="space-y-3.5 border-t border-neutral-900 pt-6 font-sans">
-                <div className="flex justify-between text-xs text-neutral-300">
-                  <span className="font-semibold">⚓ Costa Norte (Chiclayo, Piura, Paita)</span>
-                  <span className="text-[#ff4d00] font-bold">Activo</span>
-                </div>
-                <div className="flex justify-between text-xs text-neutral-300">
-                  <span className="font-semibold">⚓ Costa Centro (Ancón, Chorrillos, Cañete)</span>
-                  <span className="text-[#ff4d00] font-bold">Activo</span>
-                </div>
-                <div className="flex justify-between text-xs text-neutral-300">
-                  <span className="font-semibold">⚓ Costa Sur (Ilo, Chala, San Bartolo)</span>
-                  <span className="text-[#ff4d00] font-bold">Activo</span>
-                </div>
-              </div>
+          {/* Interactive filter tabs */}
+          <div className="flex justify-center mb-10 overflow-x-auto pb-2 scrollbar-none">
+            <ScrollReveal className="bg-white/80 border border-neutral-200 p-1.5 rounded-2xl flex items-center gap-1 overflow-x-auto max-w-full scrollbar-none shadow-sm shadow-neutral-100 shrink-0">
+              {[
+                { id: 'todo', label: 'Ver Todo' },
+                { id: 'capturas', label: 'Capturas Reales' },
+                { id: 'accion', label: 'En Acción' },
+                { id: 'equipo', label: 'Drone y Equipo' }
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    setGalleryFilter(tab.id as any);
+                    setShowAllMedia(false);
+                  }}
+                  className={`text-[10px] md:text-xs font-display font-bold uppercase tracking-wider px-5 py-2.5 rounded-xl transition-all whitespace-nowrap ${
+                    galleryFilter === tab.id
+                      ? 'bg-neutral-950 text-white shadow-md shadow-neutral-950/20'
+                      : 'text-neutral-600 hover:text-neutral-950 hover:bg-neutral-100'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </ScrollReveal>
-
-            {/* Lifestyle Gallery with brand-new high-end assets */}
-            <ScrollReveal className="md:col-span-2 grid grid-cols-2 gap-4">
-              <div className="relative group overflow-hidden rounded-2xl h-52 bg-neutral-200 border border-neutral-100">
-                <img
-                  src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/drones-for-land-based-game-fishing_cp3stb.webp"
-                  alt="Pesca de juego desde tierra con drones en Perú"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none"
-                  loading="lazy"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 px-4 py-3 text-white text-[11px] font-semibold font-sans">
-                  Lanzamiento táctico guiado desde la playa
-                </div>
-              </div>
-              <div className="relative group overflow-hidden rounded-2xl h-52 bg-neutral-200 border border-neutral-100">
-                <img
-                  src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/shark-fishing-tournament_600x_y7eibg.webp"
-                  alt="Torneos extremos y captura de grandes presas con Swellpro"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none"
-                  loading="lazy"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 px-4 py-3 text-white text-[11px] font-semibold font-sans">
-                  Soporte de torque extremo para torneos marinos
-                </div>
-              </div>
-              <div className="relative col-span-2 group overflow-hidden rounded-2xl h-52 bg-neutral-200 border border-neutral-100">
-                <img
-                  src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/drone-fishing-charter-banner_600x_zvxgav.webp"
-                  alt="Servicios charter y botes recreativos con Swellpro"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 pointer-events-none"
-                  loading="lazy"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 px-5 py-3.5 text-white text-xs font-semibold font-sans">
-                  Operaciones coordinadas en botes y embarcaciones recreativas
-                </div>
-              </div>
-            </ScrollReveal>
-
           </div>
 
-          {/* Authentic Local Testimonials (Rebuilt, no long placeholder templates) */}
-          <div className="max-w-4xl mx-auto bg-neutral-50 border border-neutral-200 p-8 md:p-10 rounded-3xl">
-            <h3 className="font-display font-extrabold text-center uppercase tracking-wider text-neutral-900 mb-8 text-sm">
-              🗣️ Voces del mar peruano: Testimonios auténticos
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-6 bg-white rounded-2xl border border-neutral-150 relative shadow-xs flex flex-col justify-between">
-                <p className="text-neutral-600 italic text-sm mb-6 leading-relaxed font-sans">
-                  &ldquo;Pasaba horas arriesgando el hombro intentando cruzar la rompiente en San Bartolo con plomada pesada. Con el Fisherman Max FD2 ubico el canal de alimentación en mi control y suelto carnada de hasta 3 kilos con precisión de cirujano. El soporte en Lima me entregó el equipo calibrado y me enseñó a despegarlo con viento fuerte.&rdquo;
-                </p>
-                <div>
-                  <span className="block text-xs font-extrabold text-[#ff4d00] uppercase tracking-wider">Carlos M. - San Bartolo</span>
-                  <span className="text-[10px] text-neutral-400 block font-semibold font-sans">SwellPro FD2 Max · Pesca de Playa</span>
+          {/* Media Grid Section (Mobile horizontal-scroll snap carousel, Desktop responsive editorial grid) */}
+          <ScrollReveal>
+            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory pb-6 md:pb-0 scrollbar-none scroll-smooth">
+              {(galleryFilter === 'todo'
+                ? (showAllMedia 
+                    ? galleryItems 
+                    : [
+                        galleryItems.find(i => i.id === "action-1")!,
+                        galleryItems.find(i => i.id === "captura-1")!,
+                        galleryItems.find(i => i.id === "action-2")!,
+                        galleryItems.find(i => i.id === "captura-2")!,
+                        galleryItems.find(i => i.id === "dron-1")!,
+                        galleryItems.find(i => i.id === "action-5")!,
+                        galleryItems.find(i => i.id === "captura-3")!,
+                        galleryItems.find(i => i.id === "dron-3")!,
+                      ].filter(Boolean)
+                  )
+                : galleryItems.filter(item => item.category === galleryFilter)
+              ).map((item) => (
+                <div
+                  key={item.id}
+                  onClick={() => setSelectedMedia(item)}
+                  className="group relative bg-white rounded-3xl overflow-hidden border border-neutral-200 hover:border-[#ff4d00]/45 hover:shadow-2xl hover:shadow-neutral-200/50 transition-all duration-300 cursor-pointer snap-center shrink-0 w-[280px] md:w-auto h-[380px] md:h-[420px] flex flex-col justify-between"
+                >
+                  {/* Media Content Stage */}
+                  <div className="relative w-full h-full overflow-hidden bg-neutral-950">
+                    {item.type === 'video' ? (
+                      <div className="w-full h-full relative">
+                        <video
+                          src={item.url}
+                          muted
+                          loop
+                          autoPlay
+                          playsInline
+                          className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700 select-none pointer-events-none"
+                        />
+                        {/* Interactive floating Play icon indicator */}
+                        <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md p-2 rounded-full text-white border border-white/10 shadow-lg">
+                          <Play className="w-3.5 h-3.5 fill-white" />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="w-full h-full relative">
+                        <img
+                          src={item.url}
+                          alt={item.title}
+                          referrerPolicy="no-referrer"
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700 select-none pointer-events-none"
+                        />
+                      </div>
+                    )}
+                    
+                    {/* Double gradient overlay for superior readability on light properties */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-90 group-hover:via-neutral-950/40 transition-all duration-300"></div>
+
+                    {/* Highly visible Category Tag indicator on top-left of the card */}
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-[#ff4d00] text-white text-[9.5px] font-extrabold uppercase tracking-widest px-2.5 py-1.5 rounded-full shadow-lg border border-white/10">
+                        {item.tag}
+                      </span>
+                    </div>
+
+                    {/* Card Title & Desc - persisting on mobile, smoothly fading/lifting on hover in desktop */}
+                    <div className="absolute inset-x-0 bottom-0 p-5 text-white flex flex-col gap-1.5 z-10">
+                      <h4 className="font-display font-extrabold uppercase tracking-tight text-sm leading-tight group-hover:text-[#ff4d00] transition-colors">
+                        {item.title}
+                      </h4>
+                      <p className="text-neutral-300 text-[10px] font-sans leading-relaxed line-clamp-2 md:opacity-0 md:group-hover:opacity-100 md:transform md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-300 ease-out">
+                        {item.desc}
+                      </p>
+                    </div>
+
+                    {/* Seamless hover lens backdrop for screen expansion feedback */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-900/10 backdrop-blur-2xs">
+                      <div className="bg-white/95 text-neutral-950 px-4 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-300">
+                        <Eye className="w-3.5 h-3.5 text-[#ff4d00]" /> Ver pantalla completa
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="p-6 bg-white rounded-2xl border border-neutral-150 relative shadow-xs flex flex-col justify-between">
-                <p className="text-neutral-600 italic text-sm mb-6 leading-relaxed font-sans">
-                  &ldquo;Tenía mucho recelo de volar un aparato tan caro sobre el agua salada. Sin embargo, ver flotar el drone y despegar desde el agua me dio calma absoluta en Chiclayo. El servicio técnico local me brindó confianza de inmediato: compré filtros de cámara y una batería de repuesto que me llegaron al día siguiente.&rdquo;
-                </p>
-                <div>
-                  <span className="block text-xs font-extrabold text-[#ff4d00] uppercase tracking-wider">Javier R. - Costa Norte</span>
-                  <span className="text-[10px] text-neutral-400 block font-semibold font-sans">SwellPro FD3 · Pesca de Peña</span>
-                </div>
-              </div>
+              ))}
             </div>
+          </ScrollReveal>
+
+          {/* Optional Expansion Trigger & WhatsApp Evidence Link */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-12 mb-16">
+            {!showAllMedia && galleryFilter === 'todo' && (
+              <button
+                onClick={() => setShowAllMedia(true)}
+                className="w-full sm:w-auto text-center font-display font-bold text-xs uppercase tracking-wider py-4.5 px-8 rounded-2xl border border-neutral-300 text-neutral-800 bg-white hover:bg-neutral-50 hover:border-neutral-400 transition-all duration-150 inline-block cursor-pointer"
+              >
+                Ver más evidencia real →
+              </button>
+            )}
+            
+            <a
+              href={getWhatsAppUrl("Hola SwellPro Perú, he estado revisando su galería premium de evidencias de pesca. Deseo recibir asesoría exclusiva y coordinar mi compra.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto text-center font-bold text-xs uppercase tracking-widest py-4.5 px-8 rounded-2xl bg-[#ff4d00] hover:bg-[#e04400] text-white shadow-xl shadow-[#ff4d00]/20 inline-flex items-center justify-center gap-2 transition transform hover:-translate-y-0.5"
+            >
+              <PhoneCall className="w-4 h-4" /> Quiero ver más evidencia por WhatsApp
+            </a>
           </div>
+
+
 
         </div>
       </section>
@@ -1111,44 +1361,7 @@ export default function App() {
             ))}
           </div>
 
-          {/* Timeline de Innovación */}
-          <div className="mb-24">
-            <ScrollReveal className="text-center mb-12">
-              <h3 className="font-display font-bold text-xl md:text-2xl uppercase tracking-wider text-neutral-300">
-                Línea de tiempo de nuestra tecnología
-              </h3>
-            </ScrollReveal>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-7 gap-4 relative">
-              {[
-                { year: "2014", title: "GoPro Waterproof", desc: "Primer drone del mundo waterproof adaptado para cámaras GoPro." },
-                { year: "2015", title: "Lanzamiento de Carga", desc: "Primer drone con mecanismo de liberación de carga del mercado." },
-                { year: "2017", title: "Cámara 4K Sumergible", desc: "Primer drone waterproof con cámara UHD integrada y estabilizada." },
-                { year: "2021", title: "Línea Fisherman", desc: "Lanzamiento del primer drone diseñado 100% para pescadores (FD1)." },
-                { year: "2023", title: "FD2 Max Pro", desc: "La bestia con 3.5 kg de carga, el máximo nivel de fuerza costera." },
-                { year: "2024", title: "SplashDrone 4+", desc: "La plataforma waterproof híbrida profesional más avanzada del mercado." },
-                { year: "2025", title: "Máxima Integración", desc: "Sistemas súper integrados de última generación para operaciones complejas." },
-              ].map((item, idx) => (
-                <ScrollReveal 
-                  key={idx}
-                  className="bg-neutral-950 border border-neutral-900 p-5 rounded-2xl flex flex-col justify-between hover:border-neutral-800 transition shadow-lg relative group animate-none"
-                >
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-neutral-800 group-hover:bg-[#ff4d00] transition-colors"></div>
-                  <div>
-                    <span className="font-display font-black text-[#ff4d00] text-xl md:text-2xl block mb-1">
-                      {item.year}
-                    </span>
-                    <h4 className="text-white font-bold text-xs uppercase tracking-tight mb-2 font-display leading-tight group-hover:text-[#ff4d00] transition-colors">
-                      {item.title}
-                    </h4>
-                  </div>
-                  <p className="text-neutral-400 text-[10px] leading-relaxed font-sans">
-                    {item.desc}
-                  </p>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
 
 
 
@@ -1312,6 +1525,66 @@ export default function App() {
 
         </div>
       </footer>
+
+
+      {/* FULLSCREEN REAL EVIDENCE LIGHTBOX MODAL */}
+      {selectedMedia && (
+        <div className="fixed inset-0 bg-black/95 z-50 flex flex-col justify-center items-center p-4 backdrop-blur-md animate-fade-in select-none">
+          {/* Close trigger */}
+          <button 
+            onClick={() => setSelectedMedia(null)}
+            className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3.5 rounded-full transition-all duration-150 border border-white/10 z-[60] cursor-pointer"
+            aria-label="Cerrar vista"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          {/* Active media canvas */}
+          <div className="max-w-4xl w-full max-h-[70vh] flex justify-center items-center relative overflow-hidden rounded-2xl bg-black">
+            {selectedMedia.type === 'video' ? (
+              <video 
+                src={selectedMedia.url} 
+                controls 
+                autoPlay 
+                playsInline
+                className="max-w-full max-h-[70vh] object-contain rounded-2xl"
+              />
+            ) : (
+              <img 
+                src={selectedMedia.url} 
+                alt={selectedMedia.title} 
+                referrerPolicy="no-referrer"
+                className="max-w-full max-h-[70vh] object-contain rounded-2xl"
+              />
+            )}
+          </div>
+
+          {/* Descriptive footer context */}
+          <div className="max-w-2xl text-center mt-6 text-white px-2">
+            <span className="inline-block bg-[#ff4d00] text-white text-[9px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full mb-3 shadow-md">
+              {selectedMedia.tag}
+            </span>
+            <h3 className="font-display font-bold text-lg md:text-xl uppercase tracking-tight text-white mb-2">
+              {selectedMedia.title}
+            </h3>
+            <p className="text-neutral-400 text-xs md:text-sm font-sans leading-relaxed max-w-lg mx-auto">
+              {selectedMedia.desc}
+            </p>
+
+            {/* In-Modal Direct Action */}
+            <div className="mt-5">
+              <a
+                href={getWhatsAppUrl(`Hola SwellPro Perú, vi su evidencia real "${selectedMedia.title}" en la galería. Me interesa saber precio, entrega inmediata y soporte técnico de sus operaciones.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#ff4d00]/95 hover:bg-[#ff4d00] text-white font-bold text-[10px] uppercase tracking-widest py-3 px-6 rounded-xl transition duration-150"
+              >
+                <PhoneCall className="w-3.5 h-3.5" /> Cotizar equipo con esta evidencia por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
 
       {/* FLOATING WHATSAPP OVERLAY (MANDATORY AND CONSTANT PING) */}
