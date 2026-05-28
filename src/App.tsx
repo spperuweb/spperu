@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   Menu, 
   X, 
@@ -212,6 +212,7 @@ export default function App() {
   const [galleryFilter, setGalleryFilter] = useState<'todo' | 'capturas' | 'accion' | 'equipo'>('todo');
   const [selectedMedia, setSelectedMedia] = useState<typeof galleryItems[0] | null>(null);
   const [showAllMedia, setShowAllMedia] = useState(false);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
 
   // Monitor scroll to add style to Navbar
   useEffect(() => {
@@ -225,6 +226,54 @@ export default function App() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Parse deep link media on mount or parameter change
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const mediaId = params.get("media");
+    if (mediaId) {
+      const matchedItem = galleryItems.find(item => item.id === mediaId);
+      if (matchedItem) {
+        setSelectedMedia(matchedItem);
+        // Scroll to gallery
+        setTimeout(() => {
+          const galleryEl = document.getElementById("galeria");
+          if (galleryEl) {
+            galleryEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 300);
+      }
+    }
+  }, []);
+
+  const copyShareLink = async (id: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    const origin = window.location.origin || "https://swellpro.pe";
+    const shareUrl = `${origin}/?media=${id}`;
+    
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(shareUrl);
+      } else {
+        // Fallback
+        const textArea = document.createElement("textarea");
+        textArea.value = shareUrl;
+        textArea.style.position = "fixed";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+      }
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 2000);
+    } catch (err) {
+      console.error("No se pudo copiar el enlace", err);
+    }
+  };
 
   const getWhatsAppUrl = (text: string) => {
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -1343,25 +1392,31 @@ export default function App() {
 
                     {/* Floating Sharing & Direct Link Actions Panel */}
                     <div className="absolute top-4 right-4 flex items-center gap-1.5 z-20">
-                      {/* Enlace Directo */}
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="bg-black/70 hover:bg-[#ff4d00] text-white p-2 rounded-xl transition-all duration-200 border border-white/10 shadow-lg flex items-center justify-center cursor-pointer"
-                        title="Ver recurso directo"
+                      {/* Copiar Enlace Directo a la Web */}
+                      <button
+                        onClick={(e) => copyShareLink(item.id, e)}
+                        className={`p-2 rounded-xl transition-all duration-200 border shadow-lg flex items-center justify-center cursor-pointer text-xs font-bold gap-1 ${
+                          copiedId === item.id 
+                            ? "bg-[#25D366] text-white border-transparent" 
+                            : "bg-black/75 hover:bg-[#ff4d00] text-white border-white/10"
+                        }`}
+                        title="Copiar enlace para compartir"
                       >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                      {/* Compartir por WhatsApp */}
+                        {copiedId === item.id ? (
+                          <span className="text-[9px] font-extrabold uppercase px-1">¡Copiado!</span>
+                        ) : (
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        )}
+                      </button>
+
+                      {/* Compartir por WhatsApp sin número de teléfono específico */}
                       <a
-                        href={getWhatsAppUrl(`¡Mira esta evidencia real de pesca con SwellPro Perú! 🎣\n\nRecurso: ${item.url}`)}
+                        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`¡Mira esta evidencia real de pesca de SwellPro Perú! 🎣\n\n"${item.title}"\n\nVer en la web: ${window.location.origin || "https://swellpro.pe"}/?media=${item.id}`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="bg-black/70 hover:bg-[#25D366] text-white p-2 rounded-xl transition-all duration-200 border border-white/10 shadow-lg flex items-center justify-center cursor-pointer"
-                        title="Compartir por WhatsApp"
+                        className="bg-black/75 hover:bg-[#25D366] text-white p-2 rounded-xl transition-all duration-200 border border-white/10 shadow-lg flex items-center justify-center cursor-pointer"
+                        title="Compartir por WhatsApp (Selecciona contacto)"
                       >
                         <Share2 className="w-3.5 h-3.5" />
                       </a>
@@ -1675,32 +1730,48 @@ export default function App() {
             </p>
 
              {/* In-Modal Direct Action */}
-            <div className="mt-5 flex flex-wrap gap-3 justify-center items-center">
+            <div className="mt-5 flex flex-wrap gap-2.5 justify-center items-center">
+              {/* Cotización directa con Carlos / SwellPro */}
               <a
-                href={getWhatsAppUrl(`Hola SwellPro Perú, vi su evidencia real "${selectedMedia.title}" en la galería. Me interesa saber precio, entrega inmediata y soporte técnico de sus operaciones.`)}
+                href={getWhatsAppUrl(`Hola SwellPro Perú, vi su evidencia real "${selectedMedia.title}" en la galería de su web. Me interesa asesoramiento y cotización para comprar mi drone.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#ff4d00]/95 hover:bg-[#ff4d00] text-white font-bold text-[10px] uppercase tracking-widest py-3 px-6 rounded-xl transition duration-150 cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#ff4d00]/95 hover:bg-[#ff4d00] text-white font-bold text-[10px] uppercase tracking-widest py-3 px-5 rounded-xl transition duration-150 cursor-pointer shadow-md"
               >
-                <PhoneCall className="w-3.5 h-3.5" /> Cotizar equipo con WhatsApp
+                <PhoneCall className="w-3.5 h-3.5 animate-pulse" /> Cotizar por WhatsApp
               </a>
 
+              {/* Copiar enlace de la web */}
+              <button
+                onClick={() => copyShareLink(selectedMedia.id)}
+                className={`inline-flex items-center gap-2 font-bold text-[10px] uppercase tracking-widest py-3 px-5 rounded-xl transition duration-150 border cursor-pointer shadow-md ${
+                  copiedId === selectedMedia.id
+                    ? "bg-[#25D366] text-white border-transparent"
+                    : "bg-white/10 hover:bg-white/20 text-white border-white/15"
+                }`}
+              >
+                <ExternalLink className="w-3.5 h-3.5 text-[#ff4d00]" /> 
+                {copiedId === selectedMedia.id ? "¡Enlace Copiado!" : "Copiar Enlace"}
+              </button>
+
+              {/* Compartir por WhatsApp a amigos / contactos seleccionados */}
+              <a
+                href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`¡Mira esta evidencia real de pesca de SwellPro Perú! 🎣\n\n"${selectedMedia.title}"\n\nVer directamente en la web: ${window.location.origin || "https://swellpro.pe"}/?media=${selectedMedia.id}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-neutral-900 hover:bg-neutral-800 text-[#25D366] font-bold text-[10px] uppercase tracking-widest py-3 px-5 rounded-xl transition duration-150 border border-neutral-800 cursor-pointer shadow-md"
+              >
+                <Share2 className="w-3.5 h-3.5" /> Compartir con Amigos
+              </a>
+
+              {/* Botón secundario para el archivo original */}
               <a
                 href={selectedMedia.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-[10px] uppercase tracking-widest py-3 px-6 rounded-xl transition duration-150 border border-white/15 cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-neutral-400 hover:text-white transition py-1.5 px-3 rounded-lg border border-neutral-800/60 hover:border-neutral-700 bg-neutral-950/20"
               >
-                <ExternalLink className="w-3.5 h-3.5 text-[#ff4d00]" /> Enlace Directo
-              </a>
-
-              <a
-                href={getWhatsAppUrl(`¡Mira esta increíble evidencia de pesca de SwellPro Perú! 🎣\n\n${selectedMedia.title}: ${selectedMedia.url}`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-neutral-900 hover:bg-neutral-800 text-[#25D366] font-bold text-[10px] uppercase tracking-widest py-3 px-6 rounded-xl transition duration-150 border border-neutral-800 cursor-pointer"
-              >
-                <Share2 className="w-3.5 h-3.5" /> Compartir Recurso
+                Archivo Original ↗
               </a>
             </div>
           </div>
