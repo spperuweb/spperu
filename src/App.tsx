@@ -23,7 +23,9 @@ import {
   Pause,
   Eye,
   Video,
-  Sparkles
+  Sparkles,
+  Share2,
+  ExternalLink
 } from "lucide-react";
 import { Product, FAQItem } from "./types";
 import SelectionAssistant from "./components/SelectionAssistant";
@@ -1315,10 +1317,6 @@ export default function App() {
                           playsInline
                           className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700 select-none pointer-events-none"
                         />
-                        {/* Interactive floating Play icon indicator */}
-                        <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md p-2 rounded-full text-white border border-white/10 shadow-lg">
-                          <Play className="w-3.5 h-3.5 fill-white" />
-                        </div>
                       </div>
                     ) : (
                       <div className="w-full h-full relative">
@@ -1336,10 +1334,37 @@ export default function App() {
                     <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-90 group-hover:via-neutral-950/40 transition-all duration-300"></div>
 
                     {/* Highly visible Category Tag indicator on top-left of the card */}
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-[#ff4d00] text-white text-[9.5px] font-extrabold uppercase tracking-widest px-2.5 py-1.5 rounded-full shadow-lg border border-white/10">
+                    <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5">
+                      <span className="bg-[#ff4d00] text-white text-[9.5px] font-extrabold uppercase tracking-widest px-2.5 py-1.5 rounded-full shadow-lg border border-white/10 flex items-center gap-1">
+                        {item.type === 'video' && <Play className="w-2.5 h-2.5 fill-white" />}
                         {item.tag}
                       </span>
+                    </div>
+
+                    {/* Floating Sharing & Direct Link Actions Panel */}
+                    <div className="absolute top-4 right-4 flex items-center gap-1.5 z-20">
+                      {/* Enlace Directo */}
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="bg-black/70 hover:bg-[#ff4d00] text-white p-2 rounded-xl transition-all duration-200 border border-white/10 shadow-lg flex items-center justify-center cursor-pointer"
+                        title="Ver recurso directo"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                      {/* Compartir por WhatsApp */}
+                      <a
+                        href={getWhatsAppUrl(`¡Mira esta evidencia real de pesca con SwellPro Perú! 🎣\n\nRecurso: ${item.url}`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="bg-black/70 hover:bg-[#25D366] text-white p-2 rounded-xl transition-all duration-200 border border-white/10 shadow-lg flex items-center justify-center cursor-pointer"
+                        title="Compartir por WhatsApp"
+                      >
+                        <Share2 className="w-3.5 h-3.5" />
+                      </a>
                     </div>
 
                     {/* Card Title & Desc - persisting on mobile, smoothly fading/lifting on hover in desktop */}
@@ -1649,15 +1674,33 @@ export default function App() {
               {selectedMedia.desc}
             </p>
 
-            {/* In-Modal Direct Action */}
-            <div className="mt-5">
+             {/* In-Modal Direct Action */}
+            <div className="mt-5 flex flex-wrap gap-3 justify-center items-center">
               <a
                 href={getWhatsAppUrl(`Hola SwellPro Perú, vi su evidencia real "${selectedMedia.title}" en la galería. Me interesa saber precio, entrega inmediata y soporte técnico de sus operaciones.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#ff4d00]/95 hover:bg-[#ff4d00] text-white font-bold text-[10px] uppercase tracking-widest py-3 px-6 rounded-xl transition duration-150"
+                className="inline-flex items-center gap-2 bg-[#ff4d00]/95 hover:bg-[#ff4d00] text-white font-bold text-[10px] uppercase tracking-widest py-3 px-6 rounded-xl transition duration-150 cursor-pointer"
               >
-                <PhoneCall className="w-3.5 h-3.5" /> Cotizar equipo con esta evidencia por WhatsApp
+                <PhoneCall className="w-3.5 h-3.5" /> Cotizar equipo con WhatsApp
+              </a>
+
+              <a
+                href={selectedMedia.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-[10px] uppercase tracking-widest py-3 px-6 rounded-xl transition duration-150 border border-white/15 cursor-pointer"
+              >
+                <ExternalLink className="w-3.5 h-3.5 text-[#ff4d00]" /> Enlace Directo
+              </a>
+
+              <a
+                href={getWhatsAppUrl(`¡Mira esta increíble evidencia de pesca de SwellPro Perú! 🎣\n\n${selectedMedia.title}: ${selectedMedia.url}`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-neutral-900 hover:bg-neutral-800 text-[#25D366] font-bold text-[10px] uppercase tracking-widest py-3 px-6 rounded-xl transition duration-150 border border-neutral-800 cursor-pointer"
+              >
+                <Share2 className="w-3.5 h-3.5" /> Compartir Recurso
               </a>
             </div>
           </div>
