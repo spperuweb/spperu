@@ -33,93 +33,93 @@ const fd1sGalleryItems = [
   {
     id: "fd1s-galeria-capturas-01",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-01_pu8tgl.jpg",
-    tag: "FD1S en acción",
-    title: "Maniobra de despegue seguro",
-    desc: "Sencillo de operar incluso con viento moderado en la orilla costera."
+    tag: "Tecnología Marina",
+    title: "Estructura del chasis e ingeniería",
+    desc: "Vista en primer plano de los componentes herméticos resistentes al salitre."
   },
   {
     id: "fd1s-galeria-capturas-02",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-02_v195q2.jpg",
-    tag: "Cliente real",
-    title: "Excelente pieza lograda desde la orilla",
-    desc: "Resultados insuperables pescando cómodamente desde la costa de la playa."
+    tag: "Calidad de Construcción",
+    title: "Motores potentes de alta eficiencia",
+    desc: "Diseño de propulsión de alta resistencia para sobrellevar vientos marinos."
   },
   {
     id: "fd1s-galeria-capturas-03",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-03_gszeqk.jpg",
-    tag: "Resultado real",
-    title: "Captura imponente y solidez mecánica",
-    desc: "SwellPro FD1S deposita el cebo justo detrás de la rompiente con precisión."
+    tag: "Detalle Técnico",
+    title: "Mecanismo de liberación de carga",
+    desc: "Detalle del gancho electromecánico de alta confiabilidad física."
   },
   {
     id: "fd1s-galeria-capturas-04",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-04_uduouh.jpg",
-    tag: "Prueba real",
-    title: "Inspección del equipo en tierra",
-    desc: "Listo para un despegue rápido con estructura marina SeaShield™."
+    tag: "Diseño Estanco",
+    title: "Chasis de alta visibilidad",
+    desc: "Cuerpo de color naranja de alta visibilidad ideal para la navegación costera."
   },
   {
     id: "fd1s-galeria-capturas-05",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-05_bus2mx.jpg",
-    tag: "Captura real",
-    title: "Doble captura de gran peso",
-    desc: "Operando líneas de tracción múltiples con total fiabilidad satelital."
+    tag: "Estructura IP67",
+    title: "Excelente sellado impermeable",
+    desc: "Aislamiento hermético contra la humedad y el aire salino en puertos."
   },
   {
     id: "fd1s-galeria-capturas-06",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930422/imagen-FD1S-06_diuwwt.jpg",
-    tag: "Cliente real",
-    title: "Pescador con equipo estanco",
-    desc: "Garantía oficial y servicio técnico inmediato en Lima para cuidar tu inversión."
+    tag: "Tecnología Marina",
+    title: "Componentes anticorrosión SeaShield™",
+    desc: "Protección avanzada en tornillería marina y metales expuestos al agua."
   },
   {
     id: "fd1s-galeria-capturas-07",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-07_cjxdfj.jpg",
-    tag: "FD1S en acción",
-    title: "Vuelo de precisión para liberar línea",
-    desc: "Calado milimétrico controlado desde el control a libre demanda."
+    tag: "Ingeniería de Vuelo",
+    title: "Soportes de apoyo reforzados",
+    desc: "Estructura estable diseñada para aterrizajes seguros en cualquier superficie."
   },
   {
     id: "fd1s-galeria-capturas-08",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-08_vkoacd.jpg",
-    tag: "Resultado real",
-    title: "Pieza ejemplar conseguida desde playa",
-    desc: "Abundancia y mayor tamaño sin necesidad de embarcación artificial."
+    tag: "Calidad de Construcción",
+    title: "Hélices balanceadas de acople rápido",
+    desc: "Hélices optimizadas para maximizar el empuje aerodinámico."
   },
   {
     id: "fd1s-galeria-capturas-09",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-09_n9olt9.jpg",
-    tag: "Prueba real",
-    title: "Aterrizaje sutil sobre la arena",
-    desc: "El sensor ToF óptico incorporado mide la distancia con precisión láser."
+    tag: "Detalle Técnico",
+    title: "Sistemas inteligentes de vuelo",
+    desc: "Estabilización mediante giroscopios y barómetros integrados."
   },
   {
     id: "fd1s-galeria-capturas-10",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-10_h6optn.jpg",
-    tag: "Captura real",
-    title: "Demostración de fuerza de arrastre",
-    desc: "Su motorización soporta plomos y carnadas pesadas con soltura."
+    tag: "Estructura IP67",
+    title: "Mecanismo del sistema de flotación",
+    desc: "Estructura flotante que permite el despegue e inicio seguro desde el agua."
   },
   {
     id: "fd1s-galeria-capturas-11",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-11_ojtmxq.jpg",
-    tag: "Cliente real",
-    title: "Día exitoso en el litoral peruano",
-    desc: "Pescadores que adoptan tecnología waterproof con respaldo local."
+    tag: "Detalle Técnico",
+    title: "Batería inteligente de alta capacidad",
+    desc: "Suministro continuo de alta corriente y balance de celdas integrado."
   },
   {
     id: "fd1s-galeria-capturas-12",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930426/imagen-FD1S-12_rlpdww.jpg",
-    tag: "FD1S en acción",
-    title: "Preparado de batería inteligente",
-    desc: "Autoconservación de carga para potenciar su durabilidad en el tiempo."
+    tag: "Ingeniería de Vuelo",
+    title: "Detalles del sistema radiotransmisor",
+    desc: "Antenas de amplio alcance posicionadas para máxima conectividad."
   },
   {
     id: "fd1s-galeria-capturas-13",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930425/imagen-FD1S-13_ak9bsx.jpg",
-    tag: "Resultado real",
-    title: "Trofeo costero excepcional",
-    desc: "Vencer rompientes difíciles ahora es una realidad al alcance de todos."
+    tag: "Diseño Estanco",
+    title: "Pruebas de calidad del hardware",
+    desc: "Resistencia física certificada para resistir las jornadas operativas de playa."
   }
 ];
 
