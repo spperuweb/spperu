@@ -703,7 +703,7 @@ export default function App() {
                       {/* Persistent Pill Badge at the bottom-right corner to make it clear photos exist */}
                       <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md shadow-sm border border-neutral-200/60 px-2.5 py-1.5 rounded-xl text-[8.5px] font-bold tracking-wider text-neutral-700 uppercase flex items-center gap-1.5 transition-all duration-200 hover:bg-neutral-900 hover:text-white hover:border-transparent">
                         <Camera className="w-3.5 h-3.5 text-[#ff4d00]" />
-                        <span>FOTOS DE PLAYA ↗</span>
+                        <span>GALERÍA ↗</span>
                       </div>
                     </a>
                   </div>
