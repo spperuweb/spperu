@@ -747,7 +747,7 @@ export default function FD1SPage() {
                     Iniciación Práctica, Fácil de usar para pescador primerizo
                   </td>
                   <td className="p-4 sm:p-5">Pescador intermedio avanzado y arrastres de orilla pesado</td>
-                  <td className="p-4 sm:p-5">Lanzados extremos profesionales en playas bravas</td>
+                  <td className="p-4 sm:p-5">Visión marina en tiempo real con cámara Gimbal 4K y suelta asistida</td>
                   <td className="p-4 sm:p-5">Plataforma sumergible multipropósito de gama alta</td>
                 </tr>
 
@@ -756,8 +756,8 @@ export default function FD1SPage() {
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-bold text-neutral-900">
                     2.2 Kilogramos
                   </td>
-                  <td className="p-4 sm:p-5">2.5 Kilogramos</td>
-                  <td className="p-4 sm:p-5">4.0 Kilogramos (Extremo)</td>
+                  <td className="p-4 sm:p-5 font-bold">3.5 Kilogramos (Carga máxima)</td>
+                  <td className="p-4 sm:p-5">2 kg (Capacidad máxima de carga)</td>
                   <td className="p-4 sm:p-5">2.0 Kilogramos</td>
                 </tr>
 
@@ -766,8 +766,8 @@ export default function FD1SPage() {
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-medium text-neutral-800">
                     Apropiado 1.3 Kilómetros
                   </td>
-                  <td className="p-4 sm:p-5">1.5 Kilómetros</td>
-                  <td className="p-4 sm:p-5">1.6 Kilómetros</td>
+                  <td className="p-4 sm:p-5">1.2 Kilómetros (Alcance máximo)</td>
+                  <td className="p-4 sm:p-5">1.2 km</td>
                   <td className="p-4 sm:p-5 font-bold">Hasta 7.0 Kilómetros</td>
                 </tr>
 
@@ -776,8 +776,8 @@ export default function FD1SPage() {
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 text-neutral-800">
                     Opcional (Monturas fijas de fábrica de fácil adición)
                   </td>
-                  <td className="p-4 sm:p-5">Cámara Fija inclinable manual 4K Incluida</td>
-                  <td className="p-4 sm:p-5">Opcional externa para cargadores de pesca</td>
+                  <td className="p-4 sm:p-5">Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65</td>
+                  <td className="p-4 sm:p-5">Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65, equivalente a 25mm</td>
                   <td className="p-4 sm:p-5">Gimbal Estabilizado 3-Ejes 4K y Visión Nocturna</td>
                 </tr>
 
@@ -786,8 +786,8 @@ export default function FD1SPage() {
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 text-neutral-800">
                     IP67 sellado militar con auto-volteo PowerFlip
                   </td>
-                  <td className="p-4 sm:p-5">Estanqueidad IP67 con sensor dual ToF</td>
-                  <td className="p-4 sm:p-5">Estanqueidad profesional IP67 con motores pesados</td>
+                  <td className="p-4 sm:p-5">Sistema WaterProf con resistencia viento 7 y mar 5 (PowerFlip™)</td>
+                  <td className="p-4 sm:p-5">Estanqueidad profesional IP67 con resistencia viento 7, mar 5, PowerFlip™ y SeaSheld™</td>
                   <td className="p-4 sm:p-5">Estanqueidad de grado militar y gimbal estable 3-axis</td>
                 </tr>
 
@@ -796,7 +796,7 @@ export default function FD1SPage() {
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-extrabold text-[#ff4d00]" id="por-que-comprar">
                     ★ De Entrada (El más económico de la gama)
                   </td>
-                  <td className="p-4 sm:p-5">Inversión Intermedia-Alta</td>
+                  <td className="p-4 sm:p-5">Fuerte arrastre comercial</td>
                   <td className="p-4 sm:p-5">Inversión Profesional</td>
                   <td className="p-4 sm:p-5">Premium Completo</td>
                 </tr>

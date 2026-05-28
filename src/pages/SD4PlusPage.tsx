@@ -974,7 +974,7 @@ export default function SD4PlusPage() {
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Enfoque Principal</td>
                   <td className="p-4 sm:p-5">Iniciación práctica y vuelos fáciles de orilla</td>
                   <td className="p-4 sm:p-5">Carga de plomo y carnadas de gran porte</td>
-                  <td className="p-4 sm:p-5">Equilibrio práctico de cámara en vivo y calado</td>
+                  <td className="p-4 sm:p-5">El equilibrio ideal de visión marina, cámara 4K en directo y precisión</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 text-neutral-900 font-black italic text-center text-[13px]">
                      La plataforma profesional multiusos absoluta sin límites
                   </td>
@@ -983,8 +983,8 @@ export default function SD4PlusPage() {
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Capacidad de Carga</td>
                   <td className="p-4 sm:p-5">Hasta 2.2 Kilogramos</td>
-                  <td className="p-4 sm:p-5 font-bold">Hasta 3.5 Kilogramos</td>
-                  <td className="p-4 sm:p-5">Hasta 2.0 Kilogramos</td>
+                  <td className="p-4 sm:p-5 font-bold">Hasta 3.5 Kilogramos (Carga máxima)</td>
+                  <td className="p-4 sm:p-5">Hasta 2 kg (Carga máxima)</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-bold text-[#ff4d00] text-center text-sm">
                     Hasta 2.0 Kilogramos con gancho múltiple
                   </td>
@@ -993,8 +993,8 @@ export default function SD4PlusPage() {
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Alcance Operativo</td>
                   <td className="p-4 sm:p-5">1.3 Kilómetros de radio</td>
-                  <td className="p-4 sm:p-5">1.2 Kilómetros de radio</td>
-                  <td className="p-4 sm:p-5">1.2 Kilómetros de radio</td>
+                  <td className="p-4 sm:p-5 font-bold">1.2 Kilómetros (Alcance máximo)</td>
+                  <td className="p-4 sm:p-5">1.2 km (Alcance máximo)</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-black text-neutral-900 text-center text-sm">
                     ⚡ 7.0 Kilómetros de largo alcance digital
                   </td>
@@ -1003,8 +1003,8 @@ export default function SD4PlusPage() {
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Cámara & Transmisión</td>
                   <td className="p-4 sm:p-5">Opcional externa de rápido montaje</td>
-                  <td className="p-4 sm:p-5">Gimbal 4K, 12 MP CMOS</td>
-                  <td className="p-4 sm:p-5">Gimbal 4K, 12 MP, transmisión en directo</td>
+                  <td className="p-4 sm:p-5 font-medium">Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65</td>
+                  <td className="p-4 sm:p-5">Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65, equivalente a 25mm</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-bold text-[#ff4d00] text-center">
                     🎦 Sony 4K UHD 60fps, 48 MP, Zoom 8x, cardán giroscópico estable de 3 ejes
                   </td>
@@ -1013,8 +1013,8 @@ export default function SD4PlusPage() {
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Herrajes y Mar</td>
                   <td className="p-4 sm:p-5">Sumergible IP67 básico</td>
-                  <td className="p-4 sm:p-5">Estanqueidad IP67 con resistencia viento 7</td>
-                  <td className="p-4 sm:p-5">Estanqueidad IP67 con sistema PowerFlip</td>
+                  <td className="p-4 sm:p-5">Sistema WaterProf con resistencia viento 7 y mar 5 (PowerFlip™)</td>
+                  <td className="p-4 sm:p-5">Estanqueidad IP67 con resistencia viento 7, mar 5, PowerFlip™ y SeaSheld™</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 text-neutral-850 text-center font-semibold">
                     Compuestos de policarbonato reforzados con fibra de vidrio IP67 e inversión PowerFlip
                   </td>
@@ -1237,7 +1237,7 @@ export default function SD4PlusPage() {
               </h3>
               <ul className="text-xs text-neutral-400 space-y-2">
                 <li><a href="../fd1s/index.html" className="hover:text-white transition">Fisherman FD1S</a></li>
-                <li><a href="../fd2/index.html" className="hover:text-white transition">Fisherman Max FD2</a></li>
+                <li><a href="../fd2/index.html" className="hover:text-white transition">Fisherman FD2 Max</a></li>
                 <li><a href="../fd3/index.html" className="hover:text-white transition">Fisherman FD3</a></li>
                 <li><a href="../sd4/index.html" className="hover:text-white transition font-bold text-[#ff4d00]">SplashDrone 4 Plus</a></li>
               </ul>

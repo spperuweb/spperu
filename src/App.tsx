@@ -52,7 +52,7 @@ const galleryItems = [
     category: "capturas",
     tag: "Captura real",
     title: "Doble captura logrativa mar adentro",
-    desc: "Calado profundo con plomada pesada y múltiples anzuelos utilizando el Fisherman Max FD2."
+    desc: "Calado profundo con plomada pesada y múltiples anzuelos utilizando el Fisherman FD2 Max."
   },
   {
     id: "captura-3",
@@ -245,7 +245,7 @@ export default function App() {
     },
     {
       id: "fd2-max",
-      name: "Fisherman Max FD2",
+      name: "Fisherman FD2 Max",
       badge: "Máxima carga",
       isPopular: true,
       tagline: "El titán del calado. Soporta vientos brutales sin pestañear.",
@@ -265,9 +265,9 @@ export default function App() {
       tagline: "Tus ojos en vivo bajo la espuma para clavar con precisión quirúrgica.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816471/swellpro-fisherman-fd3-drone-thumnail_mdxsb2.png",
       specs: {
-        reach: "1.2 Kilómetros",
-        payload: "2.0 Kilogramos",
-        camera: "Gimbal 4K en vivo, 12 MP, 1/2.3\" CMOS",
+        reach: "1.2 km",
+        payload: "2 kg",
+        camera: "Gimbal 4K, 12 MP, 1/2.3\" CMOS, f/2.65, equivalente a 25mm",
       },
       description: "Explora la estructura marina desde tu control con pantalla brillante. Mira en tiempo real dónde se rompe la ola, localiza el banco de arena y suelta tu cebo de hasta 2 kg exactamente donde se alimenta la corvina grande.",
       statusMessage: "Hola, quiero info del Fisherman FD3",
@@ -945,8 +945,8 @@ export default function App() {
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Cámara</td>
                   <td className="p-4">No</td>
-                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900">4K 12MP</td>
-                  <td className="p-4">4K 12MP</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900 font-medium">Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65</td>
+                  <td className="p-4">Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65, equivalente a 25mm</td>
                   <td className="p-4">Sony 4K 60fps</td>
                   <td className="p-4 text-neutral-450">Sony 4K 60fps, 5.7K UHD</td>
                 </tr>
@@ -961,18 +961,42 @@ export default function App() {
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Batería</td>
                   <td className="p-4">27 min</td>
-                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900">27 min</td>
-                  <td className="p-4">27 min</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900">27 min (vuelo)</td>
+                  <td className="p-4">27 min (vuelo)</td>
                   <td className="p-4 font-semibold">29 min</td>
                   <td className="p-4 text-neutral-450">29 min</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">IP Waterproof</td>
-                  <td className="p-4">IP67</td>
-                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900">IP67</td>
-                  <td className="p-4">IP67</td>
+                  <td className="p-4">IP67 Estanqueidad</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900 font-bold">IP67 / WaterProf (Viento 7, Mar 5)</td>
+                  <td className="p-4">IP67 (Viento 7, Mar 5)</td>
                   <td className="p-4">IP67</td>
                   <td className="p-4 text-neutral-450">IP67</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="p-4 font-bold text-neutral-950">Control Remoto</td>
+                  <td className="p-4">Estándar IP54</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900 font-bold">IP54 Impermeable</td>
+                  <td className="p-4">IP54 Impermeable</td>
+                  <td className="p-4">IP66 Waterproof</td>
+                  <td className="p-4 text-neutral-450">IP66 Waterproof</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="p-4 font-bold text-neutral-950">Peso y Dimensiones</td>
+                  <td className="p-4">Not especificado</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900">3.78 kg | 522 × 522 × 192 mm</td>
+                  <td className="p-4">2.54 kg | 372 × 372 × 202 mm</td>
+                  <td className="p-4">Not especificado</td>
+                  <td className="p-4 text-neutral-450">Not especificado</td>
+                </tr>
+                <tr className="hover:bg-neutral-50/50">
+                  <td className="p-4 font-bold text-neutral-950">Sistemas Especiales</td>
+                  <td className="p-4">PowerFlip™</td>
+                  <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900 font-bold">PowerFlip™ + SeaSheld™ Anticorrosión</td>
+                  <td className="p-4">PowerFlip™ + SeaSheld™ + Sistema BAP</td>
+                  <td className="p-4">PowerFlip™</td>
+                  <td className="p-4 text-neutral-450">PowerFlip™ + SeaSheld™</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Disponibilidad</td>

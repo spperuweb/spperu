@@ -38,7 +38,7 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
       return products.find((p) => p.id === "fd2-max") || products[1];
     }
 
-    return products[1]; // Fisherman Max FD2 por defecto
+    return products[1]; // Fisherman FD2 Max por defecto
   };
 
   const resetQuiz = () => {

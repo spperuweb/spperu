@@ -36,6 +36,7 @@ interface GalleryItem {
   tag: string;
   title: string;
   desc: string;
+  category: 'drone' | 'accesorios' | 'detalle';
 }
 
 const fd2GalleryImages: GalleryItem[] = [
@@ -43,105 +44,120 @@ const fd2GalleryImages: GalleryItem[] = [
     id: "fd2-galeria-capturas-01",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936854/fd2-image-14_ehirnu.jpg",
     tag: "Foto de Estudio",
-    title: "Vista General del FD2 Max",
-    desc: "Inspección detallada del cuerpo principal del drone en superficie plana, mostrando su terminación de fábrica y estructura de alta resistencia."
+    title: "SwellPro FD2 Max",
+    desc: "Vista del drone principal junto a su mando en mesa.",
+    category: "drone"
   },
   {
     id: "fd2-galeria-capturas-02",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936853/fd2-image-13_jfeh6h.jpg",
-    tag: "Detalle Técnico",
-    title: "Vista Frontal y Sellos",
-    desc: "Primer plano de los componentes frontales del drone, donde se observan sus acabados estancos y ensamble de precisión."
+    tag: "Maletín Oficial",
+    title: "Caja de Foam Rígido",
+    desc: "Interior acolchado para amortiguar golpes de campo.",
+    category: "accesorios"
   },
   {
     id: "fd2-galeria-capturas-03",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936852/fd2-image-02_cvikgc.jpg",
-    tag: "Chasis Casero",
-    title: "Estructura de Motores Brushless",
-    desc: "Detalle tomado de cerca para apreciar el sistema de anclaje de motores y la robusta fibra del brazo que soporta la potencia de vuelo."
+    tag: "Foto de Estudio",
+    title: "Perfil Frontal",
+    desc: "Plano horizontal mostrando la estanqueidad sellada.",
+    category: "drone"
   },
   {
     id: "fd2-galeria-capturas-04",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936851/fd2-image-01_k6qmjs.jpg",
-    tag: "Maletín de Campo",
-    title: "Almacenaje en Caja de Transporte",
-    desc: "El sistema de embalaje y cuidado con el que se resguarda el equipo. Espuma densa con corte exacto para cada accesorio."
+    tag: "Foto a Detalle",
+    title: "Compartimento de Batería",
+    desc: "Compuerta trasera con empaquetaduras de silicona.",
+    category: "detalle"
   },
   {
     id: "fd2-galeria-capturas-05",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936849/fd2-image-05_lms8bf.jpg",
-    tag: "Diseño Estanco",
-    title: "Compuerta de Batería Inteligente",
-    desc: "Fotografía del compartimiento que resalta la compuerta posterior de alimentación marina con empaquetaduras de silicona reforzada."
+    tag: "Foto a Detalle",
+    title: "Hélices y Motor",
+    desc: "Conexión reforzada para resistir ráfagas de aire.",
+    category: "detalle"
   },
   {
     id: "fd2-galeria-capturas-06",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936848/fd2-image-11_gcznor.jpg",
-    tag: "Control Remoto",
-    title: "Mando Impermeable con Pantalla",
-    desc: "Primer plano del transmisor con antena de gran alcance y grips ergonómicos diseñados para operar cómodamente."
+    tag: "Foto de Estudio",
+    title: "Estación de Vuelo",
+    desc: "Conjunto del drone y radiocontrol listo para usar.",
+    category: "drone"
   },
   {
     id: "fd2-galeria-capturas-07",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936847/fd2-image-12_ygllt9.jpg",
-    tag: "Accesorios Cargador",
-    title: "Cables y Cargador de Balance",
-    desc: "Detalle de los cables de carga rápida, conectores oficiales y fusibles incluidos de fábrica para la puesta a punto."
+    tag: "Cuerpo Sellado",
+    title: "Integridad Estanca",
+    desc: "Resina sellada resistente a la humedad constante.",
+    category: "drone"
   },
   {
     id: "fd2-galeria-capturas-08",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936846/fd2-image-08_hlhda4.jpg",
-    tag: "Servo y Gancho",
-    title: "Mecanismo de Liberación Rápida",
-    desc: "Fotografía del gancho de suelta electromecánico y de la cámara FPV, resguardados por un domo rígido de policarbonato."
+    tag: "Foto a Detalle",
+    title: "Cuerpo de Fibra",
+    desc: "Giroscopio y estabilizador en estructura reforzada.",
+    category: "detalle"
   },
   {
     id: "fd2-galeria-capturas-09",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936845/fd2-image-09_e1exa9.jpg",
-    tag: "Kit de Herramientas",
-    title: "Accesorios Menores de Ensamble",
-    desc: "Herramientas de mano oficiales y repuestos de hélice en inspección casera sobre mesa de pruebas."
+    tag: "Mecanismo Técnico",
+    title: "Disparador de Carga",
+    desc: "Gancho mecánico electromecánico para líneas.",
+    category: "detalle"
   },
   {
     id: "fd2-galeria-capturas-10",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936845/fd2-image-10_f07vps.jpg",
-    tag: "Mandos de Vuelo",
-    title: "Controles Físicos del Transmisor",
-    desc: "Detalle de los joysticks de dirección de alta sensibilidad y los potenciómetros superiores para la inclinación de la cámara."
+    tag: "Radiocontrol",
+    title: "Mando con Pantalla",
+    desc: "Pantalla ultra brillante excelente para sol costero.",
+    category: "accesorios"
   },
   {
     id: "fd2-galeria-capturas-11",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936843/fd2-image-07_c1bgzj.jpg",
-    tag: "Amortiguadores",
-    title: "Base del Tren de Aterrizaje",
-    desc: "Acercamiento a las patas inferiores de goma que absorben los impactos pequeños y evitan derrapes en superficies irregulares."
+    tag: "Foto a Detalle",
+    title: "Altavoz y Sensores ToF",
+    desc: "Módulos de seguridad para medir distancia al suelo.",
+    category: "detalle"
   },
   {
     id: "fd2-galeria-capturas-12",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936842/fd2-image-06_wnpcam.jpg",
-    tag: "Hélices Desmontables",
-    title: "Palas de Propulsión de Fibra",
-    desc: "Muestra de las hélices rígidas de acople rápido optimizadas para resistir la flexión mecánica durante calados pesados."
+    tag: "Foto a Detalle",
+    title: "Cámara FPV Frontal",
+    desc: "Inclinación por control directo para buscar pozones.",
+    category: "detalle"
   },
   {
     id: "fd2-galeria-capturas-13",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936842/fd2-image-03_zurk9e.jpg",
-    tag: "Brazo Mecánico",
-    title: "Detalle de Soporte y Torsión",
-    desc: "Plano cerrado que resalta el sellado exterior y los tornillos de fijación para mantener la integridad en condiciones de viento fuerte."
+    tag: "Foto a Detalle",
+    title: "Motor Brushless",
+    desc: "Bobinado estanco con alta tolerancia contra sales.",
+    category: "detalle"
   },
   {
     id: "fd2-galeria-capturas-14",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936841/fd2-image-04_mvxodh.jpg",
-    tag: "Case Hermético",
-    title: "Presentación del Maletín por Fuera",
-    desc: "Diseño exterior de caja hermética reforzada con asa ergonómica pesada, listo para ser transportado a cualquier playa peruana."
+    tag: "Maletín Oficial",
+    title: "Maletín de Transporte Exterior",
+    desc: "Con válvula de balance de presión y broches rígidos.",
+    category: "accesorios"
   }
 ];
 
 export default function FD2Page() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [selectedGalleryIndex, setSelectedGalleryIndex] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState<'todo' | 'drone' | 'accesorios' | 'detalle'>('todo');
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -607,33 +623,43 @@ export default function FD2Page() {
                 {[
                   { 
                     item: "Capacidad de Carga", 
-                    value: "Hasta 3.5 kg de arrastre bruto", 
+                    value: "Carga máxima: 3.5 kg de arrastre bruto", 
                     explain: "Capacidad para llevar plomos de hasta 200g y carnadas enteras pesadas (lisas, calamares) sin esfuerzos mecánicos." 
                   },
                   { 
                     item: "Alcance Máximo de Lanzado", 
-                    value: "1.2 Kilómetros de distancia real", 
-                    explain: "Te colona con solvencia en la zona de pozas profundas más lejanas, superando con creces la orilla costera." 
+                    value: "Alcance máximo: 1.2 km de distancia real", 
+                    explain: "Te coloca con solvencia en la zona de pozas profundas más lejanas, superando con creces la orilla costera." 
                   },
                   { 
                     item: "Cámara & Gimbal", 
-                    value: "Gimbal 4K, 12 Megapíxeles, 1/2.3\" CMOS", 
-                    explain: "Estabilizado para transmisión digital directa de video. Permite estudiar la topología de la playa para un fijado óptimo." 
+                    value: "Gimbal 4K, 12 MP, 1/2.3\" CMOS, f/2.65", 
+                    explain: "Estabilizado para transmisión digital directa de video. Permite estudiar la topología de la playa para un fijado de línea óptimo." 
                   },
                   { 
                     item: "Autonomía de Batería", 
-                    value: "Hasta 27 minutos inteligentes", 
+                    value: "Tiempo de vuelo: 27 min de autonomía real", 
                     explain: "Suficiente autonomía para realizar múltiples mapeos y soltadas consecutivas de líneas sin recargas intermedias." 
                   },
                   { 
-                    item: "Resistencia Al Viento", 
-                    value: "Nivel de vientos hasta 7 (Estado de Mar 5)", 
-                    explain: "Vuela estable y ancla firme incluso en días de ráfagas continuas de invierno costero peruano." 
+                    item: "Estanqueidad y Mar", 
+                    value: "Sistema WaterProf con resistencia al viento nivel 7 y mar 5", 
+                    explain: "Vuela estable y ancla firme incluso en días de ráfagas continuas de invierno y oleaje costero peruano duro." 
+                  },
+                  { 
+                    item: "Control Remoto", 
+                    value: "Control impermeable: IP54 con pantalla brillante", 
+                    explain: "Soporta salpicaduras marinas directas, arena húmeda fina y llovizna densa playera sin contratiempos." 
                   },
                   { 
                     item: "Estructura y Anticorrosión", 
-                    value: "PowerFlip™ + Aleación anticorrosiva SeaShield™", 
-                    explain: "Materiales y juntas que evitan daños por salitre, condensación de humedad y erosión salina pesada." 
+                    value: "PowerFlip™ + SeaSheld™ anticorrosión especial", 
+                    explain: "Tratamiento anticorrosivo que evita deterioros por salitre marino, condensación costera y humedad progresiva." 
+                  },
+                  { 
+                    item: "Peso y Dimensiones", 
+                    value: "Peso: 3.78 kg | Dimensiones: 522 × 522 × 192 mm", 
+                    explain: "Estructura de compuestos de policarbonato y fibra moldeada marina para una rigidez y anclaje brutales." 
                   },
                 ].map((spec, idx) => (
                   <div 
@@ -743,76 +769,112 @@ export default function FD2Page() {
       </section>
 
       {/* SECCIÓN — EVIDENCIA DE CAMPO REAL EXCLUSIVA FD2 MAX */}
-      <section id="fd2-evidencia" className="py-24 bg-neutral-50/50 scroll-mt-20 border-t border-b border-neutral-200">
+      <section id="fd2-evidencia" className="py-24 bg-[#fafafa] scroll-mt-20 border-t border-b border-neutral-200/70">
         <div className="max-w-7xl mx-auto px-6">
           
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-[#ff4d00] font-display font-semibold text-xs uppercase tracking-widest block mb-1">
-              ✓ ADEMÁS DE LA FICHA: CONFIANZA Y VERIFICACIÓN REAL
+              • COLECCIÓN DE ESTUDIO SWELLPRO
             </span>
             <h2 className="text-3xl sm:text-5xl font-display font-black text-neutral-900 uppercase leading-none mt-2 mb-4 tracking-tight">
-              Swellpro FD2 en <span className="text-[#ff4d00]">acción real</span>
+              Análisis <span className="text-[#ff4d00]">Fotográfico</span>
             </h2>
-            <p className="text-neutral-500 text-xs sm:text-sm font-sans-dm max-w-2xl mx-auto">
-              Fotos exclusivas tomadas en el litoral peruano. Desde unboxings técnicos y demostraciones oficiales hasta entregas reales y capturas valiosas logradas gracias a la tracción de 3.5 kg.
+            <p className="text-neutral-500 text-xs sm:text-sm font-sans-dm max-w-xl mx-auto">
+              Galería técnica del Fisherman FD2 Max. Inspección casera de componentes estancos, sistemas de protección y estructura del chasis.
             </p>
           </div>
 
-          {/* Clean modern editorial grid layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch mb-16">
-            {fd2GalleryImages.map((img, idx) => (
-              <div 
-                key={img.id}
-                onClick={() => setSelectedGalleryIndex(idx)}
-                className="bg-white rounded-2xl border border-neutral-200/70 overflow-hidden shadow-xs hover:shadow-xl hover:border-neutral-350 transition-all duration-300 group cursor-pointer flex flex-col justify-between"
+          {/* Luxury Category Filter Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-16 max-w-2xl mx-auto bg-neutral-100/80 p-1 rounded-full border border-neutral-200/50">
+            {[
+              { id: 'todo', label: 'Todo el Equipo' },
+              { id: 'drone', label: 'El Drone' },
+              { id: 'detalle', label: 'Vistas a Detalle' },
+              { id: 'accesorios', label: 'Maletín & Mando' }
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveCategory(tab.id as any)}
+                className={`flex-1 min-w-[100px] text-center px-4 py-2 rounded-full text-[10px] sm:text-xs font-display tracking-wider uppercase transition-all duration-300 ${
+                  activeCategory === tab.id
+                    ? 'bg-neutral-900 text-white shadow-sm font-bold'
+                    : 'text-neutral-500 hover:text-neutral-950 font-medium'
+                }`}
               >
-                {/* Photo Pedestal */}
-                <div className="relative overflow-hidden aspect-video bg-neutral-100 flex items-center justify-center">
-                  <img 
-                    src={img.url}
-                    alt={img.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover select-none transition-transform duration-500 group-hover:scale-105"
-                  />
-                  
-                  {/* Zoom indicator on hover */}
-                  <div className="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/95 text-[#ff4d00] p-3 rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition duration-300 flex items-center justify-center">
-                      <Camera className="w-5 h-5" />
-                    </div>
-                  </div>
-
-                  {/* Absolute subtle tag label */}
-                  <div className="absolute top-3 left-3 bg-neutral-900/90 backdrop-blur-xs text-white px-2.5 py-1 rounded-lg text-[9px] font-bold uppercase tracking-wider border border-neutral-800">
-                    {img.tag}
-                  </div>
-                </div>
-
-                {/* Subtitles Area */}
-                <div className="p-5 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="font-display font-black text-neutral-900 text-sm uppercase tracking-tight duration-150 group-hover:text-[#ff4d00] line-clamp-1">
-                      {img.title}
-                    </h3>
-                    <p className="text-neutral-500 text-xs font-sans-dm leading-relaxed mt-1.5 line-clamp-2">
-                      {img.desc}
-                    </p>
-                  </div>
-
-                  {/* ID & view command */}
-                  <div className="border-t border-neutral-100 mt-4 pt-3 flex items-center justify-between text-[10px] text-neutral-400 font-bold uppercase tracking-wider">
-                    <span>{img.id.slice(4)}</span>
-                    <span className="text-[#ff4d00] flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform duration-150">
-                      AMPLIAR DETALLE ↗
-                    </span>
-                  </div>
-                </div>
-              </div>
+                {tab.label}
+              </button>
             ))}
           </div>
 
+          {/* Premium editorial asymmetric Bento grid layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch mb-16">
+            {fd2GalleryImages
+              .filter(img => activeCategory === 'todo' || img.category === activeCategory)
+              .map((img) => {
+                const isExpanded = activeCategory === 'todo' && (img.id === "fd2-galeria-capturas-01" || img.id === "fd2-galeria-capturas-06");
+                const originalIndex = fd2GalleryImages.findIndex(item => item.id === img.id);
+                
+                return (
+                  <div 
+                    key={img.id}
+                    onClick={() => setSelectedGalleryIndex(originalIndex)}
+                    className={`bg-white rounded-3xl border border-neutral-200/60 overflow-hidden shadow-xs hover:shadow-xl hover:border-neutral-400 transition-all duration-500 group cursor-pointer flex flex-col justify-between ${
+                      isExpanded ? 'md:col-span-2' : 'col-span-1'
+                    }`}
+                  >
+                    {/* Photo Pedestal */}
+                    <div className={`relative overflow-hidden ${isExpanded ? 'aspect-[16/10] md:aspect-[21/9]' : 'aspect-[4/3]'} bg-neutral-50 flex items-center justify-center border-b border-neutral-105/50`}>
+                      <img 
+                        src={img.url}
+                        alt={img.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover select-none transition-transform duration-700 ease-out group-hover:scale-103"
+                      />
+                      
+                      {/* Dark premium overlay with minimal eye icon on hover */}
+                      <div className="absolute inset-0 bg-neutral-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+                        <div className="bg-white/95 text-neutral-900 px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md transform translate-y-2 group-hover:translate-y-0 transition duration-400">
+                          Zoom de Inspección
+                        </div>
+                      </div>
+
+                      {/* Absolute minimal subtle tag label */}
+                      <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-xs text-neutral-800 px-2.5 py-1 rounded-full text-[8px] font-bold uppercase tracking-widest shadow-xs border border-neutral-200/50">
+                        {img.tag}
+                      </div>
+
+                      {/* Discrete ID badge on top right */}
+                      <div className="absolute top-4 right-4 text-[9px] font-mono text-neutral-400/80 bg-neutral-905/5 px-2 py-0.5 rounded-full">
+                        #{img.id.split('-').pop()}
+                      </div>
+                    </div>
+
+                    {/* Subtitles Area - Clean Editorial Minimalist Spacing */}
+                    <div className="p-6 flex-1 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-display font-black text-neutral-900 text-sm sm:text-base uppercase tracking-tight duration-300 group-hover:text-[#ff4d00]">
+                          {img.title}
+                        </h3>
+                        <p className="text-neutral-500 text-xs font-sans-dm leading-relaxed mt-1.5">
+                          {img.desc}
+                        </p>
+                      </div>
+
+                      {/* Bottom line interaction indicators */}
+                      <div className="border-t border-neutral-100 mt-5 pt-4 flex items-center justify-between text-[10px] text-neutral-400/80 font-bold uppercase tracking-widest">
+                        <span>DETALLE DE COMPONENTE</span>
+                        <span className="text-[#ff4d00]/80 group-hover:text-[#ff4d00] flex items-center gap-1 group-hover:translate-x-1 transition-all duration-300">
+                          VER • EXPANDIR ↗
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+
           {/* Action Area footer */}
-          <div className="text-center bg-white p-8 rounded-3xl border border-neutral-200 shadow-sm max-w-3xl mx-auto">
+          <div className="text-center bg-white p-8 rounded-3xl border border-neutral-200/80 shadow-xs max-w-3xl mx-auto mt-8">
             <h3 className="font-display font-black text-neutral-900 text-lg uppercase tracking-tight">
               ¿Listo para domar las corrientes profundas con el FD2 Max?
             </h3>
@@ -950,7 +1012,7 @@ export default function FD2Page() {
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-bold text-neutral-900 italic">
                     Pesca de costa pesada, máxima capacidad de arrastre con carnada viva
                   </td>
-                  <td className="p-4 sm:p-5">Lanzamientos extremos con capacidad masiva industrial</td>
+                  <td className="p-4 sm:p-5">Visión en tiempo real con cámara Gimbal 4K y precisión en pozas</td>
                   <td className="p-4 sm:p-5 font-bold">Plataforma sumergible multipropósito Pro</td>
                 </tr>
 
@@ -958,40 +1020,80 @@ export default function FD2Page() {
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Carga Máxima de Arrastre</td>
                   <td className="p-4 sm:p-5">Hasta 2.2 Kilogramos</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-extrabold text-[#ff4d00] text-sm">
-                    Hasta 3.5 Kilogramos (El rey de la costa)
+                    Hasta 3.5 Kilogramos (Carga máxima)
                   </td>
-                  <td className="p-4 sm:p-5">Hasta 4.0 Kilogramos</td>
+                  <td className="p-4 sm:p-5">Hasta 2 kg (Capacidad máxima de carga)</td>
                   <td className="p-4 sm:p-5">Hasta 2.0 Kilogramos</td>
                 </tr>
 
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Alcance Operativo Real</td>
                   <td className="p-4 sm:p-5">1.3 Kilómetros</td>
-                  <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-medium">
-                    1.2 Kilómetros
+                  <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-bold text-[#ff4d00]">
+                    1.2 Kilómetros (Alcance máximo)
                   </td>
-                  <td className="p-4 sm:p-5">1.6 Kilómetros</td>
-                  <td className="p-4 sm:p-5">7.0 Kilómetros (Largo alcance)</td>
+                  <td className="p-4 sm:p-5">1.2 km</td>
+                  <td className="p-4 sm:p-5 font-bold text-neutral-800">7.0 Kilómetros</td>
+                </tr>
+
+                <tr>
+                  <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Tiempo de Vuelo</td>
+                  <td className="p-4 sm:p-5">27 minutos</td>
+                  <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 text-neutral-800 font-bold">
+                    ⏱ 27 minutos (Tiempo de vuelo)
+                  </td>
+                  <td className="p-4 sm:p-5">27 min</td>
+                  <td className="p-4 sm:p-5">29 minutos</td>
                 </tr>
 
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Cámara Incluida</td>
                   <td className="p-4 sm:p-5">Opcional externa de fácil adición</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 text-neutral-800 font-medium">
-                    🎦 Gimbal 4K UHD con transmisión de video digital directa
+                    🎦 Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65
                   </td>
-                  <td className="p-4 sm:p-5">Opcional externa de liberación rápida</td>
+                  <td className="p-4 sm:p-5">Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65, equivalente a 25mm</td>
                   <td className="p-4 sm:p-5">Gimbal Estabilizado 3-Ejes 4K y Visión Nocturna</td>
                 </tr>
 
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Estabilidad en Rompiente</td>
                   <td className="p-4 sm:p-5">Impermeable IP67 simple</td>
-                  <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-medium text-neutral-800">
-                    Estanqueidad IP67 con resistencia extrema al viento nivel 7 y Mar 5
+                  <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-medium text-neutral-850">
+                    Sistema WaterProf con resistencia al viento nivel 7 y mar 5 (Herraje IP67)
                   </td>
-                  <td className="p-4 sm:p-5">Estanqueidad IP67 pesada para climas inclementes</td>
+                  <td className="p-4 sm:p-5">Estanqueidad IP67 con resistencia viento 7, mar 5 y SeaSheld™</td>
                   <td className="p-4 sm:p-5 font-bold">Hermético grado militar</td>
+                </tr>
+
+                <tr>
+                  <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Control Remoto</td>
+                  <td className="p-4 sm:p-5">Estándar IP54</td>
+                  <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-bold text-neutral-850">
+                    SwellPro IP54 (Control impermeable)
+                  </td>
+                  <td className="p-4 sm:p-5">IP54 Impermeable</td>
+                  <td className="p-4 sm:p-5">IP66 Waterproof con pantalla</td>
+                </tr>
+
+                <tr>
+                  <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Peso y Dimensiones</td>
+                  <td className="p-4 sm:p-5">No especificado</td>
+                  <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 text-neutral-800">
+                    Peso: 3.78 kg | Dimensiones: 522 × 522 × 192 mm
+                  </td>
+                  <td className="p-4 sm:p-5">2.54 kg | 372 × 372 × 202 mm</td>
+                  <td className="p-4 sm:p-5">No especificado</td>
+                </tr>
+
+                <tr>
+                  <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Sistemas de Seguridad</td>
+                  <td className="p-4 sm:p-5">PowerFlip™</td>
+                  <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 text-[#ff4d00] font-bold">
+                    PowerFlip™ + SeaSheld™ Anticorrosión
+                  </td>
+                  <td className="p-4 sm:p-5">PowerFlip™ + SeaSheld™ + Sistema BAP</td>
+                  <td className="p-4 sm:p-5">PowerFlip™ + SeaSheld™</td>
                 </tr>
 
               </tbody>
@@ -1100,7 +1202,7 @@ export default function FD2Page() {
               },
               {
                 q: "¿Tienen todas las piezas y servicio postventa en caso de percances?",
-                a: "Absolutamente sí. Como representantes oficiales en Perú, poseemos stock listo al instante para el Fisherman FD2 Max: hélices reforzadas, carcasas herméticas, tarjetas lógicas, baterías LIHV de alto rendimiento, conectores SeaShield y motores en Lima. Nuestro laboratorio físico garantiza diagnósticos y calibraciones rápidas por ingenieros peruanos autorizados."
+                a: "Absolutamente sí. Como representantes oficiales en Perú, poseemos stock listo al instante para el Fisherman FD2 Max: hélices reforzadas, carcasas herméticas, tarjetas lógicas, baterías LIHV de alto rendimiento, conectores SeaSheld™ y motores en Lima. Nuestro laboratorio físico garantiza diagnósticos y calibraciones rápidas por ingenieros peruanos autorizados."
               }
             ].map((faq, idx) => (
               <div 

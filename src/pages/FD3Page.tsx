@@ -59,7 +59,7 @@ const fd3GalleryItems = [
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933449/fd3-image-03_azjd6s.jpg",
     tag: "Seguridad Costera",
     title: "Anclaje de carga de alta precisión",
-    desc: "Mecanismo electromecánico listo para soportar hasta 2.0 kg de aparejos libres."
+    desc: "Mecanismo electromecánico listo para soportar hasta 2 kg de aparejos libres."
   },
   {
     id: "fd3-galeria-capturas-05",
@@ -166,7 +166,7 @@ export default function FD3Page() {
   // Pre-filled WhatsApp message templates
   const msgHero = "Hola SwellPro Perú, estoy muy interesado en el Fisherman FD3 (el drone de precisión con cámara Gimbal 4K en vivo). Deseo recibir asesoría técnica y cotización formal de stock local.";
   const msgWhy = "Hola SwellPro Perú, quiero saber cómo la cámara en vivo del Fisherman FD3 me ayuda a leer el mar de mi playa habitual y encontrar pozos de pesca. ¿Me asesoran por favor?";
-  const msgBenefits = "Hola SwellPro Perú, deseo información detallada sobre la planificación de calado y el sistema de suelta electromecánica de 2.0 kg del Fisherman FD3.";
+  const msgBenefits = "Hola SwellPro Perú, deseo información detallada sobre la planificación de calado y el sistema de suelta electromecánica de 2 kg del Fisherman FD3.";
   const msgProduct = "Hola SwellPro Perú, he leído la ficha técnica del FD3 con cámara Gimbal 4K y control impermeable. ¿Tienen stock en Lima o envían a provincias con garantía local?";
   const msgCompare = "Hola SwellPro Perú, comparé el FD3 en su tabla de flota y me parece el modelo más equilibrado en visión y precisión. Me gustaría conversar con un asesor técnico.";
   const msgFooter = "Hola SwellPro Perú, estoy listo para revolucionar mi pesca de costa con la ventaja visual del Fisherman FD3. Solicito comunicarme con un especialista técnico de inmediato.";
@@ -264,7 +264,7 @@ export default function FD3Page() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <CheckCircle className="w-5 h-5 text-[#ff4d00]" />
-                  <span>2.0 kg de capacidad de carga útil</span>
+                  <span>2 kg de capacidad de carga útil</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <CheckCircle className="w-5 h-5 text-[#ff4d00]" />
@@ -272,7 +272,7 @@ export default function FD3Page() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <CheckCircle className="w-5 h-5 text-[#ff4d00]" />
-                  <span>Protección anticorrosión SeaShield™</span>
+                  <span>Protección anticorrosión SeaSheld™</span>
                 </div>
               </div>
 
@@ -301,7 +301,7 @@ export default function FD3Page() {
               {/* Macro Indicators */}
               <div className="grid grid-cols-3 gap-4 pt-8 border-t border-neutral-100 max-w-xl">
                 <div>
-                  <span className="font-display font-black text-neutral-900 text-2xl sm:text-4xl block">2.0 kg</span>
+                  <span className="font-display font-black text-neutral-900 text-2xl sm:text-4xl block">2 kg</span>
                   <span className="text-[10px] text-neutral-400 uppercase tracking-widest font-bold block mt-0.5">Carga de precisión</span>
                 </div>
                 <div>
@@ -438,7 +438,7 @@ export default function FD3Page() {
             </blockquote>
 
             <p className="text-neutral-400 font-sans-dm text-sm sm:text-base leading-relaxed">
-              Con un radio de acción sólido de 1.2 km y un soporte de arrastre de hasta 2.0 kg, el FD3 te permite explorar cómodamente la orilla sin el castigo físico de lanzar la caña de forma exhaustiva una y otra vez. Te ubicas en el punto exacto, monitoreas el movimiento de la espuma y permites que el mecanismo electromecánico de soltado deposite tu pejerrey o carnada viva de forma perfecta.
+              Con un radio de acción sólido de 1.2 km y un soporte de arrastre de hasta 2 kg, el FD3 te permite explorar cómodamente la orilla sin el castigo físico de lanzar la caña de forma exhaustiva una y otra vez. Te ubicas en el punto exacto, monitoreas el movimiento de la espuma y permites que el mecanismo electromecánico de soltado deposite tu pejerrey o carnada viva de forma perfecta.
             </p>
 
             <div className="mt-8 pt-8 border-t border-neutral-850 flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -629,33 +629,63 @@ export default function FD3Page() {
                 {[
                   { 
                     item: "Capacidad de Carga", 
-                    value: "Hasta 2.0 kg de arrastre óptimo", 
-                    explain: "Nivel ideal para aparejos deportivos pesados, pejerreyes, calamares cortados y plomadas de anclaje de costa." 
+                    value: "Capacidad máxima de carga: 2 kg", 
+                    explain: "Nivel ideal para arrastre balanceado de aparejos pesados, cebo vivo y bait casting de precisión." 
                   },
                   { 
-                    item: "Alcance Operativo Real", 
-                    value: "1.2 Kilómetros de distancia real de RF", 
-                    explain: "Lejos del ruido urbano de la playa, de lleno en la zona de pozas calmas profundas donde se esconden las presas." 
+                    item: "Alcance Operativo", 
+                    value: "Alcance máximo: 1.2 km", 
+                    explain: "Rango operativo sólido de distancia real de RF optimizada para costa y playas bravas." 
                   },
                   { 
-                    item: "Cámara & Gimbal", 
-                    value: "Gimbal 4K, 12 MP, 1/2.3\" CMOS", 
-                    explain: "Perfectación visual digital. La cámara se estabiliza con un servo para neutralizar las vibraciones del aire costero." 
+                    item: "Control Remoto", 
+                    value: "Control impermeable: IP54", 
+                    explain: "Mando a distancia impermeable protegido contra salpicaduras de agua de mar y arena fina costera." 
                   },
                   { 
-                    item: "Autonomía de Vuelo", 
-                    value: "Hasta 27 minutos inteligentes continuos", 
-                    explain: "Duración óptima que te permite explorar cómodamente la orilla antes de decidir la soltada definitiva del sedal." 
+                    item: "Cámara & Sensor", 
+                    value: "Cámara: Gimbal 4K, 12 MP, 1/2.3\" CMOS, f/2.65, equivalente a 25mm", 
+                    explain: "Visión nítida HD con servoestabilidad para leer el agua, detectar canales y anclar con precisión." 
+                  },
+                  { 
+                    item: "Peso del Drone", 
+                    value: "Peso: 2.54 kg", 
+                    explain: "Estructura de compuestos de policarbonato y resina marina con rigidez ideal para resistir rachas de viento." 
+                  },
+                  { 
+                    item: "Dimensiones", 
+                    value: "Dimensiones: 372 × 372 × 202 mm", 
+                    explain: "Formato aerodinámico compacto y ágil que facilita el pilotaje táctico y un viaje cómodo a todas tus playas." 
+                  },
+                  { 
+                    item: "Tiempo de Vuelo", 
+                    value: "Tiempo de vuelo: 27 min", 
+                    explain: "Autonomía de vuelo óptima y real con descarga pasiva inteligente para resguardo de celdas." 
                   },
                   { 
                     item: "Resistencia Al Viento", 
-                    value: "Nivel de vientos hasta 7 (Estado de Mar 5)", 
-                    explain: "Permanece inmóvil ante las ráfagas costeras de invierno del litoral sin inclinaciones drásticas inesperadas." 
+                    value: "Resistencia al viento nivel 7", 
+                    explain: "Estabilidad excepcional en vuelo que soporta ráfagas violentas del Pacífico peruano." 
                   },
                   { 
-                    item: "Estructura y Anticorrosión", 
-                    value: "PowerFlip™ + Revestimiento SeaShield™", 
-                    explain: "Fuselaje estanco al salitre con un switch para auto-voltear el drone si el fuerte oleaje de la orilla lo tumba al acuatizar." 
+                    item: "Estado del Mar", 
+                    value: "Estado del mar 5", 
+                    explain: "Preparado para caídas accidentales y oleajes duros sin comprometer la aeronavegabilidad costera." 
+                  },
+                  { 
+                    item: "Anticorrosión Marina", 
+                    value: "SeaSheld™ anticorrosión", 
+                    explain: "Tratamiento de sellado anticorrosivo avanzado en conectores, motores brushless y mecanismos." 
+                  },
+                  { 
+                    item: "Autovuelco", 
+                    value: "PowerFlip™", 
+                    explain: "Sistema de auto-volteo que endereza el drone en el mar si es volteado por una ola en la orilla." 
+                  },
+                  { 
+                    item: "Asistencia de Vuelo", 
+                    value: "Sistema BAP", 
+                    explain: "Sistema BAP (Barómetro Asistido de Calado / Presión) que optimiza la liberación y el posicionamiento del sedal." 
                   },
                 ].map((spec, idx) => (
                   <div 
@@ -800,7 +830,7 @@ export default function FD3Page() {
                   <td className="p-4 sm:p-5">Iniciación práctica y vuelos fáciles de orilla</td>
                   <td className="p-4 sm:p-5">Carga de plomo y carnadas gigantes pesadas</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 text-neutral-900 font-extrabold italic text-center text-[13px]">
-                     El balance inteligente de visión marina, cámara 4K en directo y precisión
+                     El balance ideal de visión marina, cámara 4K en vivo y precisión
                   </td>
                   <td className="p-4 sm:p-5 font-medium">Plataforma industrial sumergible avanzada</td>
                 </tr>
@@ -808,9 +838,9 @@ export default function FD3Page() {
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Capacidad de Arrastre</td>
                   <td className="p-4 sm:p-5">Hasta 2.2 Kilogramos</td>
-                  <td className="p-4 sm:p-5 font-black text-neutral-900">Hasta 3.5 Kilogramos</td>
+                  <td className="p-4 sm:p-5 font-bold text-neutral-900">Hasta 3.5 Kilogramos (Carga máxima)</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-bold text-[#ff4d00] text-center text-sm">
-                    Hasta 2.0 Kilogramos de alta precisión
+                    Hasta 2 kg (Capacidad máxima de carga)
                   </td>
                   <td className="p-4 sm:p-5">Hasta 2.0 Kilogramos</td>
                 </tr>
@@ -818,9 +848,9 @@ export default function FD3Page() {
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Alcance Operativo</td>
                   <td className="p-4 sm:p-5">1.3 Kilómetros</td>
-                  <td className="p-4 sm:p-5">1.2 Kilómetros</td>
+                  <td className="p-4 sm:p-5 font-bold">1.2 Kilómetros (Alcance máximo)</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-bold text-neutral-800 text-center">
-                    1.2 Kilómetros
+                    1.2 km (Alcance máximo)
                   </td>
                   <td className="p-4 sm:p-5 font-bold text-neutral-800">7.0 Kilómetros</td>
                 </tr>
@@ -828,9 +858,9 @@ export default function FD3Page() {
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Cámara & Transmisión</td>
                   <td className="p-4 sm:p-5">Opcional externa de rápido montaje</td>
-                  <td className="p-4 sm:p-5">Gimbal 4K, 12 MP CMOS</td>
+                  <td className="p-4 sm:p-5 font-medium">Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 font-bold text-neutral-850 text-center">
-                    🎦 Gimbal 4K UHD servoestabilizado con transmisión digital directa
+                    🎦 Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65, equivalente a 25mm
                   </td>
                   <td className="p-4 sm:p-5">Gimbal 3-Ejes 4K y opción de Visión Nocturna</td>
                 </tr>
@@ -838,9 +868,9 @@ export default function FD3Page() {
                 <tr>
                   <td className="p-4 sm:p-5 font-bold text-neutral-900 font-display text-xs uppercase tracking-tight">Herrajes y Mar</td>
                   <td className="p-4 sm:p-5">Sumergible IP67 básico</td>
-                  <td className="p-4 sm:p-5">Estanqueidad IP67 con resistencia viento 7</td>
+                  <td className="p-4 sm:p-5">Sistema WaterProf con resistencia viento 7 y mar 5 (PowerFlip™)</td>
                   <td className="p-4 sm:p-5 bg-orange-50/40 border-x border-orange-100/40 text-neutral-800 text-center">
-                    Estanqueidad IP67 con sistema de volteo PowerFlip y SeaShield anticorrosión
+                    Estanqueidad IP67 con resistencia viento 7, mar 5, PowerFlip™ y SeaSheld™ anticorrosión
                   </td>
                   <td className="p-4 sm:p-5">Sellado de policarbonato grado militar militar IP67</td>
                 </tr>
@@ -1034,7 +1064,7 @@ export default function FD3Page() {
               },
               {
                 q: "¿Qué aparejos típicos y plomadas puede traccionar el Fisherman FD3?",
-                a: "El Fisherman FD3 posee una tracción de arrastre óptima certificada de hasta 2.0 kilogramos de peso. Es más que suficiente para volar plomos deportivos araña o de destorcedor de 120g a 170g acoplados a anzuelos tradicionales con carnadas orgánicas como pejerreyes, lisas, colas de langostinos, calamares o jigs medianos."
+                a: "El Fisherman FD3 posee una tracción de arrastre óptima certificada de hasta 2 kg de peso. Es más que suficiente para volar plomos deportivos araña o de destorcedor de 120g a 170g acoplados a anzuelos tradicionales con carnadas orgánicas como pejerreyes, lisas, colas de langostinos, calamares o jigs medianos."
               },
               {
                 q: "¿Cómo se activa la liberación de la línea en vuelo?",
