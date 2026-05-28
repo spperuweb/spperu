@@ -632,7 +632,7 @@ export default function App() {
               const galleryLink = product.id === "fd1" 
                 ? "./fd1s/index.html#fd1s-evidencia" 
                 : product.id === "fd2-max" 
-                ? "./fd2/index.html#por-que-fd2max" 
+                ? "./fd2/index.html#fd2-evidencia" 
                 : product.id === "fd3" 
                 ? "./fd3/index.html#fd3-evidencia" 
                 : product.id === "sd4" 

@@ -17,7 +17,12 @@ import {
   Video,
   Wind,
   Plus,
-  HelpCircle
+  HelpCircle,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Camera,
+  PhoneCall
 } from "lucide-react";
 
 // Helper for prefilled WhatsApp link
@@ -25,8 +30,118 @@ const getWhatsAppUrl = (text: string) => {
   return `https://api.whatsapp.com/send?phone=51991664146&text=${encodeURIComponent(text)}`;
 };
 
+interface GalleryItem {
+  id: string;
+  url: string;
+  tag: string;
+  title: string;
+  desc: string;
+}
+
+const fd2GalleryImages: GalleryItem[] = [
+  {
+    id: "fd2-galeria-capturas-01",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936854/fd2-image-14_ehirnu.jpg",
+    tag: "Operaciones de Costa",
+    title: "Preparación del Calado",
+    desc: "Alineación de aparejo y verificación de línea asistida sobre la arena de la costa peruana antes del despegue."
+  },
+  {
+    id: "fd2-galeria-capturas-02",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936853/fd2-image-13_jfeh6h.jpg",
+    tag: "Entregas Exclusivas",
+    title: "Cliente recibe el Fisherman Max FD2",
+    desc: "Un pescador local recibe su equipo para calados masivos y pesados directos a los pozos costeros."
+  },
+  {
+    id: "fd2-galeria-capturas-03",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936852/fd2-image-02_cvikgc.jpg",
+    tag: "Prueba de Vuelo",
+    title: "Estabilidad del FD2 Max Frente al Mar",
+    desc: "Mantiene un vuelo de precisión gracias al barómetro reforzado y la resistencia a ráfagas costeras de invierno."
+  },
+  {
+    id: "fd2-galeria-capturas-04",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936851/fd2-image-01_k6qmjs.jpg",
+    tag: "Unboxing de Campo",
+    title: "Maletín Oficial Hermético Rígido",
+    desc: "Maletín súper resistente a golpes y aislamiento de humedad para el cuidado premium permanente de la máquina."
+  },
+  {
+    id: "fd2-galeria-capturas-05",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936849/fd2-image-05_lms8bf.jpg",
+    tag: "Ingeniería Anticorrosión",
+    title: "Estructura Robusta de Motores",
+    desc: "Hélices de alto rendimiento aseguradas para soportar la constante brisa marina cargada de salitre."
+  },
+  {
+    id: "fd2-galeria-capturas-06",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936848/fd2-image-11_gcznor.jpg",
+    tag: "Acompañamiento Técnico",
+    title: "Clase de Inducción Práctica Profesional",
+    desc: "Nuestro soporte oficial instruyendo paso a paso en costa para asegurar operaciones impecables."
+  },
+  {
+    id: "fd2-galeria-capturas-07",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936847/fd2-image-12_ygllt9.jpg",
+    tag: "Evidencia de Pesca",
+    title: "Logros Reales de Lenguado en Playa",
+    desc: "Resultado exitoso tras calar la plomada en la rampa exacta gracias al rango de vuelo extendido de 1.2km."
+  },
+  {
+    id: "fd2-galeria-capturas-08",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936846/fd2-image-08_hlhda4.jpg",
+    tag: "Dureza del Chasis",
+    title: "Confiabilidad en Entornos Complejos",
+    desc: "Fibra de ingeniería con sellos SeaShield para una protección total IP67 contra salpicaduras pesadas."
+  },
+  {
+    id: "fd2-galeria-capturas-09",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936845/fd2-image-09_e1exa9.jpg",
+    tag: "Poder de Arrastre",
+    title: "Detalle de Gancho de Liberación",
+    desc: "Tracción constante garantizada. Soporta el lanzamiento de carnadas masivas y plomos de araña."
+  },
+  {
+    id: "fd2-galeria-capturas-10",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936845/fd2-image-10_f07vps.jpg",
+    tag: "Feed de Video digital",
+    title: "Control Remoto Impermeable con Pantalla",
+    desc: "Muestra la altitud, rumbos satelitales GPS y video UHD de la rompiente con claridad total de cara al sol."
+  },
+  {
+    id: "fd2-galeria-capturas-11",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936843/fd2-image-07_c1bgzj.jpg",
+    tag: "Sensores ToF",
+    title: "Estación de Vuelo con Sensores Inteligentes",
+    desc: "Equipado con medidores de rebote para prevenir roces contra laderas rocosas u dunas imprevistas."
+  },
+  {
+    id: "fd2-galeria-capturas-12",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936842/fd2-image-06_wnpcam.jpg",
+    tag: "Taller en Lima",
+    title: "Alineación e Inspección de Estanqueidad",
+    desc: "Mantenimiento especializado en nuestro taller propio de atención inmediata con repuestos originales."
+  },
+  {
+    id: "fd2-galeria-capturas-13",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936842/fd2-image-03_zurk9e.jpg",
+    tag: "Resinas Marinas",
+    title: "Detalle de Brazo Estanco de Torsión",
+    desc: "Estructura que resiste la fatiga mecánica de arrastres prolongados de carnada de volumen extremo."
+  },
+  {
+    id: "fd2-galeria-capturas-14",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936841/fd2-image-04_mvxodh.jpg",
+    tag: "Control de Calado",
+    title: "Suelto Inmediato de Aparejo en Poza",
+    desc: "Permite liberar plomos pesados a control remoto exactamente en la fosa de alimentación tranquila."
+  }
+];
+
 export default function FD2Page() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [selectedGalleryIndex, setSelectedGalleryIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -626,6 +741,178 @@ export default function FD2Page() {
 
         </div>
       </section>
+
+      {/* SECCIÓN — EVIDENCIA DE CAMPO REAL EXCLUSIVA FD2 MAX */}
+      <section id="fd2-evidencia" className="py-24 bg-neutral-50/50 scroll-mt-20 border-t border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-6">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-[#ff4d00] font-display font-semibold text-xs uppercase tracking-widest block mb-1">
+              ✓ ADEMÁS DE LA FICHA: CONFIANZA Y VERIFICACIÓN REAL
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-display font-black text-neutral-900 uppercase leading-none mt-2 mb-4 tracking-tight">
+              Swellpro FD2 en <span className="text-[#ff4d00]">acción real</span>
+            </h2>
+            <p className="text-neutral-500 text-xs sm:text-sm font-sans-dm max-w-2xl mx-auto">
+              Fotos exclusivas tomadas en el litoral peruano. Desde unboxings técnicos y demostraciones oficiales hasta entregas reales y capturas valiosas logradas gracias a la tracción de 3.5 kg.
+            </p>
+          </div>
+
+          {/* Clean modern editorial grid layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch mb-16">
+            {fd2GalleryImages.map((img, idx) => (
+              <div 
+                key={img.id}
+                onClick={() => setSelectedGalleryIndex(idx)}
+                className="bg-white rounded-2xl border border-neutral-200/70 overflow-hidden shadow-xs hover:shadow-xl hover:border-neutral-350 transition-all duration-300 group cursor-pointer flex flex-col justify-between"
+              >
+                {/* Photo Pedestal */}
+                <div className="relative overflow-hidden aspect-video bg-neutral-100 flex items-center justify-center">
+                  <img 
+                    src={img.url}
+                    alt={img.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover select-none transition-transform duration-500 group-hover:scale-105"
+                  />
+                  
+                  {/* Zoom indicator on hover */}
+                  <div className="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white/95 text-[#ff4d00] p-3 rounded-full shadow-lg transform translate-y-2 group-hover:translate-y-0 transition duration-300 flex items-center justify-center">
+                      <Camera className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  {/* Absolute subtle tag label */}
+                  <div className="absolute top-3 left-3 bg-neutral-900/90 backdrop-blur-xs text-white px-2.5 py-1 rounded-lg text-[9px] font-bold uppercase tracking-wider border border-neutral-800">
+                    {img.tag}
+                  </div>
+                </div>
+
+                {/* Subtitles Area */}
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-display font-black text-neutral-900 text-sm uppercase tracking-tight duration-150 group-hover:text-[#ff4d00] line-clamp-1">
+                      {img.title}
+                    </h3>
+                    <p className="text-neutral-500 text-xs font-sans-dm leading-relaxed mt-1.5 line-clamp-2">
+                      {img.desc}
+                    </p>
+                  </div>
+
+                  {/* ID & view command */}
+                  <div className="border-t border-neutral-100 mt-4 pt-3 flex items-center justify-between text-[10px] text-neutral-400 font-bold uppercase tracking-wider">
+                    <span>{img.id.slice(4)}</span>
+                    <span className="text-[#ff4d00] flex items-center gap-0.5 group-hover:translate-x-0.5 transition-transform duration-150">
+                      AMPLIAR DETALLE ↗
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Action Area footer */}
+          <div className="text-center bg-white p-8 rounded-3xl border border-neutral-200 shadow-sm max-w-3xl mx-auto">
+            <h3 className="font-display font-black text-neutral-900 text-lg uppercase tracking-tight">
+              ¿Listo para domar las corrientes profundas con el FD2 Max?
+            </h3>
+            <p className="text-neutral-500 text-xs sm:text-sm font-sans-dm max-w-xl mx-auto mt-2 mb-6">
+              Te garantizamos asesoría continua personalizada, taller oficial propio 100% abastecido en Lima y repuestos originales de entrega inmediata.
+            </p>
+            <a 
+              href={getWhatsAppUrl("Hola SwellPro Perú, he estado revisando su galería premium de fotos reales del Fisherman FD2 Max en uso práctico. Deseo recibir más detalles, precios directos y stock actual por favor.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#ff4d00] hover:bg-[#e04400] text-white font-display font-bold text-xs uppercase tracking-widest py-4 px-8 rounded-2xl inline-flex items-center gap-2 shadow-lg shadow-[#ff4d00]/25 hover:-translate-y-0.5 transition-all duration-250 cursor-pointer h-12"
+            >
+              <PhoneCall className="w-4 h-4" /> Quiero verlo por WhatsApp →
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ULTRA LIGHTBOX INTERACTIVO DE ALTA FIDELIDAD */}
+      {selectedGalleryIndex !== null && (
+        <div className="fixed inset-0 z-55 bg-neutral-950/98 backdrop-blur-md flex flex-col justify-between p-4 sm:p-6 select-none animate-fadeIn">
+          
+          {/* Lightbox Headbar */}
+          <div className="flex items-center justify-between text-white border-b border-neutral-900 pb-4 max-w-7xl mx-auto w-full">
+            <div className="flex items-center gap-2">
+              <Camera className="w-5 h-5 text-[#ff4d00]" />
+              <span className="font-display font-black text-xs sm:text-sm uppercase tracking-widest text-[#ff4d00]">
+                EVIDENCIA EXCLUSIVA SWELLPRO PERÚ
+              </span>
+            </div>
+            <button 
+              onClick={() => setSelectedGalleryIndex(null)}
+              className="p-2 sm:p-2.5 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:bg-neutral-800 transition duration-150"
+              title="Cerrar galería"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Main Slide Viewer Space */}
+          <div className="flex-1 flex items-center justify-between relative max-w-6xl mx-auto w-full py-4 sm:py-6">
+            {/* Left Prev Trigger */}
+            <button 
+              onClick={() => setSelectedGalleryIndex((prev) => (prev! === 0 ? fd2GalleryImages.length - 1 : prev! - 1))}
+              className="absolute left-2 sm:left-4 z-20 p-2.5 sm:p-3.5 rounded-full bg-neutral-900/80 border border-neutral-800 text-neutral-300 hover:text-white hover:bg-neutral-800 transition duration-150"
+              title="Imagen Anterior"
+            >
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+
+            {/* Rendered Target Zoom Photo */}
+            <div className="w-full h-full flex items-center justify-center p-2">
+              <img 
+                src={fd2GalleryImages[selectedGalleryIndex].url}
+                alt={fd2GalleryImages[selectedGalleryIndex].title}
+                className="max-h-[55vh] sm:max-h-[62vh] max-w-full object-contain rounded-2xl shadow-2xl border border-neutral-900"
+              />
+            </div>
+
+            {/* Right Next Trigger */}
+            <button 
+              onClick={() => setSelectedGalleryIndex((prev) => (prev! === fd2GalleryImages.length - 1 ? 0 : prev! + 1))}
+              className="absolute right-2 sm:right-4 z-20 p-2.5 sm:p-3.5 rounded-full bg-neutral-900/80 border border-neutral-800 text-neutral-300 hover:text-white hover:bg-neutral-800 transition duration-150"
+              title="Imagen Siguiente"
+            >
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+          </div>
+
+          {/* Slide meta block and action trigger */}
+          <div className="border-t border-neutral-900 pt-5 max-w-4xl mx-auto w-full mb-2">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 text-left">
+              <div className="space-y-1">
+                <span className="text-[10px] sm:text-xs font-black uppercase text-[#ff4d00] tracking-widest block font-display">
+                  {fd2GalleryImages[selectedGalleryIndex].tag}
+                </span>
+                <h3 className="text-lg sm:text-2.5xl font-display font-black text-white uppercase tracking-tight leading-none mt-0.5">
+                  {fd2GalleryImages[selectedGalleryIndex].title}
+                </h3>
+                <p className="text-neutral-400 text-xs sm:text-sm font-sans max-w-xl leading-relaxed mt-2.5">
+                  {fd2GalleryImages[selectedGalleryIndex].desc}
+                </p>
+              </div>
+
+              {/* Direct customized WhatsApp lead generator */}
+              <div className="shrink-0">
+                <a
+                  href={getWhatsAppUrl(`Hola SwellPro Perú, vi su evidencia real de FD2 Max "${fd2GalleryImages[selectedGalleryIndex].title}" (${fd2GalleryImages[selectedGalleryIndex].id}) en la galería oficial. Deseo recibir más detalles de este equipo por favor.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#25D366] hover:bg-[#1ebd5d] text-white font-display font-bold text-xs uppercase tracking-widest px-6 py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/10 transform hover:-translate-y-0.5 transition duration-150 h-12 inline-flex"
+                >
+                  <PhoneCall className="w-4 h-4" /> Quiero verlo por WhatsApp →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* SECCIÓN COMPARATIVA DE MODELOS */}
       <section className="py-24 bg-white border-b border-neutral-100">
