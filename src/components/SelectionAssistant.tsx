@@ -319,22 +319,42 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
             </div>
 
             {/* CTA panel */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-neutral-100">
-              <a
-                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-                  `Hola SwellPro Perú. Completé el recomendador interactivo en su web y mi modelo ideal resultó el *${recommendedProduct.name}*. Me gustaría recibir información de stock, precio actual con descuento exclusivo y coordinar detalles sobre la asesoría y capacitación en campo.`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-3 bg-[#ff4d00] hover:bg-[#e04400] text-white text-center font-bold text-sm uppercase tracking-wider py-4.5 px-6 rounded-2xl transition-all duration-200 shadow-xl shadow-orange-brand/20 flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
-              >
-                <Anchor className="w-4 h-4" /> Solicitar este equipo por WhatsApp →
-              </a>
+            <div className="flex flex-col gap-3 pt-6 border-t border-neutral-100">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                    `Hola SwellPro Perú. Completé el recomendador interactivo en su web y mi modelo ideal resultó el *${recommendedProduct.name}*. Me gustaría recibir información de stock, precio actual con descuento exclusivo y coordinar detalles sobre la asesoría y capacitación en campo.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-3 bg-[#ff4d00] hover:bg-[#e04400] text-white text-center font-bold text-sm uppercase tracking-wider py-4 px-6 rounded-2xl transition-all duration-200 shadow-xl shadow-orange-brand/20 flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
+                >
+                  <Anchor className="w-4 h-4" /> Solicitar este equipo por WhatsApp →
+                </a>
+                
+                <a
+                  href={
+                    recommendedProduct.id === "fd1" 
+                      ? "./fd1s/index.html" 
+                      : recommendedProduct.id === "fd2-max" 
+                      ? "./fd2/index.html" 
+                      : recommendedProduct.id === "fd3" 
+                      ? "./fd3/index.html" 
+                      : recommendedProduct.id === "sd4" 
+                      ? "./sd4/index.html" 
+                      : "./sd4-plus/index.html"
+                  }
+                  className="flex-1 bg-neutral-950 hover:bg-neutral-900 text-white text-center font-display font-semibold text-xs uppercase tracking-wider py-4 px-5 rounded-2xl transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  Ver Ficha de Producto →
+                </a>
+              </div>
+              
               <button
                 onClick={resetQuiz}
-                className="flex-1 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 font-bold text-xs uppercase tracking-wider py-4.5 px-5 rounded-2xl transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer"
+                className="w-full bg-neutral-100 hover:bg-neutral-200 text-neutral-700 font-bold text-xs uppercase tracking-wider py-3 px-5 rounded-2xl transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer"
               >
-                <RotateCcw size={14} /> Reintentar
+                <RotateCcw size={14} /> Reintentar recomendador
               </button>
             </div>
           </div>

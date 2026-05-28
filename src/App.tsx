@@ -26,7 +26,7 @@ import FAQSection from "./components/FAQSection";
 import ScrollReveal from "./components/ScrollReveal";
 
 // CONFIGURACIÓN DE WHATSAPP
-const WHATSAPP_NUMBER = "51987654321"; // Representante de SwellPro Perú
+const WHATSAPP_NUMBER = "51991664146"; // Representante de SwellPro Perú
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -648,21 +648,40 @@ export default function App() {
                       </div>
                     </div>
 
-                    {/* WhatsApp link CTA */}
-                    <a
-                      href={getWhatsAppUrl(product.statusMessage)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`w-full text-center font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-2xl transition duration-250 block ${
-                        product.isSoldOut
-                          ? "bg-neutral-200 hover:bg-neutral-300 text-neutral-650 border border-neutral-300"
-                          : product.isPopular
-                          ? "bg-[#ff4d00] hover:bg-[#e04400] text-white shadow-lg shadow-orange-brand/25"
-                          : "bg-neutral-950 hover:bg-neutral-900 text-white"
-                      }`}
-                    >
-                      {product.isSoldOut ? "Avísame cuando llegue → WhatsApp" : "Preguntar precio y stock →"}
-                    </a>
+                    {/* CTAs Stack */}
+                    <div className="flex flex-col gap-2">
+                      <a
+                        href={
+                          product.id === "fd1" 
+                            ? "./fd1s/index.html" 
+                            : product.id === "fd2-max" 
+                            ? "./fd2/index.html" 
+                            : product.id === "fd3" 
+                            ? "./fd3/index.html" 
+                            : product.id === "sd4" 
+                            ? "./sd4/index.html" 
+                            : "./sd4-plus/index.html"
+                        }
+                        className="w-full text-center font-display font-bold text-[11px] uppercase tracking-wider py-3 px-4 rounded-xl border border-neutral-200 text-neutral-800 bg-neutral-50/40 hover:bg-neutral-100 hover:border-neutral-300 transition duration-150 block"
+                      >
+                        Ver Ficha Completa →
+                      </a>
+                      
+                      <a
+                        href={getWhatsAppUrl(product.statusMessage)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`w-full text-center font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-2xl transition duration-250 block ${
+                          product.isSoldOut
+                            ? "bg-neutral-200 hover:bg-neutral-300 text-neutral-650 border border-neutral-300"
+                            : product.isPopular
+                            ? "bg-[#ff4d00] hover:bg-[#e04400] text-white shadow-lg shadow-orange-brand/25"
+                            : "bg-neutral-950 hover:bg-neutral-900 text-white"
+                        }`}
+                      >
+                        {product.isSoldOut ? "Avísame cuando llegue → WhatsApp" : "Preguntar precio y stock →"}
+                      </a>
+                    </div>
                   </div>
 
                 </ScrollReveal>
