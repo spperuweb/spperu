@@ -85,7 +85,7 @@ const galleryItems = [
   // 2. EN ACCIÓN (Bloque: accion)
   {
     id: "action-1",
-    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929029/swellpro-peru-captura-11_sxhqph.mp4",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779941037/swellpro-peru-captura-11_qivbja.mp4",
     type: "video",
     category: "accion",
     tag: "En acción",
@@ -94,7 +94,7 @@ const galleryItems = [
   },
   {
     id: "action-2",
-    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929021/swellpro-peru-en-accion-06_bfdwc8.mp4",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779941033/swellpro-peru-en-accion-06_g8mphr.mp4",
     type: "video",
     category: "accion",
     tag: "Prueba en playa",
@@ -103,7 +103,7 @@ const galleryItems = [
   },
   {
     id: "action-3",
-    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929020/swellpro-peru-en-capturas-10_t4voqt.mp4",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779941031/swellpro-peru-en-capturas-10_ef6sck.mp4",
     type: "video",
     category: "accion",
     tag: "Cliente real",
@@ -112,7 +112,7 @@ const galleryItems = [
   },
   {
     id: "action-4",
-    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929020/swellpro-peru-en-accion-05_og8bk4.mp4",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779941031/swellpro-peru-en-accion-05_xchqmp.mp4",
     type: "video",
     category: "accion",
     tag: "Prueba en playa",
@@ -121,7 +121,7 @@ const galleryItems = [
   },
   {
     id: "action-5",
-    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929019/swellpro-peru-en-accion-04_ytab2c.mp4",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779941029/swellpro-peru-en-accion-04_tksmyf.mp4",
     type: "video",
     category: "accion",
     tag: "En acción",
@@ -130,7 +130,7 @@ const galleryItems = [
   },
   {
     id: "action-6",
-    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929018/swellpro-peru-en-accion-02_xrvn1s.mp4",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779941029/swellpro-peru-en-accion-02_kk5r6d.mp4",
     type: "video",
     category: "accion",
     tag: "Prueba en playa",
@@ -139,7 +139,7 @@ const galleryItems = [
   },
   {
     id: "action-7",
-    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929017/swellpro-peru-en-accion-03_jnotdx.mp4",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779941028/swellpro-peru-en-accion-03_qvky68.mp4",
     type: "video",
     category: "accion",
     tag: "En acción",
@@ -148,7 +148,7 @@ const galleryItems = [
   },
   {
     id: "action-8",
-    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929017/swellpro-peru-en-accion-01_j7e8zn.mp4",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779941028/swellpro-peru-en-accion-01_yxeb6w.mp4",
     type: "video",
     category: "accion",
     tag: "Prueba en playa",
@@ -157,7 +157,7 @@ const galleryItems = [
   },
   {
     id: "action-9",
-    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779929016/swellpro-peru-capturas-09_f0vzod.mp4",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1779941027/swellpro-peru-capturas-09_l6gyti.mp4",
     type: "video",
     category: "accion",
     tag: "Captura real",
