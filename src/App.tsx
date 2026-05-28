@@ -251,8 +251,8 @@ export default function App() {
       e.preventDefault();
       e.stopPropagation();
     }
-    const origin = window.location.origin || "https://swellpro.pe";
-    const shareUrl = `${origin}/?media=${id}`;
+    const baseLocation = window.location.origin + window.location.pathname;
+    const shareUrl = `${baseLocation}?media=${id}`;
     
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -273,6 +273,13 @@ export default function App() {
     } catch (err) {
       console.error("No se pudo copiar el enlace", err);
     }
+  };
+
+  const getWhatsAppShareUrl = (item: typeof galleryItems[0]) => {
+    const baseLocation = window.location.origin + window.location.pathname;
+    const shareUrl = `${baseLocation}?media=${item.id}`;
+    const text = `¡Mira esta evidencia real de pesca de SwellPro Perú! 🎣\n\n"${item.title}"\n\nVer directamente en la web:\n${shareUrl}`;
+    return `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
   };
 
   const getWhatsAppUrl = (text: string) => {
@@ -1411,7 +1418,7 @@ export default function App() {
 
                       {/* Compartir por WhatsApp sin número de teléfono específico */}
                       <a
-                        href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`¡Mira esta evidencia real de pesca de SwellPro Perú! 🎣\n\n"${item.title}"\n\nVer en la web: ${window.location.origin || "https://swellpro.pe"}/?media=${item.id}`)}`}
+                        href={getWhatsAppShareUrl(item)}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
@@ -1756,7 +1763,7 @@ export default function App() {
 
               {/* Compartir por WhatsApp a amigos / contactos seleccionados */}
               <a
-                href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`¡Mira esta evidencia real de pesca de SwellPro Perú! 🎣\n\n"${selectedMedia.title}"\n\nVer directamente en la web: ${window.location.origin || "https://swellpro.pe"}/?media=${selectedMedia.id}`)}`}
+                href={getWhatsAppShareUrl(selectedMedia)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-neutral-900 hover:bg-neutral-800 text-[#25D366] font-bold text-[10px] uppercase tracking-widest py-3 px-5 rounded-xl transition duration-150 border border-neutral-800 cursor-pointer shadow-md"
