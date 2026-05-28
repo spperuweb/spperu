@@ -233,14 +233,14 @@ export default function App() {
       id: "fd1",
       name: "Fisherman FD1S",
       badge: "El más fácil de usar",
-      tagline: "Tú pescas, él vuela. Así de simple.",
+      tagline: "Siente el viento, lanza tu línea y déjaselo a él.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816470/swellpro-fisherman-fd1-plus-drone-thumnail_z9ytsb.png",
       specs: {
         reach: "1.3 Kilómetros",
         payload: "2.2 Kilogramos",
         camera: "Sensor ToF + Batería Inteligente",
       },
-      description: "Sin configuración compleja. Sin rituales de calibración. Conecta la batería y al agua. El FD1S mantiene tus manos libres y tu carnada segura, con aterrizaje ToF suave.",
+      description: "Diseñado para el pescador que busca simplicidad absoluta sin rodeos técnicos. Enciende, asegura tu plomada al clip automático y vuela directo al pozo de alimentación del lenguado. Sin calibraciones complejas, con la tranquilidad de un aterrizaje asistido de total suavidad.",
       statusMessage: "Hola, quiero info del Fisherman FD1S",
     },
     {
@@ -248,42 +248,42 @@ export default function App() {
       name: "Fisherman Max FD2",
       badge: "Máxima carga",
       isPopular: true,
-      tagline: "Carnadas pesadas. Vientos fuertes. Sin excusas.",
+      tagline: "El titán del calado. Soporta vientos brutales sin pestañear.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816471/fisherman-max-fd2-drone-thumbnail_k1yona.png",
       specs: {
         reach: "1.2 Kilómetros",
-        payload: "3.5 Kilogramos (Máxima de la línea)",
+        payload: "3.5 Kilogramos (Máxima potencia)",
         camera: "Gimbal 4K, 12 MP, 1/2.3\" CMOS",
       },
-      description: "Construido resistente para la pesca diaria. Levanta hasta 3.5 kg, lleva carnadas grandes a aguas profundas resistiendo vientos nivel 7 y estado del mar 5.",
+      description: "La bestia definitiva para batallar con el oleaje y el viento del litoral peruano. Levanta hasta 3.5 kg de carga pesada, lleva carnada entera a pozos profundos y soporta ráfagas letales de hasta 61 km/h sin perder un milímetro de precisión.",
       statusMessage: "Hola, quiero info del Fisherman FD2 Max",
     },
     {
       id: "fd3",
       name: "Fisherman FD3",
       badge: "Cámara + Precisión",
-      tagline: "Ve la estructura. Apunta a la captura.",
+      tagline: "Tus ojos en vivo bajo la espuma para clavar con precisión quirúrgica.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816471/swellpro-fisherman-fd3-drone-thumnail_mdxsb2.png",
       specs: {
         reach: "1.2 Kilómetros",
         payload: "2.0 Kilogramos",
         camera: "Gimbal 4K en vivo, 12 MP, 1/2.3\" CMOS",
       },
-      description: "La cámara del FD3 te da ojos sobre el agua: explora el punto, revisa la corriente y lanza tu carnada con precisión y confianza mar adentro.",
+      description: "Explora la estructura marina desde tu control con pantalla brillante. Mira en tiempo real dónde se rompe la ola, localiza el banco de arena y suelta tu cebo de hasta 2 kg exactamente donde se alimenta la corvina grande.",
       statusMessage: "Hola, quiero info del Fisherman FD3",
     },
     {
       id: "sd4",
       name: "SplashDrone 4",
       badge: "Lo más avanzado",
-      tagline: "El drone marino profesional. Para el que no negocia.",
+      tagline: "Ingeniería marina sin límites. El rey absoluto del mar.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/new-waterproof-drone-splashrone-4-plus_1570x_fgdu3n.webp",
       specs: {
         reach: "7.0 Kilómetros",
         payload: "2.0 Kilogramos",
         camera: "Sony 4K 60fps, 48 MP, Zoom 8x",
       },
-      description: "Sony 4K, 7 km de alcance, 29 minutos de vuelo (hasta 7 lanzamientos) y la plataforma waterproof más completa con IP67 completo.",
+      description: "El gigante del hardware sumergible. 7 kilómetros de transmisión blindada y la capacidad de flotar indefinidamente sobre las rompientes del Pacífico. Pensado para el pescador deportivo que exige perfección implacable.",
       statusMessage: "Hola, quiero info del SplashDrone 4",
     },
     {
@@ -298,7 +298,7 @@ export default function App() {
         payload: "2.0 Kilogramos",
         camera: "Sony 4K 60fps, 5.7K UHD",
       },
-      description: "La cumbre de la versatilidad sumergible con gimbal estabilizado de 3 ejes. Próximo ingreso. ¡Separa el tuyo ahora!",
+      description: "La cumbre de la versatilidad sumergible con gimbal estabilizado de 3 ejes. Próximo ingreso en aduana peruana. Puedes separar el tuyo hoy mismo.",
       statusMessage: "Hola, avísame cuando llegue el SplashDrone 4 Plus",
     }
   ];
@@ -443,10 +443,11 @@ export default function App() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              {["Modelos", "Garantía y Soporte", "Cómo funciona", "Contacto"].map((tab) => {
+              {["Modelos", "Garantía y Soporte", "Cómo funciona", "Galería", "Contacto"].map((tab) => {
                 let targetId = "#modelos";
                 if (tab === "Garantía y Soporte") targetId = "#soporte-local";
                 if (tab === "Cómo funciona") targetId = "#como-funciona";
+                if (tab === "Galería") targetId = "#galeria";
                 if (tab === "Contacto") targetId = "#contacto";
                 
                 return (
@@ -495,10 +496,11 @@ export default function App() {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-b border-neutral-100 shadow-xl animate-fade-in absolute w-full top-full left-0">
             <div className="px-6 py-8 space-y-4">
-              {["Modelos", "Garantía y Soporte", "Cómo funciona", "Contacto"].map((tab) => {
+              {["Modelos", "Garantía y Soporte", "Cómo funciona", "Galería", "Contacto"].map((tab) => {
                 let targetId = "#modelos";
                 if (tab === "Garantía y Soporte") targetId = "#soporte-local";
                 if (tab === "Cómo funciona") targetId = "#como-funciona";
+                if (tab === "Galería") targetId = "#galeria";
                 if (tab === "Contacto") targetId = "#contacto";
                 
                 return (
@@ -536,214 +538,59 @@ export default function App() {
           <img
             src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816469/Fisherman-MAX-fd2-banner-1920x900_ebgmq0.webp"
             alt="SwellPro Fisherman Max sobre el océano Pacífico"
-            className="w-full h-full object-cover object-center opacity-40 hover:scale-[1.03] transition-transform duration-[12000ms] ease-out pointer-events-none"
+            className="w-full h-full object-cover object-center opacity-35 hover:scale-[1.03] transition-transform duration-[12000ms] ease-out pointer-events-none"
             loading="eager"
             decoding="async"
           />
           {/* Multi-layered cinematic overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-black/85 z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-black/90 z-0"></div>
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0a0a0a] to-transparent z-0"></div>
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0d0d0d]/40 to-transparent z-0"></div>
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0a0a0a]/50 to-transparent z-0"></div>
         </div>
 
         {/* Hero Content Area */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">
           
           {/* Subtle Accent Logo Badge */}
-          <div className="inline-flex items-center gap-1.5 bg-neutral-900/90 backdrop-blur-md text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-neutral-800/80 mb-8 shadow-2xl">
-            <span className="text-[#ff4d00]">🇵🇪</span> Distribución y Respaldo Oficial en el Perú
+          <div className="inline-flex items-center gap-1.5 bg-neutral-900/95 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest border border-neutral-800 mb-8 shadow-2xl animate-pulse">
+            <span className="text-[#ff4d00]">🇵🇪</span> Respaldo Oficial · Soporte Directo Nacional · Capacitación en Playa
           </div>
 
           {/* Epic Short Headline */}
-          <h1 className="font-display font-extrabold text-white text-5xl sm:text-7xl md:text-[6.5rem] tracking-tight leading-[0.9] uppercase mb-6 max-w-4xl">
+          <h1 className="font-display font-extrabold text-white text-5xl sm:text-7xl md:text-[6.8rem] tracking-tight leading-[0.85] uppercase mb-6 max-w-4xl">
             EL FIN DE<br />
-            <span className="text-[#ff4d00] relative drop-shadow-[0_10px_30px_rgba(255,77,0,0.2)]">LA ORILLA.</span>
+            <span className="text-[#ff4d00] relative drop-shadow-[0_10px_30px_rgba(255,77,0,0.35)]">LA ORILLA.</span>
           </h1>
 
           {/* Sutil Perú line decor */}
-          <div className="peru-line z-10 w-20 my-2 mx-auto"></div>
+          <div className="peru-line z-10 w-24 my-3 mx-auto"></div>
 
           {/* Aspirational emotional copy */}
-          <p className="font-sans text-neutral-300 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed mb-10 text-neutral-300/95 font-medium">
-            Conquista la rompiente más salvaje. Lleva tu anzuelo hasta <span className="text-white font-bold border-b border-[#ff4d00]">1.5 km mar adentro</span>, localiza los mejores pozos en vivo y captura las especies más grandes desde la orilla. El único drone de pesca 100% sumergible y resistente al mar peruano.
+          <p className="font-sans text-neutral-200 text-sm sm:text-base md:text-xl max-w-3xl leading-relaxed mb-10 font-sans-dm font-normal">
+            Abres tu estuche en la arena, enciendes el control y elevas tu equipo venciendo en segundos el viento del litoral. Vuela sobre la espuma, lee la corriente en vivo y deposita tu carnada exactamente a <span className="text-white font-black border-b border-[#ff4d00] pb-0.5">1.5 kilómetros</span>, donde habitan las verdaderas piezas de récord. Sin botes complejos y sin arriesgar tu vida en las peñas.
           </p>
 
           {/* Principal Call to Action */}
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-lg mb-8">
             <a
-              href={getWhatsAppUrl("Hola SwellPro Perú, deseo conversar con un experto para decidir cuál es el drone de pesca que mejor se adapta a mis necesidades.")}
+              href={getWhatsAppUrl("Hola SwellPro Perú, vi su web y quiero recibir asesoría directa. Deseo saber qué drone se adapta mejor a mis zonas usuales de pesca.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-[#ff4d00] hover:bg-[#e04400] text-white font-bold text-sm uppercase tracking-wider py-4.5 px-10 rounded-2xl transition-all duration-200 transform hover:scale-102 shadow-2xl shadow-[#ff4d00]/30 text-center cursor-pointer border-t border-white/10"
+              className="w-full sm:w-auto bg-[#ff4d00] hover:bg-[#e04400] text-white font-bold text-xs uppercase tracking-widest py-5 px-10 rounded-2xl transition-all duration-300 transform hover:scale-103 shadow-2xl shadow-[#ff4d00]/30 text-center cursor-pointer border-t border-white/10"
             >
-              Iniciar mi Asesoría por WhatsApp →
+              Lanzar mi anzuelo más lejos por WhatsApp →
             </a>
             <a
-              href="#soporte-local"
-              className="text-neutral-300 hover:text-white font-bold text-xs uppercase tracking-widest py-3 px-6 transition duration-150 border-b-2 border-transparent hover:border-[#ff4d00] flex items-center gap-2"
+              href="#modelos"
+              className="text-neutral-300 hover:text-white font-bold text-xs uppercase tracking-widest py-3 px-6 transition duration-200 border-b-2 border-transparent hover:border-[#ff4d00] flex items-center gap-2"
             >
-              <span>Por qué comprar local</span> <span className="text-[#ff4d00]">↓</span>
+              <span>Ver Drones de Pesca</span> <span className="text-[#ff4d00]">↓</span>
             </a>
           </div>
 
-          <div className="text-neutral-500 font-semibold text-[10px] tracking-widest uppercase mt-2">
-            ASESORÍA COMPLETA · REVISIÓN TÉCNICA · INDUCCIÓN DE CAMPO GRATUITA
+          <div className="text-neutral-500 font-bold text-[9px] tracking-widest uppercase mt-2">
+            ASESORÍA COMPLETA DE PESCADOR A PESCADOR · TALLER EXCLUSIVO EN LIMA · REPUESTOS EN STOCK
           </div>
-
-        </div>
-      </section>
-
-
-      {/* SECTION 2 — RESPALDO Y CONFIANZA OFICIAL (Moved early, highlighted heavily) */}
-      <section id="soporte-local" className="py-28 bg-[#fafafa] relative overflow-hidden border-t border-neutral-100">
-        <div className="absolute top-0 right-[-10%] w-[350px] h-[350px] bg-neutral-200/25 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[350px] h-[350px] bg-[#ff4d00]/5 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-          
-          <ScrollReveal className="text-center mb-20 max-w-3xl mx-auto">
-            <span className="text-[#ff4d00] text-xs font-bold tracking-widest uppercase block mb-3 bg-[#ff4d00]/5 px-3 py-1.5 rounded-full w-fit mx-auto border border-[#ff4d00]/10">
-              Tranquilidad de Inversión
-            </span>
-            <h2 className="text-3xl md:text-5xl font-display font-extrabold text-neutral-900 tracking-tight leading-none uppercase">
-              La diferencia entre volar seguro o perder tu inversión
-            </h2>
-            <div className="w-14 h-1 bg-[#ff4d00] mx-auto mt-5 rounded-full"></div>
-            <p className="text-neutral-550 text-sm md:text-base mt-4 font-sans max-w-2xl mx-auto leading-relaxed">
-              Manejar tecnología especializada en agua salada y vientos marinos peruanos requiere respaldo legítimo. Comprar con un representante autorizado te asegura continuidad; importar por tu cuenta te expone a estar solo.
-            </p>
-          </ScrollReveal>
-
-          {/* Pillars Bento Box Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch mb-20">
-            {backupPillars.map((item, idx) => (
-              <ScrollReveal 
-                key={idx}
-                className="bg-white border border-neutral-200/80 rounded-2xl p-8 hover:shadow-xl hover:shadow-neutral-200/30 transition-all duration-300 flex flex-col justify-between relative group"
-              >
-                <div>
-                  <div className="bg-neutral-50 border border-neutral-100 p-4 rounded-2xl w-fit mb-6 group-hover:bg-[#ff4d00]/5 group-hover:border-[#ff4d00]/15 transition-all duration-200">
-                    {item.icon}
-                  </div>
-                  <h3 className="font-display font-bold text-neutral-900 text-lg md:text-xl uppercase tracking-tight mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-neutral-550 text-xs md:text-sm leading-relaxed font-sans">
-                    {item.desc}
-                  </p>
-                </div>
-                <div className="w-8 h-1 bg-neutral-100 group-hover:bg-[#ff4d00] transition-colors mt-6 rounded-full"></div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          {/* Support and Authority Visual Showcase */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20">
-            <ScrollReveal className="relative group overflow-hidden rounded-3xl border border-neutral-200 bg-white p-2 hover:shadow-xl hover:border-neutral-300 transition-all duration-350">
-              <div className="relative overflow-hidden rounded-2xl h-64 md:h-80 w-full bg-neutral-100">
-                <img
-                  src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/local-drone-repair_2_kefrex.webp"
-                  alt="Taller especializado y servicio técnico de drones en Lima Perú"
-                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-[4000ms] ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/40 to-transparent flex flex-col justify-end p-6">
-                  <span className="text-[#ff4d00] text-[10px] font-extrabold uppercase tracking-widest mb-1.5 font-display">Taller Técnico en Lima</span>
-                  <h4 className="font-display font-extrabold uppercase text-xl text-white">Soporte Técnico Especializado</h4>
-                  <p className="text-neutral-300 text-xs mt-1.5 font-sans leading-relaxed">Olvídate de esperas, aduanas o correos sin respuesta. Diagnosticamos, calibramos y reparamos tu equipo directamente en nuestro laboratorio con repuestos de fábrica en stock inmediato.</p>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal className="relative group overflow-hidden rounded-3xl border border-neutral-200 bg-white p-2 hover:shadow-xl hover:border-neutral-300 transition-all duration-350">
-              <div className="relative overflow-hidden rounded-2xl h-64 md:h-80 w-full bg-neutral-100">
-                <img
-                  src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816469/drone-fishing-master-award_600x_alcpke.webp"
-                  alt="Swellpro Drone Fishing Master Award torneo de pesca"
-                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-[4000ms] ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/40 to-transparent flex flex-col justify-end p-6">
-                  <span className="text-[#ff4d00] text-[10px] font-extrabold uppercase tracking-widest mb-1.5 font-display">Liderazgo Internacional</span>
-                  <h4 className="font-display font-extrabold uppercase text-xl text-white">Autoridad Registrada del Mar</h4>
-                  <p className="text-neutral-300 text-xs mt-1.5 font-sans leading-relaxed">El único ecosistema de drones del mundo multipremiado por pescadores deportivos por su infalible desempeño frente a rompientes letales y vientos costeros severos.</p>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Neurological comparison blocks: Jugarte la inversión vs SwellPro Perú */}
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
-            
-            {/* Si te la juegas solo block */}
-            <ScrollReveal className="bg-white p-8 md:p-10 rounded-3xl border border-red-500/15 relative overflow-hidden shadow-xs">
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-red-800"></div>
-              <div className="flex items-center gap-3.5 mb-6">
-                <div className="bg-red-50 p-2.5 rounded-xl text-red-700">
-                  <AlertTriangle className="w-6 h-6" />
-                </div>
-                <h3 className="font-display font-bold text-neutral-900 text-lg md:text-xl uppercase tracking-tight">
-                  Si te la juegas importando tú solo
-                </h3>
-              </div>
-
-              <ul className="space-y-4 text-neutral-600 text-sm leading-relaxed">
-                {[
-                  "Garantía ausente en Perú: Si pasa una falla interna de firmware, debes enviarlo de vuelta a Asia costeando el flete.",
-                  "Soporte estancado: Chateas con robots traductores en otros husos horarios con días de tardía para una sola respuesta.",
-                  "Hélices, motores o baterías ausentes en aduana: Pasas la temporada de corvina esperando meses a que liberen un paquete.",
-                  "Prueba de fuego sin guía: Si lo despegas mal en tu primer intento por falta de calibración, te quedas con un drone destruido sin retorno.",
-                ].map((text, idx) => (
-                  <li key={idx} className="flex gap-3 items-start">
-                    <span className="text-red-700 font-bold shrink-0 mt-1">✕</span>
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
-
-            {/* Con SwellPro Perú block */}
-            <ScrollReveal className="bg-white p-8 md:p-10 rounded-3xl border border-[#ff4d00]/20 shadow-xl shadow-neutral-100/40 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-[4px] bg-[#ff4d00]"></div>
-              
-              <div className="absolute top-4 right-4 bg-[#ff4d00]/5 text-[#ff4d00] font-bold text-[9px] tracking-widest px-3 py-1 rounded-full border border-[#ff4d00]/15 uppercase">
-                Garantía y Tranquilidad
-              </div>
-
-              <div className="flex items-center gap-3.5 mb-6">
-                <div className="bg-orange-50 p-2.5 rounded-xl text-[#ff4d00]">
-                  <CheckCircle2 className="w-6 h-6" />
-                </div>
-                <h3 className="font-display font-bold text-neutral-900 text-lg md:text-xl uppercase tracking-tight">
-                  Con el respaldo de SwellPro Perú
-                </h3>
-              </div>
-
-              <ul className="space-y-4 text-neutral-700 text-sm leading-relaxed font-medium">
-                {[
-                  "Garantía Directa en Lima: Examinamos y solucionamos el equipo directamente con repuestos oficiales sin enviar nada fuera.",
-                  "Atención al instante: Nos mandas un mensaje, nos llamas desde la playa ante cualquier duda y un técnico nacional te asiste en vivo.",
-                  "Repuestos inmediatos en mano: Contamos con hélices, motores, cargadores rápidos y baterías listos para salir a despacho.",
-                  "Manuales, videos de entrenamiento y capacitación presencial directa incluida para cuidar tu herramienta desde el vuelo inicial.",
-                ].map((text, idx) => (
-                  <li key={idx} className="flex gap-3 items-start">
-                    <span className="text-green-600 font-bold shrink-0 mt-1">✓</span>
-                    <span className="text-neutral-800">{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </ScrollReveal>
-
-          </div>
-
-          <ScrollReveal className="text-center mt-16">
-            <a
-              href={getWhatsAppUrl("Hola SwellPro Perú, requiero un equipo con el respaldo total de taller local y capacitación directa. Deseo comunicarme para detalles.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#ff4d00] hover:bg-[#e04400] text-white font-bold text-sm uppercase tracking-wider py-4.5 px-8 rounded-2xl transition-all duration-200 shadow-xl shadow-[#ff4d00]/20 cursor-pointer"
-            >
-              Quiero Comprar con Garantía Directa →
-            </a>
-          </ScrollReveal>
 
         </div>
       </section>
@@ -766,134 +613,186 @@ export default function App() {
             </p>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 items-stretch mb-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch mb-14">
             {products.map((product) => {
-              const borderClass = product.isSoldOut
-                ? "border-neutral-200 bg-neutral-50/50 opacity-90"
-                : product.isPopular
-                ? "border-[#ff4d00] shadow-2xl shadow-[#ff4d00]/10 ring-2 ring-[#ff4d00]/10"
-                : "border-neutral-200/95 shadow-md shadow-neutral-100 hover:shadow-xl hover:border-neutral-300";
+              const isSoldOut = product.isSoldOut;
+              const isFD2Max = product.id === "fd2-max";
+
+              // Get custom page and evidence gallery anchors
+              const modelPage = product.id === "fd1" 
+                ? "./fd1s/index.html" 
+                : product.id === "fd2-max" 
+                ? "./fd2/index.html" 
+                : product.id === "fd3" 
+                ? "./fd3/index.html" 
+                : product.id === "sd4" 
+                ? "./sd4/index.html" 
+                : "./sd4-plus/index.html";
+
+              const galleryLink = product.id === "fd1" 
+                ? "./fd1s/index.html#fd1s-evidencia" 
+                : product.id === "fd2-max" 
+                ? "./fd2/index.html#por-que-fd2max" 
+                : product.id === "fd3" 
+                ? "./fd3/index.html#fd3-evidencia" 
+                : product.id === "sd4" 
+                ? "./sd4/index.html" 
+                : "./sd4-plus/index.html";
+
+              // Visual styling classes based on product state
+              const cardClass = isSoldOut
+                ? "bg-neutral-50/80 border-neutral-200 opacity-80 lg:col-span-2 hover:border-neutral-300"
+                : isFD2Max
+                ? "bg-white border-[#ff4d00]/80 shadow-lg shadow-[#ff4d00]/5 ring-1 ring-[#ff4d00]/10 hover:border-[#ff4d00] hover:shadow-2xl hover:shadow-[#ff4d00]/10"
+                : "bg-white border-neutral-200 hover:border-neutral-300 hover:shadow-2xl hover:shadow-neutral-200/50";
+
+              const badgeBg = isSoldOut
+                ? "bg-neutral-200 text-neutral-500 border border-neutral-300"
+                : isFD2Max
+                ? "bg-[#ff4d00] text-white shadow-sm shadow-[#ff4d00]/25 font-black"
+                : "bg-neutral-900 text-white";
 
               return (
                 <ScrollReveal
                   key={product.id}
-                  className={`bg-white rounded-3xl border transition-all duration-500 flex flex-col justify-between overflow-hidden relative ${borderClass} transform hover:-translate-y-2 group`}
+                  className={`rounded-3xl border transition-all duration-300 flex flex-col md:flex-row overflow-hidden relative group ${cardClass}`}
                 >
-                  
-                  {/* Badges */}
-                  <div className="absolute top-4 left-4 z-10 flex flex-col gap-1.5">
-                    <span className={`text-[8.5px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full ${
-                      product.isSoldOut
-                        ? "bg-red-700 text-white"
-                        : product.isPopular
-                        ? "bg-[#ff4d00] text-white shadow-md shadow-[#ff4d00]/20"
-                        : "bg-neutral-950 text-white"
-                    }`}>
+                  {/* Badge Area (Absolute placement on top left) */}
+                  <div className="absolute top-4 left-4 z-20 flex flex-col gap-1.5 items-start">
+                    <span className={`text-[8px] sm:text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full font-display border border-transparent ${badgeBg}`}>
                       {product.badge}
                     </span>
-                    
-                    {product.isPopular && !product.isSoldOut && (
-                      <span className="bg-neutral-900 text-white text-[8px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border border-neutral-800 w-fit">
-                        🔥 Popular
+                    {isFD2Max && (
+                      <span className="bg-neutral-900 text-white text-[8px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border border-neutral-800 flex items-center gap-1 shadow-sm font-display">
+                        🔥 MÁS VENDIDO
                       </span>
                     )}
                   </div>
 
-                  {/* Product Image Stage (Elegant Pedestal Render) */}
-                  <div className="relative h-56 flex items-center justify-center p-6 bg-neutral-50/50 overflow-hidden border-b border-neutral-100/80">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.015)_0%,transparent_70%)] pointer-events-none"></div>
-                    {/* Visual ground shadow pedestal for 3D realism */}
-                    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-40 h-2 bg-black/[0.06] rounded-full blur-md pointer-events-none transition-all duration-500 group-hover:scale-95 group-hover:opacity-75"></div>
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-24 h-2 bg-[#ff4d00]/[0.03] rounded-full blur-lg pointer-events-none transition-all duration-500 group-hover:scale-110 group-hover:opacity-100"></div>
+                  {/* Left Column: Product Image Box (Interactive Pedestal render + Gallery Click indicator) */}
+                  <div className={`relative min-h-[220px] md:w-[42%] flex items-center justify-center p-6 overflow-hidden border-b md:border-b-0 md:border-r border-neutral-100/80 shrink-0 ${isSoldOut ? "bg-neutral-100/40" : "bg-neutral-50/40"}`}>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.01)_0%,transparent_70%)] pointer-events-none"></div>
+                    {/* Shadow Pedestal */}
+                    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-32 h-2 bg-black/[0.04] rounded-full blur-md pointer-events-none transition-all duration-300 group-hover:scale-90 group-hover:opacity-60"></div>
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-20 h-2 bg-[#ff4d00]/[0.02] rounded-full blur-lg pointer-events-none transition-all duration-300 group-hover:scale-105 group-hover:opacity-100"></div>
 
                     <img
                       src={product.image}
                       alt={product.name}
                       loading="lazy"
-                      className="max-h-36 max-w-[85%] object-contain relative z-10 select-none pointer-events-none transition-transform duration-500 transform scale-100 group-hover:scale-106 group-hover:-translate-y-2 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.03)]"
+                      className={`max-h-36 max-w-[85%] object-contain relative z-10 select-none pointer-events-none transition-transform duration-500 transform scale-100 group-hover:scale-105 group-hover:-translate-y-1 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.03)] ${isSoldOut ? "grayscale opacity-50 contrast-75" : ""}`}
                     />
+
+                    {/* Highly Interactive "VER GALERÍA" Overlay Link for clicking the image */}
+                    <a 
+                      href={galleryLink}
+                      className="absolute inset-0 z-30 flex items-center justify-center overflow-hidden group/img-overlay"
+                      title={`Ver galería de fotos reales de ${product.name}`}
+                    >
+                      {/* Smooth dark glow cover on hover */}
+                      <div className="absolute inset-0 bg-neutral-950/60 opacity-0 group-hover/img-overlay:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
+                        <Camera className="w-8 h-8 text-[#ff4d00] mb-2 transform scale-75 group-hover/img-overlay:scale-100 transition-transform duration-300" />
+                        <span className="text-white text-[10px] font-bold uppercase tracking-widest leading-none block mb-1">
+                          Ver Galería Real ↗
+                        </span>
+                        <span className="text-neutral-400 text-[8px] tracking-wide block max-w-[85%]">
+                          Fotos tomadas en playas peruanas
+                        </span>
+                      </div>
+
+                      {/* Persistent Pill Badge at the bottom-right corner to make it clear photos exist */}
+                      <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md shadow-sm border border-neutral-200/60 px-2.5 py-1.5 rounded-xl text-[8.5px] font-bold tracking-wider text-neutral-700 uppercase flex items-center gap-1.5 transition-all duration-200 hover:bg-neutral-900 hover:text-white hover:border-transparent">
+                        <Camera className="w-3.5 h-3.5 text-[#ff4d00]" />
+                        <span>FOTOS DE PLAYA ↗</span>
+                      </div>
+                    </a>
                   </div>
 
-                  {/* Product Details Section */}
-                  <div className="p-6 flex-1 flex flex-col justify-between">
+                  {/* Right Column: Informative Copy and Dynamic CTAs (More space, Clean alignment) */}
+                  <div className="p-6 md:p-7 flex-1 flex flex-col justify-between">
                     <div>
                       {/* Name */}
-                      <h3 className="text-xl md:text-2xl font-display font-extrabold text-neutral-950 uppercase mb-1 flex items-center gap-1">
+                      <h3 className="text-xl font-display font-extrabold text-neutral-900 uppercase tracking-tight mb-1">
                         {product.name}
-                        {product.isPopular && <span className="text-[#ff4d00]">★</span>}
                       </h3>
 
-                      {/* Tagline */}
+                      {/* Emotional tagline (Short and conversational) */}
                       {product.tagline && (
-                        <span className="text-neutral-500 font-medium italic text-xs block mb-3 leading-tight font-sans">
+                        <p className={`font-sans text-[11px] font-medium leading-relaxed mb-4 italic ${isSoldOut ? "text-neutral-400" : "text-[#ff4d00]"}`}>
                           "{product.tagline}"
-                        </span>
+                        </p>
                       )}
 
-                      {/* Description */}
-                      <p className="text-neutral-550 text-xs leading-relaxed mb-5 font-sans h-24 overflow-hidden">
-                        {product.description}
-                      </p>
-
-                      {/* Specs Mini Panel */}
-                      <div className="border-t border-b border-neutral-100 py-4 mb-5 space-y-2.5">
-                        <div className="flex items-center gap-2.5 text-xs">
-                          <Ruler className="w-4 h-4 text-[#ff4d00] shrink-0" />
-                          <span className="text-neutral-500 font-semibold font-sans">
-                            Alcance: <strong className="text-neutral-800 font-black">{product.specs.reach}</strong>
+                      {/* Compact Technical Specs with clean outline */}
+                      <div className="border-t border-b border-neutral-100/60 py-3.5 mb-5 space-y-2 text-[11.5px] font-sans">
+                        <div className="flex items-center gap-2 text-neutral-600">
+                          <Ruler className="w-4 h-4 text-neutral-450 shrink-0" />
+                          <span>
+                            Alcance: <strong className="text-neutral-800 font-bold">{product.specs.reach}</strong>
                           </span>
                         </div>
-                        <div className="flex items-center gap-2.5 text-xs">
-                          <Scale className="w-4 h-4 text-[#ff4d00] shrink-0" />
-                          <span className="text-neutral-500 font-semibold font-sans">
-                            Capacidad: <strong className="text-neutral-800 font-black">{product.specs.payload}</strong>
+                        <div className="flex items-center gap-2 text-neutral-700">
+                          <Scale className="w-4 h-4 text-neutral-450 shrink-0" />
+                          <span>
+                            Lanzamiento: <strong className="text-neutral-800 font-bold">{product.specs.payload}</strong>
                           </span>
                         </div>
-                        <div className="flex items-center gap-2.5 text-xs">
-                          <Camera className="w-4 h-4 text-[#ff4d00] shrink-0" />
-                          <span className="text-neutral-500 font-semibold font-sans">
-                            Cámara: <strong className="text-neutral-800 font-black">{product.specs.camera}</strong>
+                        <div className="flex items-center gap-2 text-neutral-600">
+                          <Camera className="w-4 h-4 text-neutral-450 shrink-0" />
+                          <span className="truncate">
+                            Óptica: <strong className="text-neutral-800 font-bold">{product.specs.camera.split(',')[0]}</strong>
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    {/* CTAs Stack */}
-                    <div className="flex flex-col gap-2">
-                      <a
-                        href={
-                          product.id === "fd1" 
-                            ? "./fd1s/index.html" 
-                            : product.id === "fd2-max" 
-                            ? "./fd2/index.html" 
-                            : product.id === "fd3" 
-                            ? "./fd3/index.html" 
-                            : product.id === "sd4" 
-                            ? "./sd4/index.html" 
-                            : "./sd4-plus/index.html"
-                        }
-                        className="w-full text-center font-display font-bold text-[11px] uppercase tracking-wider py-3 px-4 rounded-xl border border-neutral-200 text-neutral-800 bg-neutral-50/40 hover:bg-neutral-100 hover:border-neutral-300 transition duration-150 block"
-                      >
-                        Ver Ficha Completa →
-                      </a>
-                      
-                      <a
-                        href={getWhatsAppUrl(product.statusMessage)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`w-full text-center font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-2xl transition duration-250 block ${
-                          product.isSoldOut
-                            ? "bg-neutral-200 hover:bg-neutral-300 text-neutral-650 border border-neutral-300"
-                            : product.isPopular
-                            ? "bg-[#ff4d00] hover:bg-[#e04400] text-white shadow-lg shadow-orange-brand/25"
-                            : "bg-neutral-950 hover:bg-neutral-900 text-white"
-                        }`}
-                      >
-                        {product.isSoldOut ? "Avísame cuando llegue → WhatsApp" : "Preguntar precio y stock →"}
-                      </a>
+                    {/* CTAs Control Area */}
+                    <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+                      {isSoldOut ? (
+                        <>
+                          <button
+                            disabled
+                            className="flex-1 text-center font-display font-bold text-[10px] uppercase tracking-widest py-3 px-4 rounded-xl border border-neutral-200 text-neutral-400 bg-neutral-100 cursor-not-allowed h-11"
+                          >
+                            Temporalmente Agotado
+                          </button>
+                          
+                          <a
+                            href={getWhatsAppUrl("Hola SwellPro Perú, veo que el SplashDrone 4 Plus está agotado pero deseo sumarme a la lista de espera oficial para el próximo ingreso peruano.")}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 text-center font-display font-bold text-[10px] uppercase tracking-widest py-3 px-4 rounded-xl bg-neutral-200 text-neutral-600 hover:bg-neutral-300 border border-neutral-300 transition duration-150 inline-flex items-center justify-center gap-1.5 h-11"
+                          >
+                            <PhoneCall className="w-3.5 h-3.5 text-[#ff4d00] animate-pulse" /> Listar Espera →
+                          </a>
+                        </>
+                      ) : (
+                        <>
+                          {/* Main Button (Go to landing page / complete specs): Visually strong */}
+                          <a
+                            href={modelPage}
+                            className={`flex-1 text-center font-display font-bold text-[10px] uppercase tracking-widest py-3.5 px-4 rounded-xl transition-all duration-200 ease-out border shadow-sm flex items-center justify-center h-11 ${
+                              isFD2Max
+                                ? "bg-[#ff4d00] text-white border-transparent hover:bg-[#e04400] hover:shadow-md hover:shadow-[#ff4d00]/20"
+                                : "bg-neutral-900 border-neutral-950 text-white hover:bg-neutral-800"
+                            }`}
+                          >
+                            Ver Ficha Completa →
+                          </a>
+                          
+                          {/* Secondary CTA (Ask on WhatsApp): Muted yet highly visible */}
+                          <a
+                            href={getWhatsAppUrl(product.statusMessage)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 text-center font-display font-semibold text-[9.5px] uppercase tracking-widest py-3.5 px-4 rounded-xl border border-neutral-250 text-neutral-700 bg-white hover:bg-neutral-50 hover:border-neutral-450 hover:text-neutral-900 transition duration-150 inline-flex items-center justify-center gap-1.5 h-11"
+                          >
+                            <PhoneCall className="w-3.5 h-3.5 text-stone-400 transition-colors group-hover:text-[#ff4d00]" /> Cotizar WhatsApp →
+                          </a>
+                        </>
+                      )}
                     </div>
                   </div>
-
                 </ScrollReveal>
               );
             })}
@@ -1105,6 +1004,161 @@ export default function App() {
       </section>
 
 
+      {/* SECTION 2 — RESPALDO Y CONFIANZA OFICIAL (Repositioned below technical clarity) */}
+      <section id="soporte-local" className="py-32 bg-[#fafafa] relative overflow-hidden border-y border-neutral-100">
+        <div className="absolute top-0 right-[-10%] w-[450px] h-[450px] bg-neutral-250/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[450px] h-[450px] bg-[#ff4d00]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          
+          <ScrollReveal className="text-center mb-24 max-w-3xl mx-auto">
+            <span className="text-[#ff4d00] text-xs font-bold tracking-widest uppercase block mb-3 bg-[#ff4d00]/5 px-4 py-2 rounded-full w-fit mx-auto border border-[#ff4d00]/10 font-mono">
+              SOPORTE LOCAL · TRANQUILIDAD DE INVERSIÓN
+            </span>
+            <h2 className="text-3xl md:text-5xl font-display font-extrabold text-neutral-900 tracking-tight leading-none uppercase">
+              La diferencia entre pescar tranquilo o perder tu inversión
+            </h2>
+            <div className="w-16 h-1 bg-[#ff4d00] mx-auto mt-6 rounded-full"></div>
+            <p className="text-neutral-550 text-sm md:text-base mt-4 font-sans max-w-2xl mx-auto leading-relaxed">
+              Manejar tecnología electrónica especializada en agua salada y vientos costeros severos requiere el respaldo de expertos reales en Lima. Comprar con el representante oficial te asegura continuidad en tus salidas de pesca; arriesgarte a importar por tu cuenta te expone a quedarte solo en la arena del desierto.
+            </p>
+          </ScrollReveal>
+
+          {/* Pillars Bento Box Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch mb-24">
+            {backupPillars.map((item, idx) => (
+              <ScrollReveal 
+                key={idx}
+                className="bg-white border border-neutral-200/60 rounded-3xl p-8 hover:shadow-2xl hover:shadow-neutral-200/40 transition-all duration-300 flex flex-col justify-between relative group"
+              >
+                <div>
+                  <div className="bg-neutral-50 border border-neutral-100 p-4 rounded-2xl w-fit mb-6 group-hover:bg-[#ff4d00]/5 group-hover:border-[#ff4d00]/15 transition-all duration-300">
+                    {item.icon}
+                  </div>
+                  <h3 className="font-display font-bold text-neutral-900 text-lg md:text-xl uppercase tracking-tight mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-neutral-550 text-xs md:text-sm leading-relaxed font-sans">
+                    {item.desc}
+                  </p>
+                </div>
+                <div className="w-10 h-1 bg-neutral-100 group-hover:bg-[#ff4d00] transition-colors mt-6 rounded-full"></div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Support and Authority Visual Showcase */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-24">
+            <ScrollReveal className="relative group overflow-hidden rounded-3xl border border-neutral-200 bg-white p-2 hover:shadow-2xl hover:border-neutral-300 transition-all duration-300">
+              <div className="relative overflow-hidden rounded-2xl h-80 md:h-96 w-full bg-neutral-100">
+                <img
+                  src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/local-drone-repair_2_kefrex.webp"
+                  alt="Taller especializado y servicio técnico de drones en Lima Perú"
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-[6000ms] ease-out-back"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-950/50 to-transparent flex flex-col justify-end p-8">
+                  <span className="text-[#ff4d00] text-[10px] font-bold uppercase tracking-widest mb-2 font-mono">Taller de Servicio en Lima</span>
+                  <h4 className="font-display font-extrabold uppercase text-xl md:text-2xl text-white mb-2">Soporte Técnico Especializado</h4>
+                  <p className="text-neutral-300 text-xs md:text-sm font-sans leading-relaxed">Olvídate de trámites lentos ante aduanas o correos genéricos sin respuesta. Diagnosticamos, calibramos y reparamos tu equipo directamente en nuestro laboratorio técnico con repuestos 100% originales en stock inmediato.</p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal className="relative group overflow-hidden rounded-3xl border border-neutral-200 bg-white p-2 hover:shadow-2xl hover:border-neutral-300 transition-all duration-300">
+              <div className="relative overflow-hidden rounded-2xl h-80 md:h-96 w-full bg-neutral-100">
+                <img
+                  src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816469/drone-fishing-master-award_600x_alcpke.webp"
+                  alt="Swellpro Drone Fishing Master Award torneo de pesca"
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-[6000ms] ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/95 via-neutral-950/50 to-transparent flex flex-col justify-end p-8">
+                  <span className="text-[#ff4d00] text-[10px] font-bold uppercase tracking-widest mb-2 font-mono">Inducción Profesional</span>
+                  <h4 className="font-display font-extrabold uppercase text-xl md:text-2xl text-white mb-2">Clase Práctica en la Costa</h4>
+                  <p className="text-neutral-300 text-xs md:text-sm font-sans leading-relaxed">No te dejamos solo en tu primer despegue. Te enseñamos de forma práctica y guiada a calibrar, cargar la carnada, liberar el lastre y recuperar el drone con seguridad. Pescar con éxito desde el primer día está garantizado.</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* Neurological comparison blocks: Jugarte la inversión vs SwellPro Perú */}
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+            
+            {/* Si te la juegas solo block */}
+            <ScrollReveal className="bg-white p-10 rounded-3xl border border-red-500/10 shadow-xs relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-[4px] bg-red-750"></div>
+              <div className="flex items-center gap-3.5 mb-8">
+                <div className="bg-red-50/70 p-3 rounded-2xl text-red-700">
+                  <AlertTriangle className="w-6 h-6" />
+                </div>
+                <h3 className="font-display font-bold text-neutral-900 text-lg md:text-xl uppercase tracking-tight">
+                  Arriesgándote a importar solo
+                </h3>
+              </div>
+
+              <ul className="space-y-4 text-neutral-600 text-xs sm:text-sm leading-relaxed">
+                {[
+                  "Garantía ausente en el país: Ante cualquier anomalía técnica o daño de software, deberás costear envíos internacionales costosos y lidiar con trámites aduaneros.",
+                  "Asesoría técnica inexistente: Respuestas genéricas escritas por robots automáticos en inglés en horarios opuestos con días de tardanza.",
+                  "Desprotección ante la aduana peruana: Riesgo de retención de baterías de litio y aduanas bloqueadas por falta de homologación de telecomunicaciones (MTC).",
+                  "Prueba a ciegas con peligro de caída: Sin entrenamiento previo, corres el riesgo de perder tu drone en la primera rompiente brava por un mal cálculo de despegue.",
+                ].map((text, idx) => (
+                  <li key={idx} className="flex gap-3 items-start">
+                    <span className="text-red-700 font-bold shrink-0 mt-0.5">✕</span>
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+
+            {/* Con SwellPro Perú block */}
+            <ScrollReveal className="bg-white p-10 rounded-3xl border border-[#ff4d00]/10 shadow-xl shadow-neutral-100/30 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-[4px] bg-[#ff4d00]"></div>
+              
+              <div className="absolute top-4 right-4 bg-[#ff4d00]/5 text-[#ff4d00] font-bold text-[8.5px] tracking-widest px-3 py-1 rounded-full border border-[#ff4d00]/10 uppercase font-mono">
+                RESPALDO NACIONAL
+              </div>
+
+              <div className="flex items-center gap-3.5 mb-8">
+                <div className="bg-orange-50 p-3 rounded-2xl text-[#ff4d00]">
+                  <CheckCircle2 className="w-6 h-6" />
+                </div>
+                <h3 className="font-display font-bold text-neutral-900 text-lg md:text-xl uppercase tracking-tight">
+                  Comprando en SwellPro Perú
+                </h3>
+              </div>
+
+              <ul className="space-y-4 text-neutral-700 text-xs sm:text-sm leading-relaxed font-normal">
+                {[
+                  "Garantía legítima directa de fábrica en Lima: Diagnosticamos, configuramos y reparamos en nuestro laboratorio sin enviar nada al extranjero.",
+                  "Asistencia técnica de pescador a pescador: Te brindamos asesoría al instante vía telefónica o WhatsApp incluso en plena playa ante cualquier reto.",
+                  "Entrega inmediata sin demoras ni trámites: Equipos nacionales totalmente homologados ante el MTC listos para entrega inmediata y despacho seguro.",
+                  "Clase práctica post-venta incluida: Capacitación uno a uno frente al mar impartida por instructores especializados para cuidar tu inversión.",
+                ].map((text, idx) => (
+                  <li key={idx} className="flex gap-3 items-start">
+                    <span className="text-green-600 font-bold shrink-0 mt-0.5">✓</span>
+                    <span className="text-neutral-800 font-medium">{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+
+          </div>
+
+          <ScrollReveal className="text-center mt-20">
+            <a
+              href={getWhatsAppUrl("Hola SwellPro Perú, requiero un equipo con el respaldo total de taller local y capacitación directa. Deseo comunicarme para detalles de compra.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#ff4d00] hover:bg-[#e04400] text-white font-bold text-xs uppercase tracking-widest py-5 px-10 rounded-2xl transition-all duration-300 shadow-xl shadow-[#ff4d00]/25 cursor-pointer transform hover:scale-103"
+            >
+              Comprar Seguro con Garantía Oficial →
+            </a>
+          </ScrollReveal>
+
+        </div>
+      </section>
+
+
       {/* SECTION 7 — PREMIUM EXPERIENCE LIFECYCLE */}
       <section className="py-28 bg-[#fafafa]">
         <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
@@ -1149,7 +1203,7 @@ export default function App() {
 
         </div>
       </section>      {/* SECTION 8 — REAL SOCIAL PROOF / LOCAL TESTIMONIALS (No placeholders!) */}
-      <section id="evidencia" className="py-28 bg-neutral-50/40 border-t border-b border-neutral-200/60 relative overflow-hidden">
+      <section id="galeria" className="py-28 bg-neutral-50/40 border-t border-b border-neutral-200/60 relative overflow-hidden">
         
         {/* Subtle decorative glowing background for a high-end feel */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-neutral-200/20 rounded-full blur-3xl pointer-events-none"></div>

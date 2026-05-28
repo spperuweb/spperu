@@ -33,93 +33,93 @@ const fd1sGalleryItems = [
   {
     id: "fd1s-galeria-capturas-01",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-01_pu8tgl.jpg",
-    tag: "Tecnología Marina",
-    title: "Estructura del chasis e ingeniería",
-    desc: "Vista en primer plano de los componentes herméticos resistentes al salitre."
+    tag: "Hardware Real",
+    title: "Vista cercana del drone",
+    desc: "Detalle del fuselaje estanco y materiales resistentes a la corrosión."
   },
   {
     id: "fd1s-galeria-capturas-02",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-02_v195q2.jpg",
-    tag: "Calidad de Construcción",
-    title: "Motores potentes de alta eficiencia",
-    desc: "Diseño de propulsión de alta resistencia para sobrellevar vientos marinos."
+    tag: "Estructura",
+    title: "Vista de motores y hélices",
+    desc: "Detalle de la hélice izquierda instalada lista para operar."
   },
   {
     id: "fd1s-galeria-capturas-03",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-03_gszeqk.jpg",
-    tag: "Detalle Técnico",
-    title: "Mecanismo de liberación de carga",
-    desc: "Detalle del gancho electromecánico de alta confiabilidad física."
+    tag: "Mecanismo",
+    title: "Vista del sistema de calado",
+    desc: "Detalle del dispositivo electromecánico de soltado rápido."
   },
   {
     id: "fd1s-galeria-capturas-04",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-04_uduouh.jpg",
-    tag: "Diseño Estanco",
-    title: "Chasis de alta visibilidad",
-    desc: "Cuerpo de color naranja de alta visibilidad ideal para la navegación costera."
+    tag: "Fuselaje",
+    title: "Detalle delantero del chasis",
+    desc: "Vista del frontal estanco color naranja de alta visibilidad."
   },
   {
     id: "fd1s-galeria-capturas-05",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-05_bus2mx.jpg",
-    tag: "Estructura IP67",
-    title: "Excelente sellado impermeable",
-    desc: "Aislamiento hermético contra la humedad y el aire salino en puertos."
+    tag: "Estanqueidad",
+    title: "Detalle del sellado estanco",
+    desc: "Vista del borde del fuselaje que evita que ingrese agua."
   },
   {
     id: "fd1s-galeria-capturas-06",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930422/imagen-FD1S-06_diuwwt.jpg",
-    tag: "Tecnología Marina",
-    title: "Componentes anticorrosión SeaShield™",
-    desc: "Protección avanzada en tornillería marina y metales expuestos al agua."
+    tag: "Sellado",
+    title: "Vista de los tornillos marinos",
+    desc: "Detalles del sellado de goma y tornillerías resistentes."
   },
   {
     id: "fd1s-galeria-capturas-07",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-07_cjxdfj.jpg",
-    tag: "Ingeniería de Vuelo",
-    title: "Soportes de apoyo reforzados",
-    desc: "Estructura estable diseñada para aterrizajes seguros en cualquier superficie."
+    tag: "Soporte",
+    title: "Vista de las patas de apoyo",
+    desc: "Detalle de los soportes inferiores reforzados."
   },
   {
     id: "fd1s-galeria-capturas-08",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-08_vkoacd.jpg",
-    tag: "Calidad de Construcción",
-    title: "Hélices balanceadas de acople rápido",
-    desc: "Hélices optimizadas para maximizar el empuje aerodinámico."
+    tag: "Hélices",
+    title: "Hélices de repuesto originales",
+    desc: "Vista cercana de las palas diseñadas para alto viento."
   },
   {
     id: "fd1s-galeria-capturas-09",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-09_n9olt9.jpg",
-    tag: "Detalle Técnico",
-    title: "Sistemas inteligentes de vuelo",
-    desc: "Estabilización mediante giroscopios y barómetros integrados."
+    tag: "Sensores",
+    title: "Módulo de control de vuelo",
+    desc: "Vista interna sellada de los componentes de navegación."
   },
   {
     id: "fd1s-galeria-capturas-10",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-10_h6optn.jpg",
-    tag: "Estructura IP67",
-    title: "Mecanismo del sistema de flotación",
-    desc: "Estructura flotante que permite el despegue e inicio seguro desde el agua."
+    tag: "Flotación",
+    title: "Fuselaje de flotación pasiva",
+    desc: "Vista del compartimiento inferior hermético."
   },
   {
     id: "fd1s-galeria-capturas-11",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-11_ojtmxq.jpg",
-    tag: "Detalle Técnico",
-    title: "Batería inteligente de alta capacidad",
-    desc: "Suministro continuo de alta corriente y balance de celdas integrado."
+    tag: "Energía",
+    title: "Batería inteligente de alta corriente",
+    desc: "Detalle de la batería para el despegue estable."
   },
   {
     id: "fd1s-galeria-capturas-12",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930426/imagen-FD1S-12_rlpdww.jpg",
-    tag: "Ingeniería de Vuelo",
-    title: "Detalles del sistema radiotransmisor",
-    desc: "Antenas de amplio alcance posicionadas para máxima conectividad."
+    tag: "Antenas",
+    title: "Detalle de antenas del receptor",
+    desc: "Vista posterior del drone mostrando las antenas de comunicación."
   },
   {
     id: "fd1s-galeria-capturas-13",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930425/imagen-FD1S-13_ak9bsx.jpg",
-    tag: "Diseño Estanco",
-    title: "Pruebas de calidad del hardware",
-    desc: "Resistencia física certificada para resistir las jornadas operativas de playa."
+    tag: "Embalaje",
+    title: "Estuche rígido de almacenamiento",
+    desc: "Vista del drone guardado en su maletín de transporte oficial."
   }
 ];
 

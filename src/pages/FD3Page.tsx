@@ -21,7 +21,9 @@ import {
   Eye,
   Target,
   Sparkles,
-  Search
+  Search,
+  X,
+  PhoneCall
 } from "lucide-react";
 
 // Helper for prefilled WhatsApp link
@@ -29,8 +31,133 @@ const getWhatsAppUrl = (text: string) => {
   return `https://api.whatsapp.com/send?phone=51991664146&text=${encodeURIComponent(text)}`;
 };
 
+// GALERÍA ESPECÍFICA PREMIUM SWELLPRO FD3
+const fd3GalleryItems = [
+  {
+    id: "fd3-galeria-capturas-01",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933451/fd3-image-02_he20xj.jpg",
+    tag: "Prueba Real",
+    title: "SwellPro FD3 sobre el terreno de playa",
+    desc: "Inspección física y preparación previa a la jornada de pesca costera."
+  },
+  {
+    id: "fd3-galeria-capturas-02",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933450/fd3-image-15_tbt2kv.jpg",
+    tag: "Control Remoto",
+    title: "Mando inteligente de alta luminosidad",
+    desc: "Pantalla integrada con telemetría de vuelo en vivo e impermeable."
+  },
+  {
+    id: "fd3-galeria-capturas-03",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933449/fd3-image-16_by5vdb.jpg",
+    tag: "Detalle Técnico",
+    title: "Hélices balanceadas y propulsión marina",
+    desc: "Motores brushless optimizados para resistir ráfagas de viento del Pacífico."
+  },
+  {
+    id: "fd3-galeria-capturas-04",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933449/fd3-image-03_azjd6s.jpg",
+    tag: "Seguridad Costera",
+    title: "Anclaje de carga de alta precisión",
+    desc: "Mecanismo electromecánico listo para soportar hasta 2.0 kg de aparejos libres."
+  },
+  {
+    id: "fd3-galeria-capturas-05",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933448/fd3-image-01_p7jyan.jpg",
+    tag: "Tecnología de Visión",
+    title: "Cámara Gimbal 4K servoestabilizada",
+    desc: "La herramienta fundamental para ubicar visualmente canales y pozos de playa."
+  },
+  {
+    id: "fd3-galeria-capturas-06",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933446/fd3-image-10_ncvfer.jpg",
+    tag: "Prueba Física",
+    title: "Prueba de posicionamiento GPS/GLONASS",
+    desc: "Precisión satelital de alto espectro para retornos dinámicos automáticos."
+  },
+  {
+    id: "fd3-galeria-capturas-07",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933447/fd3-image-17_e1q8iz.jpg",
+    tag: "Detalle de Carga",
+    title: "Dispositivo de liberación mecánica",
+    desc: "Detalle del actuador servoestanco que previene enredos y cortocircuitos."
+  },
+  {
+    id: "fd3-galeria-capturas-08",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933445/fd3-image-12_qwroy3.jpg",
+    tag: "Ingeniería Marina",
+    title: "Carcasa hidrófoba de alta resistencia",
+    desc: "Termoplástico reforzado contra golpes, flotante y sellado IP67."
+  },
+  {
+    id: "fd3-galeria-capturas-09",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933444/fd3-image-14_rrsm2e.jpg",
+    tag: "Batería Inteligente",
+    title: "Celda inteligente de alta descarga",
+    desc: "Monitoreo digital integrado para evitar la sobrecarga y descarga crítica."
+  },
+  {
+    id: "fd3-galeria-capturas-10",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933443/fd3-image-11_z3epa5.jpg",
+    tag: "Detalle Técnico",
+    title: "Sondas de equilibrio barométrico",
+    desc: "Válvulas impermeables respirables que igualan la presión interna de forma segura."
+  },
+  {
+    id: "fd3-galeria-capturas-11",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933442/fd3-image-13_amw3nh.jpg",
+    tag: "Gimbal 4K",
+    title: "Lente sellado con recubrimiento de cuarzo",
+    desc: "Protección física frente a la niebla salina y la humedad de la rompiente marina."
+  },
+  {
+    id: "fd3-galeria-capturas-12",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933441/fd3-image-09_nyyfdq.jpg",
+    tag: "Preparación",
+    title: "Estación de carga rápida balanceada",
+    desc: "Módulo seguro de carga para alimentar la flota operativa SwellPro."
+  },
+  {
+    id: "fd3-galeria-capturas-13",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933441/fd3-image-08_ngiopi.jpg",
+    tag: "Tren de Aterrizaje",
+    title: "Soportes amortiguados de fibra de carbono",
+    desc: "Elevación adecuada del fuselaje que resguarda la cámara de la arena fina."
+  },
+  {
+    id: "fd3-galeria-capturas-14",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933440/fd3-image-05_yivhd4.jpg",
+    tag: "Inspección Técnica",
+    title: "Detalle del tren de liberación",
+    desc: "Conexión directa blindada para asegurar una operación de carga infalible."
+  },
+  {
+    id: "fd3-galeria-capturas-15",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933440/fd3-image-04_qltlkx.jpg",
+    tag: "Preparación",
+    title: "Alineamiento inicial en mesa de control",
+    desc: "Configuración o calibración antes de la salida a campo operativo de playa."
+  },
+  {
+    id: "fd3-galeria-capturas-16",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933439/fd3-image-07_o0ahno.jpg",
+    tag: "Control Remoto",
+    title: "Ergonomía marina del radio control",
+    desc: "Palancas selladas y mandos estáticos que previenen la entrada de humedad."
+  },
+  {
+    id: "fd3-galeria-capturas-17",
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933439/fd3-image-06_qz20uf.jpg",
+    tag: "Prueba Física",
+    title: "Prueba estática del rotor electromecánico",
+    desc: "Garantía de torque constante para asegurar la sustentación aérea."
+  }
+];
+
 export default function FD3Page() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [selectedGalleryItem, setSelectedGalleryItem] = useState<typeof fd3GalleryItems[0] | null>(null);
+  const [showAllGallery, setShowAllGallery] = useState(false);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -791,6 +918,101 @@ export default function FD3Page() {
         </div>
       </section>
 
+      {/* SECTION: FD3 SPECIAL PREMIUM FIELD EVIDENCE GALLERY */}
+      <section id="fd3-evidencia" className="py-24 bg-neutral-50/30 border-t border-b border-neutral-200/50 relative overflow-hidden">
+        {/* Ambient glow effects */}
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#ff4d00]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-neutral-100 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          
+          {/* Section Header */}
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <span className="text-[10px] sm:text-xs font-bold text-[#ff4d00] uppercase tracking-widest block mb-3 bg-[#ff4d00]/5 px-3.5 py-1.5 rounded-full w-fit mx-auto border border-[#ff4d00]/10 font-display">
+              Pruebas de Campo Reales
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-neutral-900 tracking-tight uppercase leading-none">
+              FD3 en la vida real
+            </h2>
+            <div className="w-12 h-1 bg-[#ff4d00] mx-auto mt-4 rounded-full"></div>
+            <p className="text-neutral-550 mt-4 text-sm sm:text-base font-sans-dm leading-relaxed max-w-2xl mx-auto">
+              No te lo contamos. Te lo mostramos.
+            </p>
+          </div>
+
+          {/* Media Grid Section (Mobile horizontal-scroll snap carousel, Desktop responsive editorial grid) */}
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory pb-6 md:pb-0 scrollbar-none scroll-smooth">
+            {(showAllGallery ? fd3GalleryItems : fd3GalleryItems.slice(0, 8)).map((item) => (
+              <div
+                key={item.id}
+                onClick={() => setSelectedGalleryItem(item)}
+                className="group relative bg-white rounded-3xl overflow-hidden border border-neutral-200 hover:border-[#ff4d00]/45 hover:shadow-2xl hover:shadow-neutral-200/50 transition-all duration-300 cursor-pointer snap-center shrink-0 w-[280px] md:w-auto h-[360px] md:h-[400px] flex flex-col justify-between"
+              >
+                {/* Media Content Stage */}
+                <div className="relative w-full h-full overflow-hidden bg-neutral-950">
+                  <img
+                    src={item.url}
+                    alt={item.title}
+                    referrerPolicy="no-referrer"
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 select-none pointer-events-none"
+                  />
+                  
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-90 group-hover:via-neutral-950/40 transition-all duration-300"></div>
+
+                  {/* Category Tag indicator */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-[#ff4d00] text-white text-[9px] font-extrabold uppercase tracking-widest px-2.5 py-1.5 rounded-full shadow-lg border border-white/10 font-display">
+                      {item.tag}
+                    </span>
+                  </div>
+
+                  {/* Title & Desc */}
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white flex flex-col gap-1.5 z-10">
+                    <h4 className="font-display font-extrabold uppercase tracking-tight text-xs sm:text-sm leading-tight group-hover:text-[#ff4d00] transition-colors">
+                      {item.title}
+                    </h4>
+                    <p className="text-neutral-300 text-[10px] font-sans-dm leading-relaxed line-clamp-2 md:opacity-0 md:group-hover:opacity-100 md:transform md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-300 ease-out">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* Hover visual cue */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-900/10 backdrop-blur-xs">
+                    <div className="bg-white/95 text-neutral-950 px-4 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-300">
+                      <Eye className="w-3.5 h-3.5 text-[#ff4d00]" /> Ver pantalla completa
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Gallery Action Triggers */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-12">
+            {!showAllGallery && (
+              <button
+                onClick={() => setShowAllGallery(true)}
+                className="w-full sm:w-auto text-center font-display font-bold text-xs uppercase tracking-wider py-4.5 px-10 rounded-2xl border border-neutral-300 text-neutral-800 bg-white hover:bg-neutral-50 hover:border-neutral-400 transition-all duration-150 inline-block cursor-pointer shadow-xs"
+              >
+                Ver más fotos de campo →
+              </button>
+            )}
+            
+            <a
+              href={getWhatsAppUrl("Hola SwellPro Perú, he estado revisando su galería de evidencias reales en uso con el Fisherman FD3. Deseo recibir más información y coordinar detalles sobre este equipo.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto text-center font-bold font-display text-xs uppercase tracking-widest py-4.5 px-10 rounded-2xl bg-[#ff4d00] hover:bg-[#e04400] text-white shadow-xl shadow-[#ff4d00]/20 inline-flex items-center justify-center gap-2 transition transform hover:-translate-y-0.5 cursor-pointer"
+            >
+              <PhoneCall className="w-4 h-4" /> Quiero verlo por WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </section>
+
       {/* PREGUNTAS FRECUENTES (Interactive Accordion) */}
       <section id="faqs-seccion-fd3" className="py-20 bg-white border-t border-b border-neutral-100">
         <div className="max-w-3xl mx-auto px-6">
@@ -872,6 +1094,57 @@ export default function FD3Page() {
           </div>
         </div>
       </footer>
+
+
+      {/* FULLSCREEN REAL EVIDENCE LIGHTBOX MODAL */}
+      {selectedGalleryItem && (
+        <div className="fixed inset-0 bg-black/95 z-50 flex flex-col justify-center items-center p-4 backdrop-blur-md animate-fade-in select-none">
+          {/* Close trigger */}
+          <button 
+            onClick={() => setSelectedGalleryItem(null)}
+            className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3.5 rounded-full transition-all duration-150 border border-white/10 z-[60] cursor-pointer"
+            aria-label="Cerrar vista"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          {/* Active media canvas */}
+          <div className="max-w-4xl w-full max-h-[70vh] flex justify-center items-center relative overflow-hidden rounded-2xl bg-black">
+            <img 
+              src={selectedGalleryItem.url} 
+              alt={selectedGalleryItem.title} 
+              referrerPolicy="no-referrer"
+              className="max-w-full max-h-[70vh] object-contain rounded-2xl"
+            />
+          </div>
+
+          {/* Descriptive footer context */}
+          <div className="max-w-2xl text-center mt-6 text-white px-2">
+            <span className="inline-block bg-[#ff4d00] text-white text-[9px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full mb-3 shadow-md font-display">
+              {selectedGalleryItem.tag}
+            </span>
+            <h3 className="font-display font-bold text-lg md:text-xl uppercase tracking-tight text-white mb-2">
+              {selectedGalleryItem.title}
+            </h3>
+            <p className="text-neutral-400 text-xs md:text-sm font-sans leading-relaxed max-w-lg mx-auto">
+              {selectedGalleryItem.desc}
+            </p>
+
+            {/* In-Modal Direct Action */}
+            <div className="mt-5">
+              <a
+                href={getWhatsAppUrl(`Hola SwellPro Perú, vi su evidencia real de FD3 "${selectedGalleryItem.title}" en la galería de su web. Me interesa saber precio, stock y soporte técnico de este equipo.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#ff4d00]/95 hover:bg-[#ff4d00] text-white font-bold text-[10px] uppercase tracking-widest py-3 px-6 rounded-xl transition duration-150 cursor-pointer font-display"
+              >
+                <PhoneCall className="w-3.5 h-3.5" /> Cotizar equipo con esta evidencia por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
 
       {/* BOTÓN FLOTANTE PERSISTENTE DE WHATSAPP */}
       <a 
