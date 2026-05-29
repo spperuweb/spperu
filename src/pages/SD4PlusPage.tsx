@@ -32,7 +32,7 @@ import {
 
 // Helper for prefilled WhatsApp link with SwellPro Perú number
 const getWhatsAppUrl = (text: string) => {
-  return `https://api.whatsapp.com/send?phone=51991664146&text=${encodeURIComponent(text)}`;
+  return `https://api.whatsapp.com/send?phone=51949643347&text=${encodeURIComponent(text)}`;
 };
 
 export default function SD4PlusPage() {
@@ -1252,7 +1252,7 @@ export default function SD4PlusPage() {
                 Brindamos asistencia en campo e inducción playera gratuita en Lima y provincias. Visitas programadas y mantenimiento express.
               </p>
               <div className="text-xs text-neutral-400 pt-2 font-mono">
-                WhatsApp Técnico: <a href="https://api.whatsapp.com/send?phone=51991664146" className="hover:underline text-[#ff4d00]" target="_blank" rel="noopener noreferrer">+51 991 664 146</a>
+                WhatsApp Técnico: <a href="https://api.whatsapp.com/send?phone=51949643347" className="hover:underline text-[#ff4d00]" target="_blank" rel="noopener noreferrer">+51 949 643 347</a>
               </div>
             </div>
 

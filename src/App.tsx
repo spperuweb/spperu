@@ -33,7 +33,7 @@ import FAQSection from "./components/FAQSection";
 import ScrollReveal from "./components/ScrollReveal";
 
 // CONFIGURACIÓN DE WHATSAPP
-const WHATSAPP_NUMBER = "51991664146"; // Representante de SwellPro Perú
+const WHATSAPP_NUMBER = "51949643347"; // Representante de SwellPro Perú
 
 const playNotificationSound = () => {
   try {

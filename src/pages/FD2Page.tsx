@@ -27,7 +27,7 @@ import {
 
 // Helper for prefilled WhatsApp link
 const getWhatsAppUrl = (text: string) => {
-  return `https://api.whatsapp.com/send?phone=51991664146&text=${encodeURIComponent(text)}`;
+  return `https://api.whatsapp.com/send?phone=51949643347&text=${encodeURIComponent(text)}`;
 };
 
 interface GalleryItem {
