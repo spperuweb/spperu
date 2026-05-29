@@ -35,6 +35,41 @@ import ScrollReveal from "./components/ScrollReveal";
 // CONFIGURACIÓN DE WHATSAPP
 const WHATSAPP_NUMBER = "51991664146"; // Representante de SwellPro Perú
 
+const playNotificationSound = () => {
+  try {
+    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+    if (!AudioContextClass) return;
+    const audioCtx = new AudioContextClass();
+    
+    // Play a friendly, high-quality double-chime (D5 -> G5)
+    const playTone = (frequency: number, startTime: number, duration: number) => {
+      const osc = audioCtx.createOscillator();
+      const gainNode = audioCtx.createGain();
+      
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(frequency, startTime);
+      
+      // Gentle attack and decay to make it pleasant, not abrupt
+      gainNode.gain.setValueAtTime(0, startTime);
+      gainNode.gain.linearRampToValueAtTime(0.12, startTime + 0.03);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+      
+      osc.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      
+      osc.start(startTime);
+      osc.stop(startTime + duration);
+    };
+    
+    const now = audioCtx.currentTime;
+    // Friendly, crisp chime melody
+    playTone(587.33, now, 0.25);        // D5
+    playTone(783.99, now + 0.12, 0.4);   // G5 (Upward interval)
+  } catch (err) {
+    console.warn("Reproducción de audio prevenida o no disponible:", err);
+  }
+};
+
 // GALERÍA REAL PREMIUM SWELLPRO PERÚ (Datos Reales de Campo)
 const galleryItems = [
   // 1. CAPTURAS REALES (Bloque: capturas)
@@ -213,6 +248,7 @@ export default function App() {
   const [selectedMedia, setSelectedMedia] = useState<typeof galleryItems[0] | null>(null);
   const [showAllMedia, setShowAllMedia] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [showHelpNotification, setShowHelpNotification] = useState(false);
 
   // Monitor scroll to add style to Navbar
   useEffect(() => {
@@ -225,6 +261,15 @@ export default function App() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Show floating help notification after 2 seconds on home page loads
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowHelpNotification(true);
+      playNotificationSound();
+    }, 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   // Parse deep link media on mount or parameter change
@@ -1785,6 +1830,48 @@ export default function App() {
         </div>
       )}
 
+
+      {/* FLOATING HELP BUBBLE */}
+      {showHelpNotification && (
+        <div style={{ zIndex: 10000 }} className="fixed bottom-[88px] right-6 sm:bottom-[92px] sm:right-6 max-w-[280px] bg-neutral-950/95 text-white p-4 rounded-2xl border border-emerald-500/30 shadow-[0_10px_35px_rgba(0,0,0,0.6)] animate-fade-in backdrop-blur-md">
+          {/* Caret pointing to WhatsApp Button */}
+          <div className="absolute bottom-[-6px] right-8 w-3 h-3 bg-neutral-950 rotate-45 border-r border-b border-emerald-500/25"></div>
+          
+          {/* Close Button */}
+          <button 
+            onClick={() => setShowHelpNotification(false)}
+            className="absolute top-2.5 right-2.5 text-neutral-400 hover:text-white transition duration-150 cursor-pointer p-0.5 rounded-full hover:bg-white/10"
+            aria-label="Cerrar notificación"
+          >
+            <X className="w-3.5 h-3.5" />
+          </button>
+
+          {/* Header & Status Indicator */}
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-[10px] uppercase tracking-widest font-extrabold text-[#ff4d00]">Asesor SwellPro</span>
+          </div>
+
+          {/* Message Text */}
+          <p className="text-xs text-neutral-200 leading-relaxed pr-3">
+            ¿Hola! ¿Buscas el drone ideal para tu zona de pesca? Escríbenos y te asesoramos de inmediato con total garantía local.
+          </p>
+
+          {/* Call-to-Action Link */}
+          <a
+            href={getWhatsAppUrl("Hola SwellPro Perú, requiero asesoría directa para elegir el mejor drone de pesca según mi región.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setShowHelpNotification(false)}
+            className="mt-2.5 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-extrabold text-emerald-400 hover:text-[#25D366] transition cursor-pointer"
+          >
+            Preguntar ahora <ArrowRight className="w-3 h-3 text-[#ff4d00]" />
+          </a>
+        </div>
+      )}
 
       {/* FLOATING WHATSAPP OVERLAY (MANDATORY AND CONSTANT PING) */}
       <a 
