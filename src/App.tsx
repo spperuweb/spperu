@@ -530,11 +530,12 @@ export default function App() {
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-              {["Modelos", "Garantía y Soporte", "Cómo funciona", "Galería", "Contacto"].map((tab) => {
+            <div className="hidden md:flex items-center gap-6 lg:gap-8">
+              {["Modelos", "Garantía y Soporte", "Cómo funciona", "Accesorios", "Galería", "Contacto"].map((tab) => {
                 let targetId = "#modelos";
                 if (tab === "Garantía y Soporte") targetId = "#soporte-local";
                 if (tab === "Cómo funciona") targetId = "#como-funciona";
+                if (tab === "Accesorios") targetId = "#accesorios-teaser";
                 if (tab === "Galería") targetId = "#galeria";
                 if (tab === "Contacto") targetId = "#contacto";
                 
@@ -584,10 +585,11 @@ export default function App() {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-b border-neutral-100 shadow-xl animate-fade-in absolute w-full top-full left-0">
             <div className="px-6 py-8 space-y-4">
-              {["Modelos", "Garantía y Soporte", "Cómo funciona", "Galería", "Contacto"].map((tab) => {
+              {["Modelos", "Garantía y Soporte", "Cómo funciona", "Accesorios", "Galería", "Contacto"].map((tab) => {
                 let targetId = "#modelos";
                 if (tab === "Garantía y Soporte") targetId = "#soporte-local";
                 if (tab === "Cómo funciona") targetId = "#como-funciona";
+                if (tab === "Accesorios") targetId = "#accesorios-teaser";
                 if (tab === "Galería") targetId = "#galeria";
                 if (tab === "Contacto") targetId = "#contacto";
                 
@@ -1556,6 +1558,177 @@ export default function App() {
               className="bg-[#ff4d00] hover:bg-[#e04400] text-white font-bold text-xs uppercase tracking-widest py-4.5 px-8 rounded-2xl transition duration-150 inline-block shadow-lg shadow-[#ff4d00]/20"
             >
               Quiero asesoría por WhatsApp
+            </a>
+          </ScrollReveal>
+
+        </div>
+      </section>
+
+
+      {/* SECTION 8.5 — ACCESORIOS TEASER */}
+      <section id="accesorios-teaser" className="py-24 bg-white border-t border-b border-neutral-100 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          
+          <ScrollReveal className="text-center mb-16 max-w-2xl mx-auto">
+            <span className="text-xs font-bold text-[#ff4d00] uppercase tracking-widest block mb-2">
+              EQUIPAMIENTO ORIGINAL
+            </span>
+            <h2 className="text-3xl md:text-5xl font-display font-extrabold text-neutral-900 tracking-tight uppercase">
+              Accesorios SwellPro
+            </h2>
+            <p className="font-sans text-neutral-500 text-sm md:text-base mt-3">
+              Encuentra repuestos oficiales y equipamiento de alta gama de inmediato en Lima para potenciar tus misiones de pesca y filmación.
+            </p>
+            <div className="w-12 h-1 bg-[#ff4d00] mx-auto mt-4 rounded-full"></div>
+          </ScrollReveal>
+
+          {/* Teaser Grid with 4 essential accessories */}
+          <ScrollReveal>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              
+              {/* Product 1: Bateria FD2 */}
+              <div className="group bg-neutral-50/60 rounded-2xl p-5 border border-neutral-150/40 hover:border-[#ff4d00]/30 transition-all duration-300 hover:shadow-lg flex flex-col justify-between" id="teaser-acc-1">
+                <div>
+                  <div className="aspect-square w-full rounded-xl overflow-hidden bg-white flex items-center justify-center p-3 border border-neutral-100">
+                    <img 
+                      src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1780031708/Aircraft_Battery_B-FD2_-_FD2_blbncg.jpg" 
+                      alt="Aircraft Battery B-FD2"
+                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-neutral-400 tracking-wider block mt-4">
+                    Baterías
+                  </span>
+                  <h3 className="font-display font-extrabold text-neutral-900 text-base mt-1 group-hover:text-[#ff4d00] transition-colors">
+                    Aircraft Battery B-FD2
+                  </h3>
+                  <div className="mt-2 text-xs text-neutral-500 font-sans">
+                    <p className="font-semibold text-neutral-700">Compatible con: <span className="text-[#ff4d00]">FD2 Max</span></p>
+                  </div>
+                </div>
+                <div className="mt-5">
+                  <a
+                    href={getWhatsAppUrl("Hola SwellPro Perú, requiero información y precio sobre el accesorio Batería de Vuelo para el modelo FD2 Max.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center text-[11px] font-bold uppercase tracking-wider text-[#ff4d00] py-2 border border-[#ff4d00]/20 rounded-xl hover:bg-[#ff4d00] hover:text-white transition-all duration-150"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+
+              {/* Product 2: Helices FD1S/FD3 */}
+              <div className="group bg-neutral-50/60 rounded-2xl p-5 border border-neutral-150/40 hover:border-[#ff4d00]/30 transition-all duration-300 hover:shadow-lg flex flex-col justify-between" id="teaser-acc-2">
+                <div>
+                  <div className="aspect-square w-full rounded-xl overflow-hidden bg-white flex items-center justify-center p-3 border border-neutral-100">
+                    <img 
+                      src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1780031714/FD1plus_FD1S_FD3_Propeller_P-FD3_-_FD1plus_FD1S_FD3_SD4plus_ze9ulw.jpg" 
+                      alt="Propeller P-FD3"
+                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-neutral-400 tracking-wider block mt-4">
+                    Hélices
+                  </span>
+                  <h3 className="font-display font-extrabold text-neutral-900 text-base mt-1 group-hover:text-[#ff4d00] transition-colors">
+                    Propeller P-FD3
+                  </h3>
+                  <div className="mt-2 text-xs text-neutral-500 font-sans">
+                    <p className="font-semibold text-neutral-700">Compatible con: <span className="text-[#ff4d00]">FD1S / FD3 / SD4+</span></p>
+                  </div>
+                </div>
+                <div className="mt-5">
+                  <a
+                    href={getWhatsAppUrl("Hola SwellPro Perú, requiero información y cotización del set de Hélices de Repuesto P-FD3.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center text-[11px] font-bold uppercase tracking-wider text-[#ff4d00] py-2 border border-[#ff4d00]/20 rounded-xl hover:bg-[#ff4d00] hover:text-white transition-all duration-150"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+
+              {/* Product 3: Control Remoto R02 */}
+              <div className="group bg-neutral-50/60 rounded-2xl p-5 border border-neutral-150/40 hover:border-[#ff4d00]/30 transition-all duration-300 hover:shadow-lg flex flex-col justify-between" id="teaser-acc-3">
+                <div>
+                  <div className="aspect-square w-full rounded-xl overflow-hidden bg-white flex items-center justify-center p-3 border border-neutral-100">
+                    <img 
+                      src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1780031724/Remote_Controller_R02_-_FD2_FD3_e8gqv1.jpg" 
+                      alt="Remote Controller R02"
+                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-neutral-400 tracking-wider block mt-4">
+                    Control y Señal
+                  </span>
+                  <h3 className="font-display font-extrabold text-neutral-900 text-base mt-1 group-hover:text-[#ff4d00] transition-colors">
+                    Remote Controller R02
+                  </h3>
+                  <div className="mt-2 text-xs text-neutral-500 font-sans">
+                    <p className="font-semibold text-neutral-700">Compatible con: <span className="text-[#ff4d00]">FD2 Max / FD3</span></p>
+                  </div>
+                </div>
+                <div className="mt-5">
+                  <a
+                    href={getWhatsAppUrl("Hola SwellPro Perú, consulto sobre un Control Remoto R02 de repuesto o secundario para drones FD2/FD3.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center text-[11px] font-bold uppercase tracking-wider text-[#ff4d00] py-2 border border-[#ff4d00]/20 rounded-xl hover:bg-[#ff4d00] hover:text-white transition-all duration-150"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+
+              {/* Product 4: Camara GC1-M */}
+              <div className="group bg-neutral-50/60 rounded-2xl p-5 border border-neutral-150/40 hover:border-[#ff4d00]/30 transition-all duration-300 hover:shadow-lg flex flex-col justify-between" id="teaser-acc-4">
+                <div>
+                  <div className="aspect-square w-full rounded-xl overflow-hidden bg-white flex items-center justify-center p-3 border border-neutral-100">
+                    <img 
+                      src="https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1780031726/Single-Axis_Gimbal_Camera_GC1-M_-_FD2_FD3_evmv7r.jpg" 
+                      alt="Single-Axis Gimbal Camera GC1-M"
+                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-neutral-400 tracking-wider block mt-4">
+                    Cámaras y Gimbals
+                  </span>
+                  <h3 className="font-display font-extrabold text-neutral-900 text-base mt-1 group-hover:text-[#ff4d00] transition-colors">
+                    Single-Axis Camera GC1-M
+                  </h3>
+                  <div className="mt-2 text-xs text-neutral-500 font-sans">
+                    <p className="font-semibold text-neutral-700">Compatible con: <span className="text-[#ff4d00]">FD2 Max / FD3</span></p>
+                  </div>
+                </div>
+                <div className="mt-5">
+                  <a
+                    href={getWhatsAppUrl("Hola SwellPro Perú, requiero información y precio sobre el Gimbal GC1-M monoeje para mi drone.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center text-[11px] font-bold uppercase tracking-wider text-[#ff4d00] py-2 border border-[#ff4d00]/20 rounded-xl hover:bg-[#ff4d00] hover:text-white transition-all duration-150"
+                  >
+                    Consultar
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </ScrollReveal>
+
+          {/* CTA to complete page */}
+          <ScrollReveal className="text-center mt-12">
+            <a
+              href="./accesorios/index.html"
+              className="inline-flex items-center gap-2 bg-[#ff4d00] hover:bg-[#e04400] text-white font-display font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-[#ff4d00]/20 transition-all duration-200 transform hover:-translate-y-0.5"
+            >
+              Ver catálogo completo de accesorios
+              <ArrowRight className="w-4 h-4" />
             </a>
           </ScrollReveal>
 

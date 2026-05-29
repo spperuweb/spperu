@@ -940,6 +940,62 @@ export default function SD4PlusPage() {
         </div>
       </section>
 
+
+      {/* SECTION - GALERÍA DE VIDEO EN ACCIÓN */}
+      <section id="galeria-video" className="py-24 bg-neutral-900 text-white border-t border-b border-neutral-950 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-[#ff4d00] font-display text-xs font-bold uppercase tracking-widest block mb-2">
+              DESEMPEÑO SIN LÍMITES
+            </span>
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <Video className="w-6 h-6 text-[#ff4d00]" />
+              <h2 className="text-3xl md:text-5xl font-display font-extrabold text-white tracking-tight uppercase animate-fade-in">
+                SplashDrone 4+ en Acción
+              </h2>
+            </div>
+            <p className="text-neutral-400 text-xs sm:text-sm md:text-base leading-relaxed font-sans-dm">
+              Mira de cerca la potencia marina, el despegue acuático y la estabilidad en vientos extremos de la plataforma definitiva SwellPro.
+            </p>
+            <div className="w-12 h-1 bg-[#ff4d00] mx-auto mt-4 rounded-full"></div>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-neutral-950 rounded-3xl p-4 sm:p-6 border border-neutral-800 shadow-2xl relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(#ff4d00_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03]"></div>
+              
+              <div className="aspect-video w-full rounded-2xl overflow-hidden relative bg-neutral-900 border border-neutral-800 group">
+                <video 
+                  src="https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1780032447/sd4_video_cwmysy.mp4" 
+                  controls
+                  preload="metadata"
+                  playsInline
+                  className="w-full h-full object-cover rounded-2xl"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 border-t border-neutral-905 pt-5 font-sans-dm">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#ff4d00] animate-pulse"></span>
+                  <span className="font-mono text-neutral-300">Sello Militar IP67 + PowerFlip™ Tecnología</span>
+                </div>
+                <a 
+                  href={getWhatsAppUrl("Hola SwellPro Perú, acabo de ver el video de acción del SplashDrone 4+ de alta gama en su landing page. Quisiera agendar una demostración o recibir más información sobre este modelo.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#ff4d00] hover:text-[#e04400] transition"
+                >
+                  Consultar sobre este modelo
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* SECCIÓN COMPARATIVA DE MODELOS - EL SD4+ QUEDA COMO EL TOPE DE GAMA ABSOLUTO */}
       <section id="comparativa" className="py-24 bg-white border-b border-neutral-100">
         <div className="max-w-7xl mx-auto px-6">
