@@ -35,42 +35,42 @@ const fd1sGalleryItems = [
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-01_pu8tgl.jpg",
     tag: "Hardware Real",
     title: "Vista cercana del drone",
-    desc: "Detalle del fuselaje estanco y materiales resistentes a la corrosión."
+    desc: "Detalles de cerca del modelo"
   },
   {
     id: "fd1s-galeria-capturas-02",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-02_v195q2.jpg",
     tag: "Estructura",
     title: "Vista de motores y hélices",
-    desc: "Detalle de la hélice izquierda instalada lista para operar."
+    desc: "Detalle de las hélices instaladas listas para operar."
   },
   {
     id: "fd1s-galeria-capturas-03",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-03_gszeqk.jpg",
     tag: "Mecanismo",
-    title: "Vista del sistema de calado",
-    desc: "Detalle del dispositivo electromecánico de soltado rápido."
+    title: "Vista del drone + control remoto",
+    desc: "Detalle del dispositivo con sus partes encima del estuche."
   },
   {
     id: "fd1s-galeria-capturas-04",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-04_uduouh.jpg",
-    tag: "Fuselaje",
-    title: "Detalle delantero del chasis",
-    desc: "Vista del frontal estanco color naranja de alta visibilidad."
+    tag: "Control",
+    title: "Detalle control remoto",
+    desc: "Vista del frontal del control del drone"
   },
   {
     id: "fd1s-galeria-capturas-05",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930424/imagen-FD1S-05_bus2mx.jpg",
-    tag: "Estanqueidad",
-    title: "Detalle del sellado estanco",
-    desc: "Vista del borde del fuselaje que evita que ingrese agua."
+    tag: "Vista",
+    title: "Vista de lo que viene",
+    desc: "Vista del drone + control + estuche Swell Pro"
   },
   {
     id: "fd1s-galeria-capturas-06",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930422/imagen-FD1S-06_diuwwt.jpg",
     tag: "Sellado",
-    title: "Vista de los tornillos marinos",
-    desc: "Detalles del sellado de goma y tornillerías resistentes."
+    title: "Vista de sellado",
+    desc: "Detalles del sellado resistente."
   },
   {
     id: "fd1s-galeria-capturas-07",
@@ -83,22 +83,22 @@ const fd1sGalleryItems = [
     id: "fd1s-galeria-capturas-08",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-08_vkoacd.jpg",
     tag: "Hélices",
-    title: "Hélices de repuesto originales",
+    title: "Hélices resistentes originales",
     desc: "Vista cercana de las palas diseñadas para alto viento."
   },
   {
     id: "fd1s-galeria-capturas-09",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-09_n9olt9.jpg",
-    tag: "Sensores",
-    title: "Módulo de control de vuelo",
-    desc: "Vista interna sellada de los componentes de navegación."
+    tag: "Batería",
+    title: "Batería Extraible",
+    desc: "Vista de la batería del drone."
   },
   {
     id: "fd1s-galeria-capturas-10",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930423/imagen-FD1S-10_h6optn.jpg",
-    tag: "Flotación",
-    title: "Fuselaje de flotación pasiva",
-    desc: "Vista del compartimiento inferior hermético."
+    tag: "Batería",
+    title: "Batería Extraible",
+    desc: "Vista de la batería del drone."
   },
   {
     id: "fd1s-galeria-capturas-11",
@@ -111,8 +111,8 @@ const fd1sGalleryItems = [
     id: "fd1s-galeria-capturas-12",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779930426/imagen-FD1S-12_rlpdww.jpg",
     tag: "Antenas",
-    title: "Detalle de antenas del receptor",
-    desc: "Vista posterior del drone mostrando las antenas de comunicación."
+    title: "Detalle de todo lo que viene",
+    desc: "Vista aérea de todas las partes que vienen en el estuche"
   },
   {
     id: "fd1s-galeria-capturas-13",

@@ -92,65 +92,65 @@ const fd2GalleryImages: GalleryItem[] = [
     id: "fd2-galeria-capturas-07",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936847/fd2-image-12_ygllt9.jpg",
     tag: "Cuerpo Sellado",
-    title: "Integridad Estanca",
+    title: "Integridad",
     desc: "Resina sellada resistente a la humedad constante.",
     category: "drone"
   },
   {
     id: "fd2-galeria-capturas-08",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936846/fd2-image-08_hlhda4.jpg",
-    tag: "Foto a Detalle",
-    title: "Cuerpo de Fibra",
-    desc: "Giroscopio y estabilizador en estructura reforzada.",
-    category: "detalle"
+    tag: "Bateria",
+    title: "Bateria",
+    desc: "Bateria extraible para alta duración.",
+    category: "accesorios"
   },
   {
     id: "fd2-galeria-capturas-09",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936845/fd2-image-09_e1exa9.jpg",
-    tag: "Mecanismo Técnico",
-    title: "Disparador de Carga",
-    desc: "Gancho mecánico electromecánico para líneas.",
-    category: "detalle"
+    tag: "Bateria",
+    title: "Bateria",
+    desc: "Bateria extraible para alta duración.",
+    category: "accesorios"
   },
   {
     id: "fd2-galeria-capturas-10",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936845/fd2-image-10_f07vps.jpg",
-    tag: "Radiocontrol",
-    title: "Mando con Pantalla",
-    desc: "Pantalla ultra brillante excelente para sol costero.",
+    tag: "Bateria",
+    title: "Bateria",
+    desc: "Bateria extraible para alta duración.",
     category: "accesorios"
   },
   {
     id: "fd2-galeria-capturas-11",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936843/fd2-image-07_c1bgzj.jpg",
     tag: "Foto a Detalle",
-    title: "Altavoz y Sensores ToF",
-    desc: "Módulos de seguridad para medir distancia al suelo.",
+    title: "Vista de helices",
+    desc: "Helices listas para vuelo.",
     category: "detalle"
   },
   {
     id: "fd2-galeria-capturas-12",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936842/fd2-image-06_wnpcam.jpg",
     tag: "Foto a Detalle",
-    title: "Cámara FPV Frontal",
-    desc: "Inclinación por control directo para buscar pozones.",
+    title: "Cámara  Frontal",
+    desc: "Cámara excelente para ver lo que vas a capturar",
     category: "detalle"
   },
   {
     id: "fd2-galeria-capturas-13",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936842/fd2-image-03_zurk9e.jpg",
     tag: "Foto a Detalle",
-    title: "Motor Brushless",
-    desc: "Bobinado estanco con alta tolerancia contra sales.",
+    title: "Vista de helices",
+    desc: "Helices listas para vuelo.",
     category: "detalle"
   },
   {
     id: "fd2-galeria-capturas-14",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779936841/fd2-image-04_mvxodh.jpg",
-    tag: "Maletín Oficial",
-    title: "Maletín de Transporte Exterior",
-    desc: "Con válvula de balance de presión y broches rígidos.",
-    category: "accesorios"
+    tag: "Foto a Detalle",
+    title: "Vista de abajo",
+    desc: "Helices y cámara listas para vuelo.",
+    category: "detalle"
   }
 ];
 

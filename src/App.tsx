@@ -45,7 +45,7 @@ const galleryItems = [
     category: "capturas",
     tag: "Cliente real",
     title: "Gran captura obtenida desde la orilla",
-    desc: "Nuestros clientes demuestran que llegar a pozos inaccesibles se traduce en capturas históricas sin pescar desde bote."
+    desc: "Nuestros clientes demuestran que llegar a lugares inaccesibles se traduce en capturas sin pescar desde un barco."
   },
   {
     id: "captura-2",
@@ -53,8 +53,8 @@ const galleryItems = [
     type: "image",
     category: "capturas",
     tag: "Captura real",
-    title: "Doble captura logrativa mar adentro",
-    desc: "Calado profundo con plomada pesada y múltiples anzuelos utilizando el Fisherman FD2 Max."
+    title: "Dron y captura mar adentro",
+    desc: "Dron + raya después de realizar la captura."
   },
   {
     id: "captura-3",
@@ -62,8 +62,8 @@ const galleryItems = [
     type: "image",
     category: "capturas",
     tag: "Captura real",
-    title: "Imponente pieza lograda en la costa centro",
-    desc: "SwellPro te permite colocar el cebo justo detrás de la rompiente donde se alimentan los grandes ejemplares."
+    title: "Imponente pieza lograda",
+    desc: "SwellPro te permite realizar muchas capturas desde la costa."
   },
   {
     id: "captura-4",
@@ -91,8 +91,8 @@ const galleryItems = [
     type: "video",
     category: "accion",
     tag: "En acción",
-    title: "Lanzamiento y arrastre de línea marina",
-    desc: "Mira cómo trabaja el sistema de liberación rápida electromecánica sobre las olas o peñas costeras."
+    title: "Mira todo lo que se puede capturar",
+    desc: "Mira cuantos ejemplares puedes capturar en una tarde recreativa de pesca."
   },
   {
     id: "action-2",
@@ -101,7 +101,7 @@ const galleryItems = [
     category: "accion",
     tag: "Prueba en playa",
     title: "Despegue vertical contra ráfagas costeras",
-    desc: "Vuelos estables con resistencia al viento de nivel 7 (hasta 61 km/h) en el litoral peruano."
+    desc: "Vuelos estables con resistencia al viento en el litoral peruano."
   },
   {
     id: "action-3",
@@ -109,8 +109,8 @@ const galleryItems = [
     type: "video",
     category: "accion",
     tag: "Cliente real",
-    title: "Reacción instantánea del soltador",
-    desc: "Liberación controlada a voluntad desde el mando a distancia para posicionar la carnada a más de 1 km."
+    title: "Captura en vivo",
+    desc: "Todo lo que puedes capturar con Swell Pro"
   },
   {
     id: "action-4",
@@ -118,8 +118,8 @@ const galleryItems = [
     type: "video",
     category: "accion",
     tag: "Prueba en playa",
-    title: "Vuelo táctico estable para calar carnada",
-    desc: "La cámara transmite en tiempo real en la pantalla del control permitiendo leer las corrientes marinas."
+    title: "Asistencia directa",
+    desc: "Soporte directo si tienes un inconvenitente en el uso y post-venta garantizada."
   },
   {
     id: "action-5",
@@ -127,8 +127,8 @@ const galleryItems = [
     type: "video",
     category: "accion",
     tag: "En acción",
-    title: "Pruebas de flote seguro en el fuerte oleaje",
-    desc: "Estructura hermética militar IP67. Si cae al mar, flota infinitamente y puede auto-voltearse de inmediato."
+    title: "Prueba en vivo",
+    desc: "Te ayudamos con tu primer vuelo y armado para que te sientas acompañado."
   },
   {
     id: "action-6",
@@ -145,8 +145,8 @@ const galleryItems = [
     type: "video",
     category: "accion",
     tag: "En acción",
-    title: "Estabilidad del drone en condiciones extremas",
-    desc: "Vuela con tranquilidad de espíritu sabiendo que los controladores de vuelo corrigen las ráfagas en milisegundos."
+    title: "Captura pesada en vivo",
+    desc: "Vuela con tranquilidad de espíritu sabiendo que puedes realziar grandes capturas en el mar peruano."
   },
   {
     id: "action-8",
@@ -155,7 +155,7 @@ const galleryItems = [
     category: "accion",
     tag: "Prueba en playa",
     title: "Maniobrabilidad y precisión milimétrica",
-    desc: "Giroscopios avanzados garantizan mantener estabilidad sin derivas molestas durante el calado."
+    desc: "Giroscopios avanzados garantizan mantener estabilidad sin derivas molestas."
   },
   {
     id: "action-9",
@@ -174,8 +174,8 @@ const galleryItems = [
     type: "image",
     category: "equipo",
     tag: "Drone real",
-    title: "Un chasis blindado contra la corrosión marina",
-    desc: "Sellados herméticos de teflón, tornillería marina de acero inoxidable y materiales ultra-resistentes."
+    title: "Un día de disfrute",
+    desc: "Ten la tranquilidad y experiencia de un día de pesca."
   },
   {
     id: "dron-2",
@@ -183,8 +183,8 @@ const galleryItems = [
     type: "image",
     category: "equipo",
     tag: "Drone real",
-    title: "Mecanismo de liberación electromecánico",
-    desc: "Clip reforzado para liberar hasta 3.5 kg de carga pesada con absoluta seguridad mediante comando radial."
+    title: "Vuelo asegurado",
+    desc: "Estabilidady Seguridad te da una marca mundial como Swell Pro."
   },
   {
     id: "dron-3",
@@ -192,8 +192,8 @@ const galleryItems = [
     type: "image",
     category: "equipo",
     tag: "Prueba en playa",
-    title: "Pescadores operando el drone en peñas costeras",
-    desc: "Capacitación práctica presencial incluida. Te enseñamos a despegar y lanzar con paciencia y método táctico."
+    title: "Pescadores felices con capturas",
+    desc: "Todo lo que puedes capturar con la tranquilidad y confianza de una buena pesca."
   },
   {
     id: "dron-4",
@@ -201,8 +201,8 @@ const galleryItems = [
     type: "image",
     category: "equipo",
     tag: "Cliente real",
-    title: "Preparación del equipo previo a calar",
-    desc: "La tecnología oficial se une con el conocimiento playero para otorgarte la experiencia definitiva de pesca."
+    title: "Rápido y confiable",
+    desc: "Capturar no es un problema. La tecnología oficial se une con el conocimiento playero para otorgarte la experiencia definitiva de pesca."
   }
 ];
 

@@ -36,121 +36,121 @@ const fd3GalleryItems = [
   {
     id: "fd3-galeria-capturas-01",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933451/fd3-image-02_he20xj.jpg",
-    tag: "Prueba Real",
-    title: "SwellPro FD3 sobre el terreno de playa",
-    desc: "Inspección física y preparación previa a la jornada de pesca costera."
+    tag: "Vista",
+    title: "Vista del drone",
+    desc: "Vista del equipo completo sobre una mesa."
   },
   {
     id: "fd3-galeria-capturas-02",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933450/fd3-image-15_tbt2kv.jpg",
-    tag: "Control Remoto",
-    title: "Mando inteligente de alta luminosidad",
-    desc: "Pantalla integrada con telemetría de vuelo en vivo e impermeable."
+    tag: "Control",
+    title: "Control remoto",
+    desc: "Detalle del mando con sus palancas y botones."
   },
   {
     id: "fd3-galeria-capturas-03",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933449/fd3-image-16_by5vdb.jpg",
-    tag: "Detalle Técnico",
-    title: "Hélices balanceadas y propulsión marina",
-    desc: "Motores brushless optimizados para resistir ráfagas de viento del Pacífico."
+    tag: "Hélices",
+    title: "Hélice instalada",
+    desc: "Detalle de una de las hélices lista para usar."
   },
   {
     id: "fd3-galeria-capturas-04",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933449/fd3-image-03_azjd6s.jpg",
-    tag: "Seguridad Costera",
-    title: "Anclaje de carga de alta precisión",
-    desc: "Mecanismo electromecánico listo para soportar hasta 2 kg de aparejos libres."
+    tag: "Mecanismo",
+    title: "Pinza de soltado",
+    desc: "Gancho en la parte inferior para llevar la carga."
   },
   {
     id: "fd3-galeria-capturas-05",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933448/fd3-image-01_p7jyan.jpg",
-    tag: "Tecnología de Visión",
-    title: "Cámara Gimbal 4K servoestabilizada",
-    desc: "La herramienta fundamental para ubicar visualmente canales y pozos de playa."
+    tag: "Cámara",
+    title: "Cámara delantera",
+    desc: "Cámara que gira para ver durante el vuelo."
   },
   {
     id: "fd3-galeria-capturas-06",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933446/fd3-image-10_ncvfer.jpg",
-    tag: "Prueba Física",
-    title: "Prueba de posicionamiento GPS/GLONASS",
-    desc: "Precisión satelital de alto espectro para retornos dinámicos automáticos."
+    tag: "Detalle",
+    title: "Parte trasera",
+    desc: "Luces indicadoras y antenas detrás del equipo."
   },
   {
     id: "fd3-galeria-capturas-07",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933447/fd3-image-17_e1q8iz.jpg",
-    tag: "Detalle de Carga",
-    title: "Dispositivo de liberación mecánica",
-    desc: "Detalle del actuador servoestanco que previene enredos y cortocircuitos."
+    tag: "Mecanismo",
+    title: "Disparador de carga",
+    desc: "Gancho para soltar el hilo con el mando."
   },
   {
     id: "fd3-galeria-capturas-08",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933445/fd3-image-12_qwroy3.jpg",
-    tag: "Ingeniería Marina",
-    title: "Carcasa hidrófoba de alta resistencia",
-    desc: "Termoplástico reforzado contra golpes, flotante y sellado IP67."
+    tag: "Fuselaje",
+    title: "Chasis naranja",
+    desc: "Cuerpo principal de color llamativo para buena visibilidad."
   },
   {
     id: "fd3-galeria-capturas-09",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933444/fd3-image-14_rrsm2e.jpg",
-    tag: "Batería Inteligente",
-    title: "Celda inteligente de alta descarga",
-    desc: "Monitoreo digital integrado para evitar la sobrecarga y descarga crítica."
+    tag: "Batería",
+    title: "Batería extraíble",
+    desc: "Batería recargable que alimenta el equipo."
   },
   {
     id: "fd3-galeria-capturas-10",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933443/fd3-image-11_z3epa5.jpg",
-    tag: "Detalle Técnico",
-    title: "Sondas de equilibrio barométrico",
-    desc: "Válvulas impermeables respirables que igualan la presión interna de forma segura."
+    tag: "Sellado",
+    title: "Goma de sellado",
+    desc: "Borde de goma que evita filtraciones en el chasis."
   },
   {
     id: "fd3-galeria-capturas-11",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933442/fd3-image-13_amw3nh.jpg",
-    tag: "Gimbal 4K",
-    title: "Lente sellado con recubrimiento de cuarzo",
-    desc: "Protección física frente a la niebla salina y la humedad de la rompiente marina."
+    tag: "Cámara",
+    title: "Lente de la cámara",
+    desc: "Vidrio protector de la cámara frontal."
   },
   {
     id: "fd3-galeria-capturas-12",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933441/fd3-image-09_nyyfdq.jpg",
-    tag: "Preparación",
-    title: "Estación de carga rápida balanceada",
-    desc: "Módulo seguro de carga para alimentar la flota operativa SwellPro."
+    tag: "Cargador",
+    title: "Cargador eléctrico",
+    desc: "Cargador para rellenar la batería de forma segura."
   },
   {
     id: "fd3-galeria-capturas-13",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933441/fd3-image-08_ngiopi.jpg",
-    tag: "Tren de Aterrizaje",
-    title: "Soportes amortiguados de fibra de carbono",
-    desc: "Elevación adecuada del fuselaje que resguarda la cámara de la arena fina."
+    tag: "Soporte",
+    title: "Patas de apoyo",
+    desc: "Soportes tubulares para mantener el drone elevado de la base."
   },
   {
     id: "fd3-galeria-capturas-14",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933440/fd3-image-05_yivhd4.jpg",
-    tag: "Inspección Técnica",
-    title: "Detalle del tren de liberación",
-    desc: "Conexión directa blindada para asegurar una operación de carga infalible."
+    tag: "Mecanismo",
+    title: "Base de conexión",
+    desc: "Entrada para el dispositivo soltador de plomadas."
   },
   {
     id: "fd3-galeria-capturas-15",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933440/fd3-image-04_qltlkx.jpg",
     tag: "Preparación",
-    title: "Alineamiento inicial en mesa de control",
-    desc: "Configuración o calibración antes de la salida a campo operativo de playa."
+    title: "Drone sobre la mesa",
+    desc: "El equipo completo visto desde arriba."
   },
   {
     id: "fd3-galeria-capturas-16",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933439/fd3-image-07_o0ahno.jpg",
-    tag: "Control Remoto",
-    title: "Ergonomía marina del radio control",
-    desc: "Palancas selladas y mandos estáticos que previenen la entrada de humedad."
+    tag: "Control",
+    title: "Joysticks del mando",
+    desc: "Palancas de control del radio control remoto."
   },
   {
     id: "fd3-galeria-capturas-17",
     url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779933439/fd3-image-06_qz20uf.jpg",
-    tag: "Prueba Física",
-    title: "Prueba estática del rotor electromecánico",
-    desc: "Garantía de torque constante para asegurar la sustentación aérea."
+    tag: "Estructura",
+    title: "Detalle de motores",
+    desc: "Motor resistente de alta fuerza debajo de la hélice."
   }
 ];
 
