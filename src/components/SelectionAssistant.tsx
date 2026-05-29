@@ -340,8 +340,6 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
                       ? "./fd2/index.html" 
                       : recommendedProduct.id === "fd3" 
                       ? "./fd3/index.html" 
-                      : recommendedProduct.id === "sd4" 
-                      ? "./sd4/index.html" 
                       : "./sd4-plus/index.html"
                   }
                   className="flex-1 bg-neutral-950 hover:bg-neutral-900 text-white text-center font-display font-semibold text-xs uppercase tracking-wider py-4 px-5 rounded-2xl transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer"

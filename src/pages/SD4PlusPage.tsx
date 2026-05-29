@@ -1239,7 +1239,7 @@ export default function SD4PlusPage() {
                 <li><a href="../fd1s/index.html" className="hover:text-white transition">Fisherman FD1S</a></li>
                 <li><a href="../fd2/index.html" className="hover:text-white transition">Fisherman FD2 Max</a></li>
                 <li><a href="../fd3/index.html" className="hover:text-white transition">Fisherman FD3</a></li>
-                <li><a href="../sd4/index.html" className="hover:text-white transition font-bold text-[#ff4d00]">SplashDrone 4 Plus</a></li>
+                <li><a href="../sd4-plus/index.html" className="hover:text-white transition font-bold text-[#ff4d00]">SplashDrone 4 Plus</a></li>
               </ul>
             </div>
 

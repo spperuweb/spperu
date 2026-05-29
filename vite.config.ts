@@ -23,7 +23,6 @@ export default defineConfig(() => {
           fd1s: path.resolve(__dirname, 'fd1s/index.html'),
           fd2: path.resolve(__dirname, 'fd2/index.html'),
           fd3: path.resolve(__dirname, 'fd3/index.html'),
-          sd4: path.resolve(__dirname, 'sd4/index.html'),
           'sd4-plus': path.resolve(__dirname, 'sd4-plus/index.html'),
         },
       },

@@ -376,33 +376,18 @@ export default function App() {
       statusMessage: "Hola, quiero info del Fisherman FD3",
     },
     {
-      id: "sd4",
-      name: "SplashDrone 4",
-      badge: "Lo más avanzado",
-      tagline: "Ingeniería marina sin límites. El rey absoluto del mar.",
-      image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/new-waterproof-drone-splashrone-4-plus_1570x_fgdu3n.webp",
-      specs: {
-        reach: "7.0 Kilómetros",
-        payload: "2.0 Kilogramos",
-        camera: "Sony 4K 60fps, 48 MP, Zoom 8x",
-      },
-      description: "El gigante del hardware sumergible. 7 kilómetros de transmisión blindada y la capacidad de flotar indefinidamente sobre las rompientes del Pacífico. Pensado para el pescador deportivo que exige perfección implacable.",
-      statusMessage: "Hola, quiero info del SplashDrone 4",
-    },
-    {
       id: "sd4-plus",
       name: "SplashDrone 4 Plus",
-      badge: "SOLD OUT — Próximo ingreso",
-      isSoldOut: true,
-      tagline: "El gigante de la versatilidad sumergible.",
+      badge: "Entrega Inmediata",
+      tagline: "El gigante definitivo de la versatilidad sumergible.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/new-waterproof-drone-splashrone-4-plus_1570x_fgdu3n.webp",
       specs: {
         reach: "7.0 Kilómetros",
         payload: "2.0 Kilogramos",
         camera: "Sony 4K 60fps, 5.7K UHD",
       },
-      description: "La cumbre de la versatilidad sumergible con gimbal estabilizado de 3 ejes. Próximo ingreso en aduana peruana. Puedes separar el tuyo hoy mismo.",
-      statusMessage: "Hola, avísame cuando llegue el SplashDrone 4 Plus",
+      description: "La cumbre de la versatilidad sumergible con gimbal estabilizado de 3 ejes. Disponible hoy para entrega inmediata con inducción técnica gratuita de vuelo en playa.",
+      statusMessage: "Hola, quiero cotizar el SplashDrone 4 Plus disponible para entrega inmediata",
     }
   ];
 
@@ -728,8 +713,6 @@ export default function App() {
                 ? "./fd2/index.html" 
                 : product.id === "fd3" 
                 ? "./fd3/index.html" 
-                : product.id === "sd4" 
-                ? "./sd4/index.html" 
                 : "./sd4-plus/index.html";
 
               const galleryLink = product.id === "fd1" 
@@ -738,8 +721,6 @@ export default function App() {
                 ? "./fd2/index.html#fd2-evidencia" 
                 : product.id === "fd3" 
                 ? "./fd3/index.html#fd3-evidencia" 
-                : product.id === "sd4" 
-                ? "./sd4/index.html" 
                 : "./sd4-plus/index.html";
 
               // Visual styling classes based on product state
@@ -1016,8 +997,7 @@ export default function App() {
                   <th className="p-5">FD1S</th>
                   <th className="p-5 bg-[#ff4d00]/10 text-center text-[#ff4d00] font-bold">FD2 Max (Recomendado)</th>
                   <th className="p-5">FD3</th>
-                  <th className="p-5">SD4</th>
-                  <th className="p-5 text-neutral-400">SD4 Plus (Sold Out)</th>
+                  <th className="p-5 text-[#ff4d00] font-bold">SD4 Plus (Tope de Gama)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-150 text-xs md:text-sm text-neutral-700 font-sans">
@@ -1026,88 +1006,77 @@ export default function App() {
                   <td className="p-4">Empezar bien</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-center font-bold text-neutral-900">Máxima carga</td>
                   <td className="p-4">Precisión + cámara</td>
-                  <td className="p-4">Lo mejor sin límites</td>
-                  <td className="p-4 text-neutral-450">Lo más premium, próximo ingreso</td>
+                  <td className="p-4 text-neutral-900 font-semibold">Lo más premium, pesca extrema y rescate</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Alcance</td>
                   <td className="p-4">1.3 km</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-[#ff4d00] text-center font-bold">1.2 km</td>
                   <td className="p-4">1.2 km</td>
-                  <td className="p-4">7 km</td>
-                  <td className="p-4 text-neutral-450">7 km</td>
+                  <td className="p-4 text-neutral-900 font-semibold">7 km</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Carga máx</td>
                   <td className="p-4">2.2 kg</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-[#ff4d00] text-center font-bold">3.5 kg</td>
                   <td className="p-4">2 kg</td>
-                  <td className="p-4">2 kg</td>
-                  <td className="p-4 text-neutral-450">2 kg</td>
+                  <td className="p-4 text-neutral-900 font-medium">2 kg</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Cámara</td>
                   <td className="p-4">No</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900 font-medium">Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65</td>
                   <td className="p-4">Gimbal 4K, 12 MP, 1/2.3" CMOS, f/2.65, equivalente a 25mm</td>
-                  <td className="p-4">Sony 4K 60fps</td>
-                  <td className="p-4 text-neutral-450">Sony 4K 60fps, 5.7K UHD</td>
+                  <td className="p-4 text-neutral-900 font-medium">Sony 4K 60fps, 5.7K UHD</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Video en vivo</td>
                   <td className="p-4">No</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900 font-bold">Sí</td>
                   <td className="p-4">Sí</td>
-                  <td className="p-4">Sí</td>
-                  <td className="p-4 text-neutral-450">Sí</td>
+                  <td className="p-4 text-neutral-900 font-bold">Sí</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Batería</td>
                   <td className="p-4">27 min</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900">27 min (vuelo)</td>
                   <td className="p-4">27 min (vuelo)</td>
-                  <td className="p-4 font-semibold">29 min</td>
-                  <td className="p-4 text-neutral-450">29 min</td>
+                  <td className="p-4 text-neutral-900 font-semibold">29 min</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">IP Waterproof</td>
                   <td className="p-4">IP67 Estanqueidad</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900 font-bold">IP67 / WaterProf (Viento 7, Mar 5)</td>
                   <td className="p-4">IP67 (Viento 7, Mar 5)</td>
-                  <td className="p-4">IP67</td>
-                  <td className="p-4 text-neutral-450">IP67</td>
+                  <td className="p-4 text-neutral-800 font-bold">IP67 (Totalmente estanco y flotante)</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Control Remoto</td>
                   <td className="p-4">Estándar IP54</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900 font-bold">IP54 Impermeable</td>
                   <td className="p-4">IP54 Impermeable</td>
-                  <td className="p-4">IP66 Waterproof</td>
-                  <td className="p-4 text-neutral-450">IP66 Waterproof</td>
+                  <td className="p-4 text-neutral-800 font-medium font-semibold">IP66 Waterproof</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Peso y Dimensiones</td>
-                  <td className="p-4">Not especificado</td>
+                  <td className="p-4">No especificado</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900">3.78 kg | 522 × 522 × 192 mm</td>
                   <td className="p-4">2.54 kg | 372 × 372 × 202 mm</td>
-                  <td className="p-4">Not especificado</td>
-                  <td className="p-4 text-neutral-450">Not especificado</td>
+                  <td className="p-4 text-neutral-500">No especificado</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Sistemas Especiales</td>
                   <td className="p-4">PowerFlip™</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-center text-neutral-900 font-bold">PowerFlip™ + SeaSheld™ Anticorrosión</td>
                   <td className="p-4">PowerFlip™ + SeaSheld™ + Sistema BAP</td>
-                  <td className="p-4">PowerFlip™</td>
-                  <td className="p-4 text-neutral-450">PowerFlip™ + SeaSheld™</td>
+                  <td className="p-4 text-neutral-900 font-medium font-semibold">PowerFlip™ + SeaSheld™</td>
                 </tr>
                 <tr className="hover:bg-neutral-50/50">
                   <td className="p-4 font-bold text-neutral-950">Disponibilidad</td>
                   <td className="p-4">✅ Disponible</td>
                   <td className="p-4 bg-[#ff4d00]/5 text-center font-bold text-green-700">✅ Disponible</td>
                   <td className="p-4">✅ Disponible</td>
-                  <td className="p-4">✅ Disponible</td>
-                  <td className="p-4 text-red-600 font-semibold">🔴 Sold Out — Próximo ingreso</td>
+                  <td className="p-4 text-green-700 font-extrabold">✅ Disponible</td>
                 </tr>
               </tbody>
             </table>
