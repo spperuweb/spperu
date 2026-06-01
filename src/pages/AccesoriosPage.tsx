@@ -727,7 +727,12 @@ export default function AccesoriosPage() {
       {/* WHATSAPP FLOAT BUTTON COMPONENT */}
       <div className="fixed bottom-6 right-6 z-50">
         <a
-          href={getWhatsAppUrl("Hola SwellPro Perú, estoy en el catálogo de accesorios y deseo atención técnica rápida.")}
+          href={getWhatsAppUrl("Hola SwellPro Perú, consulto stock de accesorios.")}
+          onClick={() => {
+            if (typeof window !== "undefined" && (window as any).playPopSound) {
+              (window as any).playPopSound();
+            }
+          }}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#25D366] hover:bg-[#128C7E] text-white p-4 completed rounded-full shadow-2xl flex items-center justify-center transition duration-200 transform hover:scale-105"

@@ -169,7 +169,7 @@ export default function FD3Page() {
   const msgBenefits = "Hola SwellPro Perú, deseo información detallada sobre la planificación de calado y el sistema de suelta electromecánica de 2 kg del Fisherman FD3.";
   const msgProduct = "Hola SwellPro Perú, he leído la ficha técnica del FD3 con cámara Gimbal 4K y control impermeable. ¿Tienen stock en Lima o envían a provincias con garantía local?";
   const msgCompare = "Hola SwellPro Perú, comparé el FD3 en su tabla de flota y me parece el modelo más equilibrado en visión y precisión. Me gustaría conversar con un asesor técnico.";
-  const msgFooter = "Hola SwellPro Perú, estoy listo para revolucionar mi pesca de costa con la ventaja visual del Fisherman FD3. Solicito comunicarme con un especialista técnico de inmediato.";
+  const msgFooter = "Hola SwellPro Perú, solicito información y cotización del Fisherman FD3.";
 
   return (
     <div className="min-h-screen bg-white text-neutral-800 font-sans selection:bg-[#ff4d00] selection:text-white antialiased">
@@ -1180,6 +1180,11 @@ export default function FD3Page() {
       <a 
         href={getWhatsAppUrl(msgFooter)} 
         id="whatsapp-floating-button"
+        onClick={() => {
+          if (typeof window !== "undefined" && (window as any).playPopSound) {
+            (window as any).playPopSound();
+          }
+        }}
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-[#25d366] hover:bg-[#128c7e] text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 z-50 flex items-center justify-center group"

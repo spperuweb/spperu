@@ -49,7 +49,7 @@ export default function SD4PlusPage() {
   const msgProduct = "Hola SwellPro Perú, he visto la ficha técnica del SplashDrone 4+ con imagen del domo hermético. Me gustaría saber precios estimados, stock de importación oficial y accesorios de soporte.";
   const msgUsos = "Hola SwellPro Perú, me interesa el SplashDrone 4+ para actividades profesionales de inspección marítima y rescate acuático. Deseo agendar una llamada con un asesor especializado.";
   const msgCompare = "Hola SwellPro Perú, comparé el SplashDrone 4+ con los demás modelos en su tabla comparativa y confirmo que es la plataforma sin límites que deseo cotizar formalmente.";
-  const msgFooter = "Hola SwellPro Perú, estoy listo para adquirir el SplashDrone 4+, el drone premium definitivo. Solicito comunicarme con el jefe técnico para programar una asesoría personalizada.";
+  const msgFooter = "Hola SwellPro Perú, solicito información y cotización del SplashDrone 4+.";
 
   return (
     <div className="min-h-screen bg-white text-neutral-850 font-sans selection:bg-[#ff4d00] selection:text-white antialiased">
@@ -1331,6 +1331,11 @@ export default function SD4PlusPage() {
       <a 
         href={getWhatsAppUrl(msgFooter)}
         id="floating-whatsapp-widget-sd4p"
+        onClick={() => {
+          if (typeof window !== "undefined" && (window as any).playPopSound) {
+            (window as any).playPopSound();
+          }
+        }}
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white p-4.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center cursor-pointer group hover:rotate-3 shadow-[#25D366]/30"

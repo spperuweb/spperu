@@ -51,17 +51,17 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
   const getCustomRecommendationDescription = () => {
     const activity = 
       answers.activity === "beach" 
-        ? "desde la orilla de nuestras playas" 
+        ? "desde la orilla de la playa" 
         : answers.activity === "boat" 
-        ? "desde embarcaciones, botes o kayak" 
-        : "desde peñas, acantilados o muelles elevados";
+        ? "desde botes, lanchas o kayak" 
+        : "desde peñas, cerros o muelles";
         
     const priorityText = 
       answers.priority === "accuracy" 
-        ? "hacer lanzamientos precisos y de larga distancia superando la rompiente" 
+        ? "hacer lanzamientos muy lejanos y precisos" 
         : answers.priority === "camera" 
-        ? "monitorear el fondo marino en vivo y con absoluto detalle con transmisión 4K" 
-        : "remolcar carnadas vivas y plomadas masivas que ningún otro equipo soporta";
+        ? "ver el fondo del mar en vivo desde la pantalla para encontrar peces" 
+        : "llevar carnadas grandes o pesadas mar adentro sin esfuerzo";
 
     return `Para tu estilo de pesca ${activity} y tu gran prioridad de ${priorityText}, el ${recommendedProduct.name} es exactamente la herramienta que cambiará tus jornadas para siempre. Diseñado con tecnología marina premium y respaldado localmente por nuestro equipo oficial en Lima.`;
   };
@@ -110,25 +110,25 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
               <span className="flex items-center justify-center bg-[#ff4d00] text-white w-7 h-7 rounded-lg text-sm font-bold shrink-0 mt-0.5 shadow-md shadow-[#ff4d00]/20">
                 1
               </span>
-              ¿En qué tipo de escenario o geografía peruana lanzas tu línea habitualmente?
+              ¿Desde dónde pescas habitualmente?
             </h4>
             
             <div className="grid gap-3.5 sm:grid-cols-1">
               {[
                 { 
-                  label: "🎣 Playas de arena abiertas (superar orilla y rompientes fuertes)", 
+                  label: "🎣 Playas de arena (para lanzar la línea desde la orilla)", 
                   value: "beach",
-                  desc: "Ideal para pescar lenguado, corvina o chita de tamaño mediano a grande."
+                  desc: "Para pescar parado en la arena y hacer que tu carnada llegue lo más lejos posible."
                 },
                 { 
-                  label: "🌊 Peñas altas, acantilados escarpados o estructuras de muelle", 
+                  label: "🌊 Peñas altas, cerros o desde el muelle", 
                   value: "heights",
-                  desc: "Zonas de altura donde se necesita vencer vientos cruzados y olas de impacto."
+                  desc: "Zonas de altura donde se necesita resistir el viento del mar y las olas."
                 },
                 { 
-                  label: "⛵ Embarcado (desde botes, kayak de pesca o lanchas en alta mar)", 
+                  label: "⛵ Embarcado (desde botes, lanchas o kayak)", 
                   value: "boat",
-                  desc: "Para adentrarse y buscar profundidad con máxima flotabilidad de seguridad."
+                  desc: "Para pescar mar adentro buscando mayor comodidad y facilidad."
                 }
               ].map((opt) => (
                 <button
@@ -159,25 +159,25 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
               <span className="flex items-center justify-center bg-[#ff4d00] text-white w-7 h-7 rounded-lg text-sm font-bold shrink-0 mt-0.5 shadow-md shadow-[#ff4d00]/20">
                 2
               </span>
-              ¿Cuál es tu prioridad principal al volar un drone en tus jornadas?
+              ¿Qué es lo más importante para ti cuando usas el drone?
             </h4>
             
             <div className="grid gap-3.5 sm:grid-cols-1">
               {[
                 { 
-                  label: "🎯 Superar récords personales de distancia con plomo pesado", 
+                  label: "🎯 Llegar lo más lejos posible con plomo pesado", 
                   value: "accuracy",
-                  desc: "Estabilidad de vuelo puro para soltar de forma segura y consistente."
+                  desc: "Volar con total tranquilidad y soltar la línea exactamente donde quieres."
                 },
                 { 
-                  label: "📷 Descubrir el canal de alimentación en vivo y grabar la jornada", 
+                  label: "📷 Ver el agua en vivo para buscar peces y grabar tus mejores capturas", 
                   value: "camera",
-                  desc: "Cámara 4K en tiempo real para rastear cardúmenes desde tu control."
+                  desc: "Ver la pantalla en tiempo real para encontrar cardúmenes y bancos de de arena."
                 },
                 { 
-                  label: "💪 Remolcar carnadas masivas o vivas sin forzar los motores", 
+                  label: "💪 Llevar carnadas grandes o pesadas sin esfuerzo", 
                   value: "weight",
-                  desc: "Máxima potencia física de carga certificada para presas pesadas mar adentro."
+                  desc: "Llevar la carnada con fuerza y potencia sin que el drone sufra o se gasten rápido las baterías del motor."
                 }
               ].map((opt) => (
                 <button
@@ -215,25 +215,25 @@ export default function SelectionAssistant({ products, whatsappNumber }: Selecti
               <span className="flex items-center justify-center bg-[#ff4d00] text-white w-7 h-7 rounded-lg text-sm font-bold shrink-0 mt-0.5 shadow-md shadow-[#ff4d00]/20">
                 3
               </span>
-              ¿Cuál es tu enfoque de inversión para este nuevo equipamiento premium?
+              ¿Qué tipo de equipo estás buscando?
             </h4>
             
             <div className="grid gap-3.5 sm:grid-cols-1">
               {[
                 { 
-                  label: "🟢 Valoro la simpleza del FD1S: El más fácil de usar, sin calibraciones complejas", 
+                  label: "🟢 Uno que sea súper fácil de usar para pescar rápido", 
                   value: "basic",
-                  desc: "Diseño intuitivo para conectar la batería y lanzar al agua de inmediato."
+                  desc: "Encender, conectar la batería y llevar tu anzuelo al mar de la forma más rápida y directa."
                 },
                 { 
-                  label: "🟡 Busco tecnología balanceada (GPS superior y vista aérea)", 
+                  label: "🟡 Uno intermedio con cámara en vivo para ver dónde lanzas", 
                   value: "premium",
-                  desc: "Quiero una cámara sumergible estabilizada 4K con retorno autónomo de precisión milimétrica."
+                  desc: "Un equipo completo con pantalla a color para guiarte y ver el fondo marino."
                 },
                 { 
-                  label: "🔴 Busco lo absoluto: el buque de fuerza extremo en el mar", 
+                  label: "🔴 El más potente y resistente para llevar las cargas más pesadas", 
                   value: "max",
-                  desc: "Capacidad límite de hasta 3.5kg reales e inigualable resistencia al oleaje y tormenta."
+                  desc: "Para volar con total seguridad con viento fuerte y llevar carnadas gigantes de hasta 3.5 kg."
                 }
               ].map((opt) => (
                 <button

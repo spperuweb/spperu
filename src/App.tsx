@@ -70,6 +70,36 @@ const playNotificationSound = () => {
   }
 };
 
+export const playPopSound = () => {
+  try {
+    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+    if (!AudioContextClass) return;
+    const audioCtx = new AudioContextClass();
+    const osc = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    
+    osc.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    
+    osc.type = "sine";
+    const now = audioCtx.currentTime;
+    osc.frequency.setValueAtTime(220, now);
+    osc.frequency.exponentialRampToValueAtTime(750, now + 0.1);
+    
+    gainNode.gain.setValueAtTime(0.18, now);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+    
+    osc.start(now);
+    osc.stop(now + 0.1);
+  } catch (err) {
+    console.warn("Audio pop preventivo:", err);
+  }
+};
+
+if (typeof window !== "undefined") {
+  (window as any).playPopSound = playPopSound;
+}
+
 // GALERÍA REAL PREMIUM SWELLPRO PERÚ (Datos Reales de Campo)
 const galleryItems = [
   // 1. CAPTURAS REALES (Bloque: capturas)
@@ -520,7 +550,7 @@ export default function App() {
                 loading="lazy"
               />
               <div className="flex flex-col">
-                <span className={`font-display font-extrabold tracking-tight text-xl ${isScrolled ? "text-neutral-900" : "text-white"}`}>
+                <span className={`font-display font-extrabold tracking-tight text-lg md:text-xl ${isScrolled ? "text-neutral-900" : "text-white"}`}>
                   SWELLPRO <span className="text-[#ff4d00]">PERÚ</span>
                 </span>
                 <span className={`text-[9px] uppercase tracking-widest font-bold -mt-1 ${isScrolled ? "text-neutral-500" : "text-neutral-300/90"}`}>
@@ -531,9 +561,8 @@ export default function App() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6 lg:gap-8">
-              {["Modelos", "Garantía y Soporte", "Cómo funciona", "Accesorios", "Galería", "Contacto"].map((tab) => {
+              {["Modelos", "Cómo funciona", "Accesorios", "Galería", "Contacto"].map((tab) => {
                 let targetId = "#modelos";
-                if (tab === "Garantía y Soporte") targetId = "#soporte-local";
                 if (tab === "Cómo funciona") targetId = "#como-funciona";
                 if (tab === "Accesorios") targetId = "#accesorios-teaser";
                 if (tab === "Galería") targetId = "#galeria";
@@ -585,9 +614,8 @@ export default function App() {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-b border-neutral-100 shadow-xl animate-fade-in absolute w-full top-full left-0">
             <div className="px-6 py-8 space-y-4">
-              {["Modelos", "Garantía y Soporte", "Cómo funciona", "Accesorios", "Galería", "Contacto"].map((tab) => {
+              {["Modelos", "Cómo funciona", "Accesorios", "Galería", "Contacto"].map((tab) => {
                 let targetId = "#modelos";
-                if (tab === "Garantía y Soporte") targetId = "#soporte-local";
                 if (tab === "Cómo funciona") targetId = "#como-funciona";
                 if (tab === "Accesorios") targetId = "#accesorios-teaser";
                 if (tab === "Galería") targetId = "#galeria";
@@ -1818,7 +1846,7 @@ export default function App() {
                 loading="lazy"
               />
               <div className="text-left">
-                <span className="font-display font-extrabold tracking-tight text-xl block uppercase leading-none">
+                <span className="font-display font-extrabold tracking-tight text-lg md:text-xl block uppercase leading-none">
                   SWELLPRO <span className="text-[#ff4d00]">PERÚ</span>
                 </span>
                 <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-bold block mt-1">
@@ -2004,10 +2032,13 @@ export default function App() {
 
           {/* Call-to-Action Link */}
           <a
-            href={getWhatsAppUrl("Hola SwellPro Perú, requiero asesoría directa para elegir el mejor drone de pesca según mi región.")}
+            href={getWhatsAppUrl("Hola SwellPro Perú, solicito asesoría rápida para elegir mi drone de pesca.")}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setShowHelpNotification(false)}
+            onClick={() => {
+              setShowHelpNotification(false);
+              playPopSound();
+            }}
             className="mt-2.5 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider font-extrabold text-emerald-400 hover:text-[#25D366] transition cursor-pointer"
           >
             Preguntar ahora <ArrowRight className="w-3 h-3 text-[#ff4d00]" />
@@ -2017,7 +2048,8 @@ export default function App() {
 
       {/* FLOATING WHATSAPP OVERLAY (MANDATORY AND CONSTANT PING) */}
       <a 
-        href={getWhatsAppUrl("Hola SwellPro Perú. Deseo recibir asesoría técnica comercial sobre los drones de pesca y coordinar una demostración o detalles de compra.")}
+        href={getWhatsAppUrl("Hola SwellPro Perú, solicito asesoría directa por WhatsApp.")}
+        onClick={playPopSound}
         className="whatsapp-float shrink-0"
         target="_blank"
         rel="noopener noreferrer"

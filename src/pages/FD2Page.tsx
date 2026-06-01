@@ -169,7 +169,7 @@ export default function FD2Page() {
   const msgBenefits = "Hola SwellPro Perú, me interesa conocer más sobre la transmisión de video en vivo del Fisherman FD2 Max y su estabilidad en vientos nivel 7.";
   const msgProduct = "Hola SwellPro Perú, he leído la ficha técnica del FD2 Max con cámara Gimbal 4K y control impermeable. ¿Tienen el equipo en stock para Lima o envían a provincias?";
   const msgCompare = "Hola SwellPro Perú, comparé el FD2 Max con otros modelos y veo que es el rey de la capacidad de carga. Quisiera coordinar una demostración o compra.";
-  const msgFooter = "Hola SwellPro Perú, estoy listo para domar el mar con el Fisherman FD2 Max. Solicito que un asesor se comunique conmigo de inmediato por favor.";
+  const msgFooter = "Hola SwellPro Perú, solicito información y cotización del Fisherman FD2 Max.";
 
   return (
     <div className="min-h-screen bg-white text-neutral-800 font-sans selection:bg-[#ff4d00] selection:text-white antialiased">
@@ -1278,6 +1278,11 @@ export default function FD2Page() {
       <div className="fixed bottom-6 right-6 z-50">
         <a
           href={getWhatsAppUrl(msgFooter)}
+          onClick={() => {
+            if (typeof window !== "undefined" && (window as any).playPopSound) {
+              (window as any).playPopSound();
+            }
+          }}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#25D366] hover:bg-[#128C7E] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition duration-200 transform hover:scale-105"

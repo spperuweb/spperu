@@ -139,7 +139,7 @@ export default function FD1SPage() {
   const msgBenefits = "Hola SwellPro Perú, me llamó la atención el sensor ToF y el sistema de flotación del FD1S. ¿Me brindan detalles técnicos y facilidades de pago?";
   const msgProduct = "Hola SwellPro Perú, he visto la ficha técnica del Fisherman FD1S (2.2 kg de carga útil). Deseo coordinar una llamada para comprar este equipo con tarjeta de crédito.";
   const msgCompare = "Hola, vi la tabla comparativa de drones de pesca y me convenció el FD1S como modelo ideal para empezar de forma práctica. ¿Cuál es su precio actual?";
-  const msgFooter = "Hola SwellPro Perú, estoy listo para multiplicar mi lanzamiento con el Fisherman FD1S. Por favor me contactan con un asesor especializado.";
+  const msgFooter = "Hola SwellPro Perú, solicito información y cotización del Fisherman FD1S.";
 
   return (
     <div className="min-h-screen bg-white text-neutral-800 font-sans selection:bg-[#ff4d00] selection:text-white antialiased">
@@ -1160,7 +1160,12 @@ export default function FD1SPage() {
 
       {/* FLOATING WHATSAPP BUTTON (Persistent conversion tool) */}
       <a 
-        href={getWhatsAppUrl("Hola SwellPro Perú, requiero asesoría personalizada sobre el Fisherman FD1S por favor.")}
+        href={getWhatsAppUrl(msgFooter)}
+        onClick={() => {
+          if (typeof window !== "undefined" && (window as any).playPopSound) {
+            (window as any).playPopSound();
+          }
+        }}
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float hover:scale-105 transition duration-155"
