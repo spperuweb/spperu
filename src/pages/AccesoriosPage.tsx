@@ -53,6 +53,15 @@ const ACCESORIOS_DATA: Accesorio[] = [
     desc: "Batería de alta potencia e inteligente para el dron Fisherman FD3, garantizando un retorno seguro y máxima duración.",
     ctaMessage: "Hola SwellPro Perú, requiero información y precio sobre la Batería inteligente de Vuelo para el modelo FD3."
   },
+  {
+    id: "bat-fd1s",
+    name: "IB4+ battery (B - FD1S)",
+    family: "Baterías",
+    image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1780347516/IB4__battery_B-FD1S_-_FD1S_SD4plus_epn6mf.jpg",
+    compatibility: ["FD1S", "SD4+"],
+    desc: "Batería oficial de alto rendimiento para el modelo tradicional Fisherman FD1S y plataforma SplashDrone 4+.",
+    ctaMessage: "Hola SwellPro Perú, consulto sobre el precio y disponibilidad de la batería IB4+ (B - FD1S)."
+  },
 
   // HÉLICES
   {
