@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: './', // Usar rutas relativas para que funcione out-of-the-box en cualquier hosting/GitHub Pages
+    base: '/', // Usar rutas relativas para que funcione out-of-the-box en cualquier hosting/GitHub Pages
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
