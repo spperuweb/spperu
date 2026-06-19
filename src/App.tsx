@@ -31,6 +31,7 @@ import { Product, FAQItem } from "./types";
 import SelectionAssistant from "./components/SelectionAssistant";
 import FAQSection from "./components/FAQSection";
 import ScrollReveal from "./components/ScrollReveal";
+import { motion } from "motion/react";
 
 // CONFIGURACIÓN DE WHATSAPP
 const WHATSAPP_NUMBER = "51949643347"; // Representante de SwellPro Perú
@@ -102,6 +103,15 @@ if (typeof window !== "undefined") {
 
 // GALERÍA REAL PREMIUM SWELLPRO PERÚ (Datos Reales de Campo)
 const galleryItems = [
+  {
+    id: "captura-real-10",
+    url: "https://res.cloudinary.com/drvejtepq/video/upload/q_auto/f_auto/v1781883706/swellpro-peru-captura-real-10_utylbv.mp4",
+    type: "video",
+    category: "capturas",
+    tag: "New",
+    title: "Espectacular captura real",
+    desc: "El último registro real subido que demuestra la efectividad infalible de SwellPro en alta mar."
+  },
   // 1. CAPTURAS REALES (Bloque: capturas)
   {
     id: "captura-1",
@@ -366,7 +376,7 @@ export default function App() {
       id: "fd1",
       name: "Fisherman FD1S",
       badge: "El más fácil de usar",
-      tagline: "Siente el viento, lanza tu línea y déjaselo a él.",
+      tagline: "Empieza fácil. Lanza con confianza.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816470/swellpro-fisherman-fd1-plus-drone-thumnail_z9ytsb.png",
       specs: {
         reach: "1.3 Kilómetros",
@@ -374,14 +384,14 @@ export default function App() {
         camera: "Sensor ToF + Batería Inteligente",
       },
       description: "Diseñado para el pescador que busca simplicidad absoluta sin rodeos técnicos. Enciende, asegura tu plomada al clip automático y vuela directo al pozo de alimentación del lenguado. Sin calibraciones complejas, con la tranquilidad de un aterrizaje asistido de total suavidad.",
-      statusMessage: "Hola, quiero info del Fisherman FD1S",
+      statusMessage: "Hola, me interesa el Fisherman FD1S",
     },
     {
       id: "fd2-max",
       name: "Fisherman FD2 Max",
       badge: "Máxima carga",
       isPopular: true,
-      tagline: "El titán del calado. Soporta vientos brutales sin pestañear.",
+      tagline: "Más carga. Más viento. Más respeto.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816471/fisherman-max-fd2-drone-thumbnail_k1yona.png",
       specs: {
         reach: "1.2 Kilómetros",
@@ -389,13 +399,13 @@ export default function App() {
         camera: "Gimbal 4K, 12 MP, 1/2.3\" CMOS",
       },
       description: "La bestia definitiva para batallar con el oleaje y el viento del litoral peruano. Levanta hasta 3.5 kg de carga pesada, lleva carnada entera a pozos profundos y soporta ráfagas letales de hasta 61 km/h sin perder un milímetro de precisión.",
-      statusMessage: "Hola, quiero info del Fisherman FD2 Max",
+      statusMessage: "Hola, me interesa el Fisherman FD2 Max",
     },
     {
       id: "fd3",
       name: "Fisherman FD3",
       badge: "Cámara + Precisión",
-      tagline: "Tus ojos en vivo bajo la espuma para clavar con precisión quirúrgica.",
+      tagline: "Ve mejor el agua. Lanza con más precisión.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816471/swellpro-fisherman-fd3-drone-thumnail_mdxsb2.png",
       specs: {
         reach: "1.2 km",
@@ -403,13 +413,13 @@ export default function App() {
         camera: "Gimbal 4K, 12 MP, 1/2.3\" CMOS, f/2.65, equivalente a 25mm",
       },
       description: "Explora la estructura marina desde tu control con pantalla brillante. Mira en tiempo real dónde se rompe la ola, localiza el banco de arena y suelta tu cebo de hasta 2 kg exactamente donde se alimenta la corvina grande.",
-      statusMessage: "Hola, quiero info del Fisherman FD3",
+      statusMessage: "Hola, me interesa el Fisherman FD3",
     },
     {
       id: "sd4-plus",
       name: "SplashDrone 4 Plus",
-      badge: "Entrega Inmediata",
-      tagline: "El gigante definitivo de la versatilidad sumergible.",
+      badge: "Entrega inmediata",
+      tagline: "La plataforma más versátil sobre y cerca del agua.",
       image: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1779816468/new-waterproof-drone-splashrone-4-plus_1570x_fgdu3n.webp",
       specs: {
         reach: "7.0 Kilómetros",
@@ -417,7 +427,7 @@ export default function App() {
         camera: "Sony 4K 60fps, 5.7K UHD",
       },
       description: "La cumbre de la versatilidad sumergible con gimbal estabilizado de 3 ejes. Disponible hoy para entrega inmediata con inducción técnica gratuita de vuelo en playa.",
-      statusMessage: "Hola, quiero cotizar el SplashDrone 4 Plus disponible para entrega inmediata",
+      statusMessage: "Hola, me interesa el SplashDrone 4 Plus",
     }
   ];
 
@@ -715,28 +725,29 @@ export default function App() {
 
 
       {/* SECTION 3 — THE PRODUCTS (Editorial Showcase) */}
-      <section id="modelos" className="py-28 bg-white relative">
-        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+      <section id="modelos" className="py-24 bg-white relative">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           
-          <ScrollReveal className="text-center mb-20 max-w-2xl mx-auto animate-fade-in">
+          <ScrollReveal className="text-center mb-16 max-w-2xl mx-auto animate-fade-in">
             <span className="text-[#ff4d00] text-xs font-bold tracking-widest uppercase block mb-3">
               Ingeniería Marina Sólida
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-extrabold text-neutral-900 uppercase leading-tight">
+            <h2 className="text-2xl md:text-4xl font-display font-extrabold text-neutral-900 uppercase leading-tight">
               Diseñados para no hundirse jamás
             </h2>
             <div className="w-14 h-1 bg-[#ff4d00] mx-auto mt-4 rounded-full"></div>
-            <p className="text-neutral-500 mt-4 text-sm md:text-base font-sans leading-relaxed">
+            <p className="text-neutral-500 mt-4 text-xs sm:text-sm font-sans leading-relaxed">
               Equipos de pesca sumergibles IP67 construidos con resinas especiales, sellos de goma marina y un poderoso motor brushless diseñado para batallar contra la sal para toda la vida.
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch mb-14">
-            {products.map((product) => {
+          <div className="space-y-10 lg:space-y-12 mb-12">
+            {products.map((product, index) => {
               const isSoldOut = product.isSoldOut;
               const isFD2Max = product.id === "fd2-max";
+              const isEven = index % 2 === 0;
 
-              // Get custom page and evidence gallery anchors
+              // Path mapping variables
               const modelPage = product.id === "fd1" 
                 ? "./fd1s/index.html" 
                 : product.id === "fd2-max" 
@@ -751,160 +762,262 @@ export default function App() {
                 ? "./fd2/index.html#fd2-evidencia" 
                 : product.id === "fd3" 
                 ? "./fd3/index.html#fd3-evidencia" 
-                : "./sd4-plus/index.html";
+                : "./sd4-plus/index.html#galeria-sd4";
 
-              // Visual styling classes based on product state
-              const cardClass = isSoldOut
-                ? "bg-neutral-50/80 border-neutral-200 opacity-80 lg:col-span-2 hover:border-neutral-300"
-                : isFD2Max
-                ? "bg-white border-[#ff4d00]/80 shadow-lg shadow-[#ff4d00]/5 ring-1 ring-[#ff4d00]/10 hover:border-[#ff4d00] hover:shadow-2xl hover:shadow-[#ff4d00]/10"
-                : "bg-white border-neutral-200 hover:border-neutral-300 hover:shadow-2xl hover:shadow-neutral-200/50";
+              // Distinct atmospheric backdrop gradients / glows by model
+              const bgGradient = product.id === "fd1"
+                ? "bg-gradient-to-br from-[#FAF8F5] via-[#F4EFE6] to-[#FFF]"
+                : product.id === "fd2-max"
+                ? "bg-gradient-to-br from-[#FFF4ED] via-[#FFE2D1]/90 to-[#FFF]"
+                : product.id === "fd3"
+                ? "bg-gradient-to-br from-[#F2F6F9] via-[#DCE5EF]/90 to-[#FFF]"
+                : "bg-gradient-to-br from-[#EFF6F8] via-[#DAEAEE]/95 to-[#FFF]"; // sd4-plus marine
 
-              const badgeBg = isSoldOut
-                ? "bg-neutral-200 text-neutral-500 border border-neutral-300"
-                : isFD2Max
-                ? "bg-[#ff4d00] text-white shadow-sm shadow-[#ff4d00]/25 font-black"
-                : "bg-neutral-900 text-white";
+              const glowHaloClass = product.id === "fd1"
+                ? "bg-[#EADDC9]/40"
+                : product.id === "fd2-max"
+                ? "bg-[#ff4d00]/12"
+                : product.id === "fd3"
+                ? "bg-[#B3C8DF]/45"
+                : "bg-[#9BCAD5]/45";
+
+              // Compact camera text for dynamic specs
+              const specCamera = product.id === "fd1"
+                ? "Sensor ToF + Batería"
+                : product.id === "fd2-max"
+                ? "Gimbal 4K Híbrido"
+                : product.id === "fd3"
+                ? "Gimbal 4K Estabilizado"
+                : "Sony 4K 60fps";
 
               return (
                 <ScrollReveal
                   key={product.id}
-                  className={`rounded-3xl border transition-all duration-300 flex flex-col md:flex-row overflow-hidden relative group ${cardClass}`}
+                  delayMs={index * 150}
+                  className="block pointer-events-auto"
                 >
-                  {/* Badge Area (Absolute placement on top left) */}
-                  <div className="absolute top-4 left-4 z-20 flex flex-col gap-1.5 items-start">
-                    <span className={`text-[8px] sm:text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full font-display border border-transparent ${badgeBg}`}>
-                      {product.badge}
-                    </span>
-                    {isFD2Max && (
-                      <span className="bg-neutral-900 text-white text-[8px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border border-neutral-800 flex items-center gap-1 shadow-sm font-display">
-                        🔥 MÁS VENDIDO
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Left Column: Product Image Box (Interactive Pedestal render + Gallery Click indicator) */}
-                  <div className={`relative min-h-[220px] md:w-[42%] flex items-center justify-center p-6 overflow-hidden border-b md:border-b-0 md:border-r border-neutral-100/80 shrink-0 ${isSoldOut ? "bg-neutral-100/40" : "bg-neutral-50/40"}`}>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.01)_0%,transparent_70%)] pointer-events-none"></div>
-                    {/* Shadow Pedestal */}
-                    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-32 h-2 bg-black/[0.04] rounded-full blur-md pointer-events-none transition-all duration-300 group-hover:scale-90 group-hover:opacity-60"></div>
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-20 h-2 bg-[#ff4d00]/[0.02] rounded-full blur-lg pointer-events-none transition-all duration-300 group-hover:scale-105 group-hover:opacity-100"></div>
-
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      loading="lazy"
-                      className={`max-h-36 max-w-[85%] object-contain relative z-10 select-none pointer-events-none transition-transform duration-500 transform scale-100 group-hover:scale-105 group-hover:-translate-y-1 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.03)] ${isSoldOut ? "grayscale opacity-50 contrast-75" : ""}`}
-                    />
-
-                    {/* Highly Interactive "VER GALERÍA" Overlay Link for clicking the image */}
-                    <a 
-                      href={galleryLink}
-                      className="absolute inset-0 z-30 flex items-center justify-center overflow-hidden group/img-overlay"
-                      title={`Ver galería de fotos reales de ${product.name}`}
+                  <div
+                    className={`flex flex-col ${
+                      isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                    } items-stretch rounded-[24px] overflow-hidden border ${
+                      isFD2Max
+                        ? "border-[#ff4d00]/40 shadow-xl shadow-[#ff4d00]/5 ring-1 ring-[#ff4d00]/10 hover:border-[#ff4d00]"
+                        : "border-neutral-200/80 hover:border-neutral-350 hover:shadow-xl hover:shadow-neutral-200/40"
+                    } transition-all duration-500 bg-white group relative`}
+                  >
+                    
+                    {/* ZONA VISUAL DOMINANTE (60% width on desktop, 100% on mobile) */}
+                    <div
+                      className={`relative h-[250px] sm:h-[300px] lg:h-auto lg:w-[46%] flex items-center justify-center p-6 sm:p-8 overflow-hidden shrink-0 ${bgGradient}`}
                     >
-                      {/* Smooth dark glow cover on hover */}
-                      <div className="absolute inset-0 bg-neutral-950/60 opacity-0 group-hover/img-overlay:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-                        <Camera className="w-8 h-8 text-[#ff4d00] mb-2 transform scale-75 group-hover/img-overlay:scale-100 transition-transform duration-300" />
-                        <span className="text-white text-[10px] font-bold uppercase tracking-widest leading-none block mb-1">
-                          Ver Galería Real ↗
-                        </span>
-                        <span className="text-neutral-400 text-[8px] tracking-wide block max-w-[85%]">
-                          Fotos tomadas en playas peruanas
-                        </span>
+                      {/* Blueprint grid layout background */}
+                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none" />
+                      
+                      {/* High-tech pulsing radial light source */}
+                      <motion.div
+                        className={`absolute w-72 h-72 rounded-full filter blur-3xl opacity-70 mix-blend-multiply pointer-events-none ${glowHaloClass}`}
+                        animate={{
+                          scale: [1, 1.15, 1],
+                          opacity: [0.6, 0.8, 0.6]
+                        }}
+                        transition={{
+                          duration: 6,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      />
+
+                      {/* Technical visual scan coordinates & rotation circles */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-25 select-none pointer-events-none group-hover:opacity-40 transition-all duration-700">
+                        <div className="w-[180px] h-[180px] border border-dashed border-neutral-300 rounded-full animate-[spin_84s_linear_infinite]" />
+                        <div className="absolute w-[260px] h-[260px] border border-neutral-200/30 rounded-full animate-[spin_120s_linear_infinite_reverse]" />
                       </div>
 
-                      {/* Persistent Pill Badge at the bottom-right corner to make it clear photos exist */}
-                      <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md shadow-sm border border-neutral-200/60 px-2.5 py-1.5 rounded-xl text-[8.5px] font-bold tracking-wider text-neutral-700 uppercase flex items-center gap-1.5 transition-all duration-200 hover:bg-neutral-900 hover:text-white hover:border-transparent">
-                        <Camera className="w-3.5 h-3.5 text-[#ff4d00]" />
-                        <span>GALERÍA ↗</span>
+                      {/* Floating shadow at the bottom that shrinks and expands in synch with drone */}
+                      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-40 h-2 bg-neutral-950/[0.04] rounded-full blur-md pointer-events-none flex items-center justify-center">
+                        <motion.div 
+                          className="w-full h-full bg-[#ff4d00]/[0.02] rounded-full blur-xs"
+                          animate={{
+                            scale: [1, 0.82, 1],
+                            opacity: [0.55, 0.28, 0.55]
+                          }}
+                          transition={{
+                            duration: 5.5,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        />
                       </div>
-                    </a>
-                  </div>
 
-                  {/* Right Column: Informative Copy and Dynamic CTAs (More space, Clean alignment) */}
-                  <div className="p-6 md:p-7 flex-1 flex flex-col justify-between">
-                    <div>
-                      {/* Name */}
-                      <h3 className="text-xl font-display font-extrabold text-neutral-900 uppercase tracking-tight mb-1">
-                        {product.name}
-                      </h3>
+                      {/* Clickable Image Box Wrapper */}
+                      <a
+                        href={modelPage}
+                        className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer group/drone-showroom"
+                        title={`Explorar ${product.name} en detalle`}
+                      >
+                        {/* Hover white light scanner flare */}
+                        <div className="absolute inset-0 bg-transparent group-hover/drone-showroom:bg-[#ff4d00]/[0.02] transition-all duration-500" />
 
-                      {/* Emotional tagline (Short and conversational) */}
-                      {product.tagline && (
-                        <p className={`font-sans text-[11px] font-medium leading-relaxed mb-4 italic ${isSoldOut ? "text-neutral-400" : "text-[#ff4d00]"}`}>
-                          "{product.tagline}"
-                        </p>
-                      )}
+                        {/* Floating model image */}
+                        <motion.img
+                          src={product.image}
+                          alt={product.name}
+                          loading="lazy"
+                          className={`max-h-[82%] max-w-[85%] object-contain relative z-25 select-none pointer-events-none filter drop-shadow-[0_15px_25px_rgba(0,0,0,0.06)] group-hover/drone-showroom:drop-shadow-[0_24px_35px_rgba(0,0,0,0.1)] ${
+                            isSoldOut ? "grayscale opacity-50 contrast-75" : ""
+                          }`}
+                          animate={{
+                            y: [0, -10, 0],
+                            rotate: [0, 1.2, -0.8, 0]
+                          }}
+                          transition={{
+                            duration: 5.5,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                          referrerPolicy="no-referrer"
+                        />
 
-                      {/* Compact Technical Specs with clean outline */}
-                      <div className="border-t border-b border-neutral-100/60 py-3.5 mb-5 space-y-2 text-[11.5px] font-sans">
-                        <div className="flex items-center gap-2 text-neutral-600">
-                          <Ruler className="w-4 h-4 text-neutral-450 shrink-0" />
-                          <span>
-                            Alcance: <strong className="text-neutral-800 font-bold">{product.specs.reach}</strong>
-                          </span>
+                        {/* High-end glassmorphism pill badge showing interaction capability */}
+                        <div className="absolute bottom-4 right-4 z-30 bg-white/95 backdrop-blur-md shadow-md border border-neutral-200/50 px-3 py-1.5 rounded-lg text-[9px] font-black tracking-widest text-[#ff4d00] hover:text-white uppercase flex items-center gap-1 transition-all duration-300 transform translate-y-1 opacity-80 group-hover/drone-showroom:translate-y-0 group-hover/drone-showroom:opacity-100 group-hover/drone-showroom:text-[#ff4d00] group-hover/drone-showroom:border-[#ff4d00]/30 animate-pulse">
+                          <span>EXPLORAR MODELO</span>
+                          <ArrowRight className="w-3 h-3 text-[#ff4d00]" />
                         </div>
-                        <div className="flex items-center gap-2 text-neutral-700">
-                          <Scale className="w-4 h-4 text-neutral-450 shrink-0" />
-                          <span>
-                            Lanzamiento: <strong className="text-neutral-800 font-bold">{product.specs.payload}</strong>
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2 text-neutral-600">
-                          <Camera className="w-4 h-4 text-neutral-450 shrink-0" />
-                          <span className="truncate">
-                            Óptica: <strong className="text-neutral-800 font-bold">{product.specs.camera.split(',')[0]}</strong>
-                          </span>
-                        </div>
-                      </div>
+                      </a>
                     </div>
 
-                    {/* CTAs Control Area */}
-                    <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-                      {isSoldOut ? (
-                        <>
-                          <button
-                            disabled
-                            className="flex-1 text-center font-display font-bold text-[10px] uppercase tracking-widest py-3 px-4 rounded-xl border border-neutral-200 text-neutral-400 bg-neutral-100 cursor-not-allowed h-11"
-                          >
-                            Temporalmente Agotado
-                          </button>
-                          
-                          <a
-                            href={getWhatsAppUrl("Hola SwellPro Perú, veo que el SplashDrone 4 Plus está agotado pero deseo sumarme a la lista de espera oficial para el próximo ingreso peruano.")}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 text-center font-display font-bold text-[10px] uppercase tracking-widest py-3 px-4 rounded-xl bg-neutral-200 text-neutral-600 hover:bg-neutral-300 border border-neutral-300 transition duration-150 inline-flex items-center justify-center gap-1.5 h-11"
-                          >
-                            <PhoneCall className="w-3.5 h-3.5 text-[#ff4d00] animate-pulse" /> Listar Espera →
-                          </a>
-                        </>
-                      ) : (
-                        <>
-                          {/* Main Button (Go to landing page / complete specs): Visually strong */}
-                          <a
-                            href={modelPage}
-                            className={`flex-1 text-center font-display font-bold text-[10px] uppercase tracking-widest py-3.5 px-4 rounded-xl transition-all duration-200 ease-out border shadow-sm flex items-center justify-center h-11 ${
-                              isFD2Max
-                                ? "bg-[#ff4d00] text-white border-transparent hover:bg-[#e04400] hover:shadow-md hover:shadow-[#ff4d00]/20"
-                                : "bg-neutral-900 border-neutral-950 text-white hover:bg-neutral-800"
-                            }`}
-                          >
-                            Ver Ficha Completa →
-                          </a>
-                          
-                          {/* Secondary CTA (Ask on WhatsApp): Muted yet highly visible */}
-                          <a
-                            href={getWhatsAppUrl(product.statusMessage)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 text-center font-display font-semibold text-[9.5px] uppercase tracking-widest py-3.5 px-4 rounded-xl border border-neutral-250 text-neutral-700 bg-white hover:bg-neutral-50 hover:border-neutral-450 hover:text-neutral-900 transition duration-150 inline-flex items-center justify-center gap-1.5 h-11"
-                          >
-                            <PhoneCall className="w-3.5 h-3.5 text-stone-400 transition-colors group-hover:text-[#ff4d00]" /> Cotizar WhatsApp →
-                          </a>
-                        </>
-                      )}
+                    {/* ZONA INFERIOR / DETALLES MODELO (40%-48% width on desktop, 100% on mobile) */}
+                    <div className="flex-1 flex flex-col justify-between p-6 sm:p-8 lg:p-10 bg-white relative z-20">
+                      
+                      {/* Top Header details */}
+                      <div>
+                        {/* Model highlights and badges */}
+                        <div className="flex flex-wrap gap-2.5 items-center mb-6">
+                          <span className={`text-[9px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full font-display border border-transparent shadow-xs ${
+                            isFD2Max
+                              ? "bg-[#ff4d00] text-white"
+                              : "bg-neutral-900 text-white"
+                          }`}>
+                            {product.badge}
+                          </span>
+                          {isFD2Max && (
+                            <span className="bg-neutral-100 border border-[#ff4d00]/15 text-[#ff4d00] text-[9.5px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full flex items-center gap-1 shadow-xs font-display font-black">
+                              🔥 MÁS VENDIDO
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Title in Space Grotesk size */}
+                        <h3 className="text-2xl sm:text-3xl lg:text-3.5xl font-display font-black text-neutral-950 uppercase tracking-tight leading-none mb-2">
+                          {product.name}
+                        </h3>
+
+                        {/* Brand orange bold italic quote line */}
+                        <p className="font-sans text-[13px] sm:text-[14px] font-extrabold leading-relaxed text-[#ff4d05] mb-3.5 italic">
+                          "{product.tagline}"
+                        </p>
+
+                        {/* Showroom short description */}
+                        <p className="text-neutral-550 font-sans text-xs leading-relaxed mb-6">
+                          {product.description}
+                        </p>
+
+                        {/* Specs grid of exactly 3 highlighted variables */}
+                        <div className="grid grid-cols-3 gap-3 border-t border-b border-neutral-100 py-4 mb-6">
+                          <div className="text-center sm:text-left border-r border-neutral-100 pr-2">
+                            <div className="flex flex-col sm:flex-row items-center gap-1.5 text-[#ff4d00]/80 mb-1">
+                              <Ruler className="w-3.5 h-3.5" />
+                              <span className="text-[9px] font-black uppercase tracking-wider text-neutral-400">ALCANCE</span>
+                            </div>
+                            <span className="text-[11.5px] sm:text-[12.5px] font-sans font-black text-neutral-900 block mt-1">
+                              {product.specs.reach}
+                            </span>
+                          </div>
+
+                          <div className="text-center sm:text-left border-r border-neutral-100 px-2">
+                            <div className="flex flex-col sm:flex-row items-center gap-1.5 text-[#ff4d00]/80 mb-1">
+                              <Scale className="w-3.5 h-3.5" />
+                              <span className="text-[9px] font-black uppercase tracking-wider text-neutral-400">CARGA MÁX</span>
+                            </div>
+                            <span className="text-[11.5px] sm:text-[12.5px] font-sans font-black text-[#ff4d00] block mt-1">
+                              {product.specs.payload.split(" ")[0]} {product.specs.payload.split(" ")[1] || "Kg"}
+                            </span>
+                          </div>
+
+                          <div className="text-center sm:text-left pl-2">
+                            <div className="flex flex-col sm:flex-row items-center gap-1.5 text-[#ff4d00]/80 mb-1">
+                              <Camera className="w-3.5 h-3.5" />
+                              <span className="text-[9px] font-black uppercase tracking-wider text-neutral-400">ÓPTICA / CAM</span>
+                            </div>
+                            <span className="text-[11.5px] sm:text-[12.5px] font-sans font-black text-neutral-900 block mt-1 truncate" title={specCamera}>
+                              {specCamera}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Interactive responsive triggers container */}
+                      <div className="space-y-4">
+                        <div className="flex flex-col sm:flex-row gap-3">
+                          {isSoldOut ? (
+                            <>
+                              <button
+                                disabled
+                                className="flex-1 text-center font-display font-black text-[10.5px] uppercase tracking-wider py-4 px-4 rounded-xl border border-neutral-250 text-neutral-400 bg-neutral-100 cursor-not-allowed h-12 flex items-center justify-center"
+                              >
+                                Temporalmente Agotado
+                              </button>
+                              
+                              <a
+                                href={getWhatsAppUrl(`Hola SwellPro Perú, veo que el exitoso modelo ${product.name} está temporalmente agotado. Quisiera ingresar gratuitamente a la lista de espera oficial para reservar el próximo lote.`)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 text-center font-display font-black text-[10.5px] uppercase tracking-wider py-4 px-4 rounded-xl bg-neutral-200 text-neutral-750 hover:bg-neutral-300 border border-neutral-350 transition duration-200 inline-flex items-center justify-center gap-1.5 h-12"
+                              >
+                                <PhoneCall className="w-3.5 h-3.5 text-[#ff4d05] animate-pulse" /> LISTAR ESPERA →
+                              </a>
+                            </>
+                          ) : (
+                            <>
+                              {/* CTA 1 (Principal): VER FICHA COMPLETA */}
+                              <a
+                                href={modelPage}
+                                className={`flex-1 text-center font-display font-black text-[10.5px] tracking-widest py-4 px-5 rounded-xl transition-all duration-300 ease-out border shadow-xs flex items-center justify-center h-12 ${
+                                  isFD2Max
+                                    ? "bg-[#ff4d00] text-white border-transparent hover:bg-[#e04400] hover:shadow-lg hover:shadow-[#ff4d00]/25 active:scale-98"
+                                    : "bg-neutral-950 border-neutral-950 text-white hover:bg-neutral-800 active:scale-98"
+                                }`}
+                              >
+                                VER FICHA COMPLETA →
+                              </a>
+                              
+                              {/* CTA 2 (Muted / Secondary): COTIZAR WHATSAPP */}
+                              <a
+                                href={getWhatsAppUrl(product.statusMessage)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 text-center font-display font-black text-[10.5px] tracking-widest py-4 px-5 rounded-xl border border-neutral-250 text-neutral-700 bg-white hover:bg-neutral-50 hover:border-neutral-400 hover:text-neutral-950 transition duration-200 inline-flex items-center justify-center gap-1.5 h-12 active:scale-98"
+                              >
+                                <PhoneCall className="w-3.5 h-3.5 text-stone-400 shrink-0" /> COTIZAR WHATSAPP →
+                              </a>
+                            </>
+                          )}
+                        </div>
+
+                        {/* Anchor textual slider link to live gallery */}
+                        {!isSoldOut && (
+                          <div className="text-center pt-1">
+                            <a
+                              href={galleryLink}
+                              className="inline-flex items-center gap-1.5 text-[10.5px] font-black uppercase tracking-widest text-[#ff4d00] hover:text-[#e04400] transition duration-200 group/gal-anchor"
+                            >
+                              <Camera className="w-3.5 h-3.5 text-[#ff4d00]" />
+                              <span className="border-b border-[#ff4d00]/30 hover:border-transparent pb-0.5">Ver galería real →</span>
+                            </a>
+                          </div>
+                        )}
+                      </div>
+
                     </div>
                   </div>
                 </ScrollReveal>
@@ -1388,6 +1501,7 @@ export default function App() {
                 ? (showAllMedia 
                     ? galleryItems 
                     : [
+                        galleryItems.find(i => i.id === "captura-real-10")!,
                         galleryItems.find(i => i.id === "action-1")!,
                         galleryItems.find(i => i.id === "captura-1")!,
                         galleryItems.find(i => i.id === "action-2")!,

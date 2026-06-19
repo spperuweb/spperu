@@ -20,8 +20,10 @@ import {
   X,
   Eye,
   Sparkles,
-  PhoneCall
+  PhoneCall,
+  Camera
 } from "lucide-react";
+import InteractiveBentoGallery from "../components/InteractiveBentoGallery";
 
 // Helper for prefilled WhatsApp link
 const getWhatsAppUrl = (text: string) => {
@@ -242,10 +244,11 @@ export default function FD1SPage() {
                 </a>
                 
                 <a 
-                  href="#por-que-fd1s"
-                  className="border border-neutral-300 hover:border-neutral-400 bg-white/80 text-neutral-700 font-display font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-8 rounded-2xl text-center transition-all duration-200 shadow-sm"
+                  href="#fd1s-evidencia"
+                  className="border border-neutral-300 hover:border-neutral-400 bg-white/80 hover:bg-neutral-50 text-neutral-700 font-display font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-8 rounded-2xl text-center transition-all duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  Ver por qué el FD1S es para mí
+                  <Camera className="w-4 h-4 text-[#ff4d00]" />
+                  Ver toda la galería
                 </a>
               </div>
 
@@ -865,99 +868,14 @@ export default function FD1SPage() {
       </section>
 
       {/* SECTION: FD1S SPECIAL PREMIUM FIELD EVIDENCE GALLERY */}
-      <section id="fd1s-evidencia" className="py-24 bg-neutral-50/30 border-t border-b border-neutral-200/50 relative overflow-hidden">
-        {/* Ambient glow effects */}
-        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#ff4d00]/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-neutral-100 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          
-          {/* Section Header */}
-          <div className="text-center mb-12 max-w-3xl mx-auto">
-            <span className="text-[10px] sm:text-xs font-bold text-[#ff4d00] uppercase tracking-widest block mb-3 bg-[#ff4d00]/5 px-3.5 py-1.5 rounded-full w-fit mx-auto border border-[#ff4d00]/10 font-display">
-              Pruebas de Campo Reales
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-neutral-900 tracking-tight uppercase leading-none">
-              FD1S en la vida real
-            </h2>
-            <div className="w-12 h-1 bg-[#ff4d00] mx-auto mt-4 rounded-full"></div>
-            <p className="text-neutral-500 mt-4 text-sm sm:text-base font-sans leading-relaxed max-w-2xl mx-auto">
-              No te lo contamos. Te lo mostramos.
-            </p>
-          </div>
-
-          {/* Media Grid Section (Mobile horizontal-scroll snap carousel, Desktop responsive editorial grid) */}
-          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory pb-6 md:pb-0 scrollbar-none scroll-smooth">
-            {(showAllGallery ? fd1sGalleryItems : fd1sGalleryItems.slice(0, 8)).map((item) => (
-              <div
-                key={item.id}
-                onClick={() => setSelectedGalleryItem(item)}
-                className="group relative bg-white rounded-3xl overflow-hidden border border-neutral-200 hover:border-[#ff4d00]/45 hover:shadow-2xl hover:shadow-neutral-200/50 transition-all duration-300 cursor-pointer snap-center shrink-0 w-[280px] md:w-auto h-[360px] md:h-[400px] flex flex-col justify-between"
-              >
-                {/* Media Content Stage */}
-                <div className="relative w-full h-full overflow-hidden bg-neutral-950">
-                  <img
-                    src={item.url}
-                    alt={item.title}
-                    referrerPolicy="no-referrer"
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 select-none pointer-events-none"
-                  />
-                  
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-90 group-hover:via-neutral-950/40 transition-all duration-300"></div>
-
-                  {/* Category Tag indicator */}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-[#ff4d00] text-white text-[9px] font-extrabold uppercase tracking-widest px-2.5 py-1.5 rounded-full shadow-lg border border-white/10 font-display">
-                      {item.tag}
-                    </span>
-                  </div>
-
-                  {/* Title & Desc */}
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white flex flex-col gap-1.5 z-10">
-                    <h4 className="font-display font-extrabold uppercase tracking-tight text-xs sm:text-sm leading-tight group-hover:text-[#ff4d00] transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-neutral-300 text-[10px] font-sans leading-relaxed line-clamp-2 md:opacity-0 md:group-hover:opacity-100 md:transform md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-300 ease-out">
-                      {item.desc}
-                    </p>
-                  </div>
-
-                  {/* Hover visual cue */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-900/10 backdrop-blur-xs">
-                    <div className="bg-white/95 text-neutral-950 px-4 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 shadow-2xl scale-95 group-hover:scale-100 transition-transform duration-300">
-                      <Eye className="w-3.5 h-3.5 text-[#ff4d00]" /> Ver pantalla completa
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Gallery Action Triggers */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-12">
-            {!showAllGallery && (
-              <button
-                onClick={() => setShowAllGallery(true)}
-                className="w-full sm:w-auto text-center font-display font-bold text-xs uppercase tracking-wider py-4.5 px-10 rounded-2xl border border-neutral-300 text-neutral-800 bg-white hover:bg-neutral-50 hover:border-neutral-400 transition-all duration-150 inline-block cursor-pointer shadow-xs"
-              >
-                Ver más fotos de campo →
-              </button>
-            )}
-            
-            <a
-              href={getWhatsAppUrl("Hola SwellPro Perú, he estado revisando su galería de evidencias reales en uso con el Fisherman FD1S. Deseo recibir más información y coordinar detalles sobre este equipo.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto text-center font-bold font-display text-xs uppercase tracking-widest py-4.5 px-10 rounded-2xl bg-[#ff4d00] hover:bg-[#e04400] text-white shadow-xl shadow-[#ff4d00]/20 inline-flex items-center justify-center gap-2 transition transform hover:-translate-y-0.5 cursor-pointer"
-            >
-              <PhoneCall className="w-4 h-4" /> Quiero verlo por WhatsApp
-            </a>
-          </div>
-
-        </div>
-      </section>
+      <InteractiveBentoGallery
+        id="fd1s-evidencia"
+        title="FD1S en la vida real"
+        subtitle="Pruebas de Campo Reales"
+        description="Explora todo el material de campo real recopilado por pescadores en alta mar. Evidencia 100% real de la resistencia y capacidad de SwellPro."
+        mediaItems={fd1sGalleryItems}
+        whatsappMessagePrefix="Hola SwellPro Perú, he estado revisando su galería de evidencias reales en uso con el Fisherman FD1S. Deseo recibir más información y coordinar detalles sobre este equipo."
+      />
 
       {/* PREGUNTAS FRECUENTES COHERENTES */}
       <section className="py-20 bg-white border-t border-b border-neutral-100">
@@ -1147,64 +1065,13 @@ export default function FD1SPage() {
             </a>
           </div>
 
-          <p className="text-neutral-655 font-sans text-[11px] leading-tight">
+          <p className="text-neutral-500 font-sans text-[11px] leading-tight">
             © 2026 SwellPro Perú. Todos los derechos reservados. <br />
             Distribuidor legítimo de tecnología marina sumergible en el Perú.
           </p>
 
         </div>
       </footer>
-
-
-      {/* FULLSCREEN REAL EVIDENCE LIGHTBOX MODAL */}
-      {selectedGalleryItem && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex flex-col justify-center items-center p-4 backdrop-blur-md animate-fade-in select-none">
-          {/* Close trigger */}
-          <button 
-            onClick={() => setSelectedGalleryItem(null)}
-            className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3.5 rounded-full transition-all duration-150 border border-white/10 z-[60] cursor-pointer"
-            aria-label="Cerrar vista"
-          >
-            <X className="w-5 h-5" />
-          </button>
-
-          {/* Active media canvas */}
-          <div className="max-w-4xl w-full max-h-[70vh] flex justify-center items-center relative overflow-hidden rounded-2xl bg-black">
-            <img 
-              src={selectedGalleryItem.url} 
-              alt={selectedGalleryItem.title} 
-              referrerPolicy="no-referrer"
-              className="max-w-full max-h-[70vh] object-contain rounded-2xl"
-            />
-          </div>
-
-          {/* Descriptive footer context */}
-          <div className="max-w-2xl text-center mt-6 text-white px-2">
-            <span className="inline-block bg-[#ff4d00] text-white text-[9px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full mb-3 shadow-md font-display">
-              {selectedGalleryItem.tag}
-            </span>
-            <h3 className="font-display font-bold text-lg md:text-xl uppercase tracking-tight text-white mb-2">
-              {selectedGalleryItem.title}
-            </h3>
-            <p className="text-neutral-400 text-xs md:text-sm font-sans leading-relaxed max-w-lg mx-auto">
-              {selectedGalleryItem.desc}
-            </p>
-
-            {/* In-Modal Direct Action */}
-            <div className="mt-5">
-              <a
-                href={getWhatsAppUrl(`Hola SwellPro Perú, vi su evidencia real de FD1S "${selectedGalleryItem.title}" en la galería de su web. Me interesa saber precio, stock y soporte técnico de este equipo.`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#ff4d00]/95 hover:bg-[#ff4d00] text-white font-bold text-[10px] uppercase tracking-widest py-3 px-6 rounded-xl transition duration-150 cursor-pointer font-display"
-              >
-                <PhoneCall className="w-3.5 h-3.5" /> Cotizar equipo con esta evidencia por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-
 
       {/* FLOATING WHATSAPP BUTTON (Persistent conversion tool) */}
       <a 

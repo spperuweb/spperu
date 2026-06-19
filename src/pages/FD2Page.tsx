@@ -24,6 +24,7 @@ import {
   Camera,
   PhoneCall
 } from "lucide-react";
+import InteractiveBentoGallery from "../components/InteractiveBentoGallery";
 
 // Helper for prefilled WhatsApp link
 const getWhatsAppUrl = (text: string) => {
@@ -156,8 +157,6 @@ const fd2GalleryImages: GalleryItem[] = [
 
 export default function FD2Page() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const [selectedGalleryIndex, setSelectedGalleryIndex] = useState<number | null>(null);
-  const [activeCategory, setActiveCategory] = useState<'todo' | 'drone' | 'accesorios' | 'detalle'>('todo');
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -287,10 +286,11 @@ export default function FD2Page() {
                 </a>
                 
                 <a 
-                  href="#por-que-fd2max"
-                  className="border border-neutral-300 hover:border-neutral-400 bg-white/80 text-neutral-700 font-display font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-8 rounded-2xl text-center transition-all duration-200 shadow-sm"
+                  href="#fd2-evidencia"
+                  className="border border-neutral-300 hover:border-neutral-400 bg-white/80 hover:bg-neutral-50 text-neutral-700 font-display font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-8 rounded-2xl text-center transition-all duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  Ver por qué el FD2 Max es distinto
+                  <Camera className="w-4 h-4 text-[#ff4d00]" />
+                  Ver toda la galería
                 </a>
               </div>
 
@@ -769,212 +769,14 @@ export default function FD2Page() {
       </section>
 
       {/* SECCIÓN — EVIDENCIA DE CAMPO REAL EXCLUSIVA FD2 MAX */}
-      <section id="fd2-evidencia" className="py-24 bg-[#fafafa] scroll-mt-20 border-t border-b border-neutral-200/70">
-        <div className="max-w-7xl mx-auto px-6">
-          
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-[#ff4d00] font-display font-semibold text-xs uppercase tracking-widest block mb-1">
-              • COLECCIÓN DE ESTUDIO SWELLPRO
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-display font-black text-neutral-900 uppercase leading-none mt-2 mb-4 tracking-tight">
-              Análisis <span className="text-[#ff4d00]">Fotográfico</span>
-            </h2>
-            <p className="text-neutral-500 text-xs sm:text-sm font-sans-dm max-w-xl mx-auto">
-              Galería técnica del Fisherman FD2 Max. Inspección casera de componentes estancos, sistemas de protección y estructura del chasis.
-            </p>
-          </div>
-
-          {/* Luxury Category Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-16 max-w-2xl mx-auto bg-neutral-100/80 p-1 rounded-full border border-neutral-200/50">
-            {[
-              { id: 'todo', label: 'Todo el Equipo' },
-              { id: 'drone', label: 'El Drone' },
-              { id: 'detalle', label: 'Vistas a Detalle' },
-              { id: 'accesorios', label: 'Maletín & Mando' }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveCategory(tab.id as any)}
-                className={`flex-1 min-w-[100px] text-center px-4 py-2 rounded-full text-[10px] sm:text-xs font-display tracking-wider uppercase transition-all duration-300 ${
-                  activeCategory === tab.id
-                    ? 'bg-neutral-900 text-white shadow-sm font-bold'
-                    : 'text-neutral-500 hover:text-neutral-950 font-medium'
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Premium editorial asymmetric Bento grid layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch mb-16">
-            {fd2GalleryImages
-              .filter(img => activeCategory === 'todo' || img.category === activeCategory)
-              .map((img) => {
-                const isExpanded = activeCategory === 'todo' && (img.id === "fd2-galeria-capturas-01" || img.id === "fd2-galeria-capturas-06");
-                const originalIndex = fd2GalleryImages.findIndex(item => item.id === img.id);
-                
-                return (
-                  <div 
-                    key={img.id}
-                    onClick={() => setSelectedGalleryIndex(originalIndex)}
-                    className={`bg-white rounded-3xl border border-neutral-200/60 overflow-hidden shadow-xs hover:shadow-xl hover:border-neutral-400 transition-all duration-500 group cursor-pointer flex flex-col justify-between ${
-                      isExpanded ? 'md:col-span-2' : 'col-span-1'
-                    }`}
-                  >
-                    {/* Photo Pedestal */}
-                    <div className={`relative overflow-hidden ${isExpanded ? 'aspect-[16/10] md:aspect-[21/9]' : 'aspect-[4/3]'} bg-neutral-50 flex items-center justify-center border-b border-neutral-105/50`}>
-                      <img 
-                        src={img.url}
-                        alt={img.title}
-                        loading="lazy"
-                        className="w-full h-full object-cover select-none transition-transform duration-700 ease-out group-hover:scale-103"
-                      />
-                      
-                      {/* Dark premium overlay with minimal eye icon on hover */}
-                      <div className="absolute inset-0 bg-neutral-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-                        <div className="bg-white/95 text-neutral-900 px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md transform translate-y-2 group-hover:translate-y-0 transition duration-400">
-                          Zoom de Inspección
-                        </div>
-                      </div>
-
-                      {/* Absolute minimal subtle tag label */}
-                      <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-xs text-neutral-800 px-2.5 py-1 rounded-full text-[8px] font-bold uppercase tracking-widest shadow-xs border border-neutral-200/50">
-                        {img.tag}
-                      </div>
-
-                      {/* Discrete ID badge on top right */}
-                      <div className="absolute top-4 right-4 text-[9px] font-mono text-neutral-400/80 bg-neutral-905/5 px-2 py-0.5 rounded-full">
-                        #{img.id.split('-').pop()}
-                      </div>
-                    </div>
-
-                    {/* Subtitles Area - Clean Editorial Minimalist Spacing */}
-                    <div className="p-6 flex-1 flex flex-col justify-between">
-                      <div>
-                        <h3 className="font-display font-black text-neutral-900 text-sm sm:text-base uppercase tracking-tight duration-300 group-hover:text-[#ff4d00]">
-                          {img.title}
-                        </h3>
-                        <p className="text-neutral-500 text-xs font-sans-dm leading-relaxed mt-1.5">
-                          {img.desc}
-                        </p>
-                      </div>
-
-                      {/* Bottom line interaction indicators */}
-                      <div className="border-t border-neutral-100 mt-5 pt-4 flex items-center justify-between text-[10px] text-neutral-400/80 font-bold uppercase tracking-widest">
-                        <span>DETALLE DE COMPONENTE</span>
-                        <span className="text-[#ff4d00]/80 group-hover:text-[#ff4d00] flex items-center gap-1 group-hover:translate-x-1 transition-all duration-300">
-                          VER • EXPANDIR ↗
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-          </div>
-
-          {/* Action Area footer */}
-          <div className="text-center bg-white p-8 rounded-3xl border border-neutral-200/80 shadow-xs max-w-3xl mx-auto mt-8">
-            <h3 className="font-display font-black text-neutral-900 text-lg uppercase tracking-tight">
-              ¿Listo para domar las corrientes profundas con el FD2 Max?
-            </h3>
-            <p className="text-neutral-500 text-xs sm:text-sm font-sans-dm max-w-xl mx-auto mt-2 mb-6">
-              Te garantizamos asesoría continua personalizada, taller oficial propio 100% abastecido en Lima y repuestos originales de entrega inmediata.
-            </p>
-            <a 
-              href={getWhatsAppUrl("Hola SwellPro Perú, he estado revisando su galería premium de fotos reales del Fisherman FD2 Max en uso práctico. Deseo recibir más detalles, precios directos y stock actual por favor.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#ff4d00] hover:bg-[#e04400] text-white font-display font-bold text-xs uppercase tracking-widest py-4 px-8 rounded-2xl inline-flex items-center gap-2 shadow-lg shadow-[#ff4d00]/25 hover:-translate-y-0.5 transition-all duration-250 cursor-pointer h-12"
-            >
-              <PhoneCall className="w-4 h-4" /> Quiero verlo por WhatsApp →
-            </a>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ULTRA LIGHTBOX INTERACTIVO DE ALTA FIDELIDAD */}
-      {selectedGalleryIndex !== null && (
-        <div className="fixed inset-0 z-55 bg-neutral-950/98 backdrop-blur-md flex flex-col justify-between p-4 sm:p-6 select-none animate-fadeIn">
-          
-          {/* Lightbox Headbar */}
-          <div className="flex items-center justify-between text-white border-b border-neutral-900 pb-4 max-w-7xl mx-auto w-full">
-            <div className="flex items-center gap-2">
-              <Camera className="w-5 h-5 text-[#ff4d00]" />
-              <span className="font-display font-black text-xs sm:text-sm uppercase tracking-widest text-[#ff4d00]">
-                EVIDENCIA EXCLUSIVA SWELLPRO PERÚ
-              </span>
-            </div>
-            <button 
-              onClick={() => setSelectedGalleryIndex(null)}
-              className="p-2 sm:p-2.5 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:bg-neutral-800 transition duration-150"
-              title="Cerrar galería"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Main Slide Viewer Space */}
-          <div className="flex-1 flex items-center justify-between relative max-w-6xl mx-auto w-full py-4 sm:py-6">
-            {/* Left Prev Trigger */}
-            <button 
-              onClick={() => setSelectedGalleryIndex((prev) => (prev! === 0 ? fd2GalleryImages.length - 1 : prev! - 1))}
-              className="absolute left-2 sm:left-4 z-20 p-2.5 sm:p-3.5 rounded-full bg-neutral-900/80 border border-neutral-800 text-neutral-300 hover:text-white hover:bg-neutral-800 transition duration-150"
-              title="Imagen Anterior"
-            >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-
-            {/* Rendered Target Zoom Photo */}
-            <div className="w-full h-full flex items-center justify-center p-2">
-              <img 
-                src={fd2GalleryImages[selectedGalleryIndex].url}
-                alt={fd2GalleryImages[selectedGalleryIndex].title}
-                className="max-h-[55vh] sm:max-h-[62vh] max-w-full object-contain rounded-2xl shadow-2xl border border-neutral-900"
-              />
-            </div>
-
-            {/* Right Next Trigger */}
-            <button 
-              onClick={() => setSelectedGalleryIndex((prev) => (prev! === fd2GalleryImages.length - 1 ? 0 : prev! + 1))}
-              className="absolute right-2 sm:right-4 z-20 p-2.5 sm:p-3.5 rounded-full bg-neutral-900/80 border border-neutral-800 text-neutral-300 hover:text-white hover:bg-neutral-800 transition duration-150"
-              title="Imagen Siguiente"
-            >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-            </button>
-          </div>
-
-          {/* Slide meta block and action trigger */}
-          <div className="border-t border-neutral-900 pt-5 max-w-4xl mx-auto w-full mb-2">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 text-left">
-              <div className="space-y-1">
-                <span className="text-[10px] sm:text-xs font-black uppercase text-[#ff4d00] tracking-widest block font-display">
-                  {fd2GalleryImages[selectedGalleryIndex].tag}
-                </span>
-                <h3 className="text-lg sm:text-2.5xl font-display font-black text-white uppercase tracking-tight leading-none mt-0.5">
-                  {fd2GalleryImages[selectedGalleryIndex].title}
-                </h3>
-                <p className="text-neutral-400 text-xs sm:text-sm font-sans max-w-xl leading-relaxed mt-2.5">
-                  {fd2GalleryImages[selectedGalleryIndex].desc}
-                </p>
-              </div>
-
-              {/* Direct customized WhatsApp lead generator */}
-              <div className="shrink-0">
-                <a
-                  href={getWhatsAppUrl(`Hola SwellPro Perú, vi su evidencia real de FD2 Max "${fd2GalleryImages[selectedGalleryIndex].title}" (${fd2GalleryImages[selectedGalleryIndex].id}) en la galería oficial. Deseo recibir más detalles de este equipo por favor.`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#25D366] hover:bg-[#1ebd5d] text-white font-display font-bold text-xs uppercase tracking-widest px-6 py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-[#25D366]/10 transform hover:-translate-y-0.5 transition duration-150 h-12 inline-flex"
-                >
-                  <PhoneCall className="w-4 h-4" /> Quiero verlo por WhatsApp →
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <InteractiveBentoGallery
+        id="fd2-evidencia"
+        title="Análisis Fotográfico"
+        subtitle="Colección de Estudio SwellPro"
+        description="Galería técnica del Fisherman FD2 Max. Inspección de componentes estancos, sistemas de protección y estructura del chasis de alta tecnología."
+        mediaItems={fd2GalleryImages}
+        whatsappMessagePrefix="Hola SwellPro Perú, he estado revisando su galería de evidencias reales en uso con el Fisherman FD2 Max. Deseo recibir más información y coordinar detalles sobre este equipo."
+      />
 
       {/* SECCIÓN COMPARATIVA DE MODELOS */}
       <section className="py-24 bg-white border-b border-neutral-100">

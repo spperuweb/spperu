@@ -27,13 +27,139 @@ import {
   Shield,
   Clock,
   ExternalLink,
-  LifeBuoy
+  LifeBuoy,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  Maximize2,
+  Filter,
+  Image as ImageIcon
 } from "lucide-react";
+import InteractiveBentoGallery from "../components/InteractiveBentoGallery";
 
 // Helper for prefilled WhatsApp link with SwellPro Perú number
 const getWhatsAppUrl = (text: string) => {
   return `https://api.whatsapp.com/send?phone=51949643347&text=${encodeURIComponent(text)}`;
 };
+
+interface SD4GalleryItem {
+  url: string;
+  title: string;
+  tag: string;
+}
+
+const sd4GalleryItems: SD4GalleryItem[] = [
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880173/swellpro-peru-sd4-plus-galeria-frontal-02_tieg5a.jpg",
+    title: "Vista frontal aerodinámica del SplashDrone 4+",
+    tag: "Vista frontal"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880179/swellpro-peru-sd4-plus-galeria-control-kit-completo-02_yjd7jl.jpg",
+    title: "Kit completo de maleta rígida militar y control remoto profesional",
+    tag: "Kit completo"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880179/swellpro-peru-sd4-plus-galeria-lateral.01_xercix.jpg",
+    title: "Detalle del chasis hermético lateral con hélice de cambio rápido",
+    tag: "Detalle del cuerpo"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880179/swellpro-peru-sd4-plus-galeria-control-kit-completo-06_opi3au.jpg",
+    title: "Configuración completa del sistema SD4+ con kit de repuestos",
+    tag: "Kit completo"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880178/swellpro-peru-sd4-plus-galeria-control-kit-completo-04_iotfn5.jpg",
+    title: "Maletín de transporte rígido hermético e impermeable SwellPro",
+    tag: "Kit completo"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880178/swellpro-peru-sd4-plus-galeria-control-kit-completo-05_mdffgm.jpg",
+    title: "Detalle interior del kit completo con cargadores y baterías inteligentes",
+    tag: "Kit completo"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880176/swellpro-peru-sd4-plus-galeria-control-kit-completo-03_q7d2lf.jpg",
+    title: "Equipamiento listo para navegación militar y rescate en mar adentro",
+    tag: "Producto real"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880176/swellpro-peru-sd4-plus-galeria-control-remoto-02_zgceyx.jpg",
+    title: "Pantalla ultra brillante FPV de 2.5 pulgadas de telemetría y video",
+    tag: "Control remoto"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880175/swellpro-peru-sd4-plus-galeria-control-remoto-03_ehit6r.jpg",
+    title: "Palancas de control de alta precisión para ambientes de alta humedad",
+    tag: "Control remoto"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880175/swellpro-peru-sd4-plus-galeria-camara-03_rmcjfr.jpg",
+    title: "Gimbal impermeable de 3 ejes y lente Sony 4K para filmación submarina",
+    tag: "Gimbal y cámara"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880175/swellpro-peru-sd4-plus-galeria-control-remoto-06_jrarkw.jpg",
+    title: "Diseño ergonómico flotante e impermeable del control remoto oficial",
+    tag: "Control remoto"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880175/swellpro-peru-sd4-plus-galeria-control-remoto-05_bhjpqq.jpg",
+    title: "Antenas dipolo de alta fidelidad multi-frecuencia para alcance de 7 KM",
+    tag: "Control remoto"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880175/swellpro-peru-sd4-plus-galeria-control-remoto-04_pa7n6b.jpg",
+    title: "Botón rápido superior y palancas físicas para liberación neumática",
+    tag: "Control remoto"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880175/swellpro-peru-sd4-plus-galeria-control-remoto-01_cfp3ux.jpg",
+    title: "Pantalla náutica con receptor GPS",
+    tag: "Control remoto"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880174/swellpro-peru-sd4-plus-galeria-superior-04_d9mfo7.jpg",
+    title: "Domo de presión superior sellado con indicador de estado LED",
+    tag: "Vista superior"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880174/swellpro-peru-sd4-plus-galeria-abajo-01_yq7rlu.jpg",
+    title: "Válvula de ecualización marina y soporte de carga por acoplamiento rápido",
+    tag: "Vista inferior"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880173/swellpro-peru-sd4-plus-galeria-camara-01_c2xrec.jpg",
+    title: "Lente corrector gran angular de cristal óptico para la cámara 4K",
+    tag: "Gimbal y cámara"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880173/swellpro-peru-sd4-plus-galeria-gimbal-01_rntmk8.jpg",
+    title: "Amortiguadores de vibración de silicona premium para estabilidad 4K",
+    tag: "Gimbal y cámara"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880173/swellpro-peru-sd4-plus-galeria-superior-02_vdwxef.jpg",
+    title: "Motores sellados especiales de 740KV resistentes de inducción náutica",
+    tag: "Vista superior"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880172/swellpro-peru-sd4-plus-galeria-superior-01_ju2j77.jpg",
+    title: "GPS dual receptor de precisión para retorno a casa en caso de pérdida",
+    tag: "Vista superior"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880172/swellpro-peru-sd4-plus-galeria-superior-05_uzq8bp.jpg",
+    title: "Hélices aerodinámicas optimizadas de fibra de carbono para viento fuerte",
+    tag: "Vista superior"
+  },
+  {
+    url: "https://res.cloudinary.com/drvejtepq/image/upload/q_auto/f_auto/v1781880172/swellpro-peru-sd4-plus-galeria-superior-03_vg5g26.jpg",
+    title: "Carrocería de ABS grado industrial ultra-resistente a la corrosión salina",
+    tag: "Vista superior"
+  }
+];
 
 export default function SD4PlusPage() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -177,11 +303,12 @@ export default function SD4PlusPage() {
                 </a>
                 
                 <a 
-                  href="#que-hace-sd4plus"
-                  id="cta-hero-details"
-                  className="border border-neutral-300 hover:border-neutral-400 bg-white/80 text-neutral-750 font-display font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-8 rounded-2xl text-center transition-all duration-200 shadow-sm"
+                  href="#galeria-sd4"
+                  id="cta-hero-gallery"
+                  className="border border-neutral-300 hover:border-neutral-400 bg-white/80 hover:bg-neutral-50 text-neutral-750 font-display font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-8 rounded-2xl text-center transition-all duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  Ver todo lo que hace el SD4+
+                  <Camera className="w-4 h-4 text-[#ff4d00]" />
+                  Ver toda la galería
                 </a>
               </div>
 
@@ -940,6 +1067,19 @@ export default function SD4PlusPage() {
         </div>
       </section>
 
+      {/* SECTION - GALERÍA DE FOTOS PREMIUM SD4+ EN DETALLE */}
+      <InteractiveBentoGallery
+        id="galeria-sd4"
+        title="SD4+ en detalle"
+        subtitle="Evidencia Real y Detalles"
+        description="Una mirada real al drone SplashDrone 4+, su control remoto, su cámara y su configuración de alto rendimiento directo en el mar peruano."
+        mediaItems={sd4GalleryItems.map((item, idx) => ({
+          id: `sd4-${idx}`,
+          desc: item.title,
+          ...item
+        }))}
+        whatsappMessagePrefix="Hola SwellPro Perú, he estado revisando su galería de evidencias reales en uso con el SplashDrone 4+. Deseo recibir más información y coordinar detalles sobre este equipo."
+      />
 
       {/* SECTION - GALERÍA DE VIDEO EN ACCIÓN */}
       <section id="galeria-video" className="py-24 bg-neutral-900 text-white border-t border-b border-neutral-950 scroll-mt-20">
