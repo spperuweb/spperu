@@ -2045,92 +2045,97 @@ export default function App() {
 
       {/* FULLSCREEN REAL EVIDENCE LIGHTBOX MODAL */}
       {selectedMedia && (
-        <div className="fixed inset-0 bg-black/95 z-50 flex flex-col justify-center items-center p-4 backdrop-blur-md animate-fade-in select-none">
-          {/* Close trigger */}
-          <button 
-            onClick={() => setSelectedMedia(null)}
-            className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3.5 rounded-full transition-all duration-150 border border-white/10 z-[60] cursor-pointer"
-            aria-label="Cerrar vista"
-          >
-            <X className="w-5 h-5" />
-          </button>
-
-          {/* Active media canvas */}
-          <div className="max-w-4xl w-full max-h-[70vh] flex justify-center items-center relative overflow-hidden rounded-2xl bg-black">
-            {selectedMedia.type === 'video' ? (
-              <video 
-                src={selectedMedia.url} 
-                controls 
-                autoPlay 
-                playsInline
-                className="max-w-full max-h-[70vh] object-contain rounded-2xl"
-              />
-            ) : (
-              <img 
-                src={selectedMedia.url} 
-                alt={selectedMedia.title} 
-                referrerPolicy="no-referrer"
-                className="max-w-full max-h-[70vh] object-contain rounded-2xl"
-              />
-            )}
+        <div className="fixed inset-0 bg-neutral-950/98 z-50 flex flex-col justify-between p-3 sm:p-4 md:p-6 backdrop-blur-xl animate-fade-in select-none overflow-y-auto">
+          {/* Top Bar */}
+          <div className="flex items-center justify-between w-full max-w-7xl mx-auto z-10 p-2">
+            <div>
+              <span className="text-[10px] font-bold text-[#ff4d00] uppercase tracking-widest block font-display">
+                Evidencia Real SwellPro Perú
+              </span>
+              <p className="text-xs text-neutral-400 font-mono">
+                {selectedMedia.tag}
+              </p>
+            </div>
+            <button 
+              onClick={() => setSelectedMedia(null)}
+              className="text-white/80 hover:text-white bg-neutral-900 hover:bg-neutral-800 p-3 rounded-full transition-all duration-150 border border-neutral-800 cursor-pointer shadow-lg"
+              aria-label="Cerrar vista"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
 
-          {/* Descriptive footer context */}
-          <div className="max-w-2xl text-center mt-6 text-white px-2">
-            <span className="inline-block bg-[#ff4d00] text-white text-[9px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full mb-3 shadow-md">
-              {selectedMedia.tag}
-            </span>
-            <h3 className="font-display font-bold text-lg md:text-xl uppercase tracking-tight text-white mb-2">
-              {selectedMedia.title}
-            </h3>
-            <p className="text-neutral-400 text-xs md:text-sm font-sans leading-relaxed max-w-lg mx-auto">
-              {selectedMedia.desc}
-            </p>
+          {/* Center Stage: Side-by-side on desktop, stacked vertical on mobile */}
+          <div className="flex-1 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 my-auto max-w-7xl w-full mx-auto relative px-1 sm:px-2 min-h-0">
+            {/* Active media canvas */}
+            <div className="flex-1 flex justify-center items-center relative w-full min-h-0 p-1 sm:p-2">
+              {selectedMedia.type === 'video' ? (
+                <video 
+                  src={selectedMedia.url} 
+                  controls 
+                  autoPlay 
+                  playsInline
+                  loop
+                  className="max-h-[58vh] sm:max-h-[68vh] lg:max-h-[78vh] w-auto max-w-full object-contain rounded-2xl border border-neutral-800 shadow-2xl bg-neutral-950"
+                />
+              ) : (
+                <img 
+                  src={selectedMedia.url} 
+                  alt={selectedMedia.title} 
+                  referrerPolicy="no-referrer"
+                  className="max-h-[58vh] sm:max-h-[68vh] lg:max-h-[78vh] w-auto max-w-full object-contain rounded-2xl border border-neutral-800 shadow-2xl"
+                />
+              )}
+            </div>
 
-             {/* In-Modal Direct Action */}
-            <div className="mt-5 flex flex-wrap gap-2.5 justify-center items-center">
-              {/* Cotización directa con Carlos / SwellPro */}
-              <a
-                href={getWhatsAppUrl(`Hola SwellPro Perú, vi su evidencia real "${selectedMedia.title}" en la galería de su web. Me interesa asesoramiento y cotización para comprar mi drone.`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#ff4d00]/95 hover:bg-[#ff4d00] text-white font-bold text-[10px] uppercase tracking-widest py-3 px-5 rounded-xl transition duration-150 cursor-pointer shadow-md"
-              >
-                <PhoneCall className="w-3.5 h-3.5 animate-pulse" /> Cotizar por WhatsApp
-              </a>
+            {/* Side Info Panel on desktop / Compact card on mobile */}
+            <div className="w-full lg:w-80 xl:w-96 bg-neutral-900/95 border border-neutral-850 p-4 sm:p-5 rounded-2xl flex flex-col justify-between gap-4 shrink-0 shadow-2xl">
+              <div>
+                <span className="inline-block bg-[#ff4d00] text-white text-[9px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full mb-2 shadow-md">
+                  {selectedMedia.tag}
+                </span>
+                <h3 className="font-display font-bold text-sm sm:text-base uppercase tracking-tight text-white mb-1.5">
+                  {selectedMedia.title}
+                </h3>
+                <p className="text-neutral-400 text-xs font-sans leading-relaxed line-clamp-3">
+                  {selectedMedia.desc}
+                </p>
+              </div>
 
-              {/* Copiar enlace de la web */}
-              <button
-                onClick={() => copyShareLink(selectedMedia.id)}
-                className={`inline-flex items-center gap-2 font-bold text-[10px] uppercase tracking-widest py-3 px-5 rounded-xl transition duration-150 border cursor-pointer shadow-md ${
-                  copiedId === selectedMedia.id
-                    ? "bg-[#25D366] text-white border-transparent"
-                    : "bg-white/10 hover:bg-white/20 text-white border-white/15"
-                }`}
-              >
-                <ExternalLink className="w-3.5 h-3.5 text-[#ff4d00]" /> 
-                {copiedId === selectedMedia.id ? "¡Enlace Copiado!" : "Copiar Enlace"}
-              </button>
+              {/* Action buttons */}
+              <div className="flex flex-col gap-2 pt-3 border-t border-neutral-800/80">
+                <a
+                  href={getWhatsAppUrl(`Hola SwellPro Perú, vi su evidencia real "${selectedMedia.title}" en la galería de su web. Me interesa asesoramiento y cotización para comprar mi drone.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#ff4d00] hover:bg-[#e04400] text-white font-black text-[10px] sm:text-xs uppercase tracking-widest py-3 px-4 rounded-xl transition duration-150 cursor-pointer shadow-md"
+                >
+                  <PhoneCall className="w-3.5 h-3.5 animate-pulse" /> Cotizar por WhatsApp
+                </a>
 
-              {/* Compartir por WhatsApp a amigos / contactos seleccionados */}
-              <a
-                href={getWhatsAppShareUrl(selectedMedia)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-neutral-900 hover:bg-neutral-800 text-[#25D366] font-bold text-[10px] uppercase tracking-widest py-3 px-5 rounded-xl transition duration-150 border border-neutral-800 cursor-pointer shadow-md"
-              >
-                <Share2 className="w-3.5 h-3.5" /> Compartir con Amigos
-              </a>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    onClick={() => copyShareLink(selectedMedia.id)}
+                    className={`inline-flex items-center justify-center gap-1.5 font-bold text-[9px] sm:text-[10px] uppercase tracking-widest py-2.5 px-3 rounded-xl transition duration-150 border cursor-pointer ${
+                      copiedId === selectedMedia.id
+                        ? "bg-[#25D366] text-white border-transparent"
+                        : "bg-white/10 hover:bg-white/20 text-white border-white/15"
+                    }`}
+                  >
+                    <ExternalLink className="w-3 h-3 text-[#ff4d00]" /> 
+                    {copiedId === selectedMedia.id ? "¡Copiado!" : "Copiar Enlace"}
+                  </button>
 
-              {/* Botón secundario para el archivo original */}
-              <a
-                href={selectedMedia.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[9px] uppercase tracking-wider text-neutral-400 hover:text-white transition py-1.5 px-3 rounded-lg border border-neutral-800/60 hover:border-neutral-700 bg-neutral-950/20"
-              >
-                Archivo Original ↗
-              </a>
+                  <a
+                    href={getWhatsAppShareUrl(selectedMedia)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 bg-neutral-900 hover:bg-neutral-800 text-[#25D366] font-bold text-[9px] sm:text-[10px] uppercase tracking-widest py-2.5 px-3 rounded-xl transition duration-150 border border-neutral-800 cursor-pointer shadow-md"
+                  >
+                    <Share2 className="w-3 h-3 text-[#25D366]" /> Compartir
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

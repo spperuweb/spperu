@@ -278,37 +278,37 @@ export default function InteractiveBentoGallery({
             </div>
 
             {/* Immersive Center Area */}
-            <div className="flex-1 flex items-center justify-between relative max-w-7xl mx-auto w-full group/modal relative px-2">
+            <div className="flex-1 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 my-auto max-w-7xl w-full mx-auto relative px-1 sm:px-2 min-h-0">
               {/* Prev Arrow */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   handlePrev();
                 }}
-                className="absolute left-0 md:left-4 z-50 bg-neutral-900/80 border border-neutral-800/60 p-4 rounded-xl text-stone-300 hover:text-white hover:bg-neutral-800 transition-all duration-200 cursor-pointer"
-                title="Flecha izquierda"
+                className="absolute left-1 sm:left-3 lg:-left-4 z-50 bg-neutral-900/85 border border-neutral-800/80 p-3 sm:p-4 rounded-full text-stone-300 hover:text-white hover:bg-neutral-800 transition-all duration-200 cursor-pointer shadow-xl backdrop-blur-md"
+                title="Anterior"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-5 h-5 text-[#ff4d00]" />
               </button>
 
               {/* Media viewer stage */}
               <div 
-                className="flex-1 h-[50vh] md:h-[62vh] xl:h-[66vh] w-full flex items-center justify-center p-2 rounded-2xl relative overflow-hidden"
+                className="flex-1 w-full flex items-center justify-center p-1 sm:p-2 relative min-h-0"
                 onClick={(e) => e.stopPropagation()}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={selectedItemIndex}
-                    initial={{ scale: 0.95, opacity: 0 }}
+                    initial={{ scale: 0.96, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.95, opacity: 0 }}
-                    transition={{ duration: 0.28, ease: "easeOut" }}
-                    className="max-h-full max-w-full flex items-center justify-center rounded-2xl overflow-hidden"
+                    exit={{ scale: 0.96, opacity: 0 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="flex items-center justify-center w-full"
                   >
                     {getMediaType(mediaItems[selectedItemIndex]) === "video" ? (
                       <video
                         src={mediaItems[selectedItemIndex].url}
-                        className="max-h-[50vh] md:max-h-[62vh] xl:max-h-[66vh] max-w-full object-contain rounded-2xl shadow-2xl"
+                        className="max-h-[58vh] sm:max-h-[68vh] lg:max-h-[78vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl border border-neutral-800/80 bg-neutral-950"
                         controls
                         autoPlay
                         muted
@@ -319,7 +319,7 @@ export default function InteractiveBentoGallery({
                       <img
                         src={mediaItems[selectedItemIndex].url}
                         alt={mediaItems[selectedItemIndex].title || "Evidencia"}
-                        className="max-h-[50vh] md:max-h-[62vh] xl:max-h-[66vh] max-w-full object-contain rounded-2xl shadow-2xl"
+                        className="max-h-[58vh] sm:max-h-[68vh] lg:max-h-[78vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl border border-neutral-800/80"
                         referrerPolicy="no-referrer"
                       />
                     )}
@@ -333,22 +333,19 @@ export default function InteractiveBentoGallery({
                   e.stopPropagation();
                   handleNext();
                 }}
-                className="absolute right-0 md:right-4 z-50 bg-neutral-900/80 border border-neutral-800/60 p-4 rounded-xl text-stone-300 hover:text-white hover:bg-neutral-800 transition-all duration-200 cursor-pointer"
-                title="Flecha derecha"
+                className="absolute right-1 sm:right-3 lg:-right-4 z-50 bg-neutral-900/85 border border-neutral-800/80 p-3 sm:p-4 rounded-full text-stone-300 hover:text-white hover:bg-neutral-800 transition-all duration-200 cursor-pointer shadow-xl backdrop-blur-md"
+                title="Siguiente"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-5 h-5 text-[#ff4d00]" />
               </button>
-            </div>
 
-            {/* Bottom Caption, triggers & thumbnail carousel */}
-            <div 
-              className="w-full max-w-4xl mx-auto flex flex-col gap-5 pt-4 relative z-50"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Info text card + specific WhatsApp Quote button */}
-              <div className="bg-neutral-900/90 border border-neutral-850 p-5 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
+              {/* Info panel: Side layout on desktop, compact bottom card on mobile */}
+              <div 
+                className="w-full lg:w-80 xl:w-96 bg-neutral-900/95 border border-neutral-850 p-4 sm:p-5 rounded-2xl flex flex-col justify-between gap-3 sm:gap-4 shrink-0 shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div>
+                  <div className="flex items-center gap-2 mb-1.5">
                     <span className="bg-[#ff4d00]/10 border border-[#ff4d00]/30 text-[#ff4d00] text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded">
                       {mediaItems[selectedItemIndex].tag || "SwellPro Perú"}
                     </span>
@@ -356,7 +353,7 @@ export default function InteractiveBentoGallery({
                   <h3 className="text-sm font-display font-black uppercase text-stone-100 tracking-tight">
                     {mediaItems[selectedItemIndex].title || "Evidencia Real de Campo"}
                   </h3>
-                  <p className="text-xs text-neutral-400 mt-1 max-w-xl">
+                  <p className="text-xs text-neutral-400 mt-1 line-clamp-3">
                     {mediaItems[selectedItemIndex].desc || "Fotografía de prueba de alta resolución."}
                   </p>
                 </div>
@@ -365,48 +362,47 @@ export default function InteractiveBentoGallery({
                   href={getWhatsAppItemUrl(mediaItems[selectedItemIndex])}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#ff4d00] hover:bg-[#e04400] text-white text-[10px] font-black uppercase tracking-wider px-4.5 py-3 rounded-xl flex items-center gap-1.5 shrink-0 self-stretch sm:self-auto justify-center transition-all duration-150"
+                  className="bg-[#ff4d00] hover:bg-[#e04400] text-white text-[10px] sm:text-xs font-black uppercase tracking-wider px-4 py-3 rounded-xl flex items-center justify-center gap-2 transition-all duration-150 shadow-md"
                 >
                   <PhoneCall className="w-3.5 h-3.5" />
                   <span>COTIZAR ESTA EVIDENCIA</span>
                 </a>
-              </div>
 
-              {/* Bottom horizontal sliding dock representing 100% of images */}
-              <div 
-                ref={thumbDockRef}
-                className="flex items-center gap-2 overflow-x-auto py-2 scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-transparent snap-x scroll-smooth touch-pan-x"
-                style={{ contentVisibility: "auto" }}
-              >
-                {mediaItems.map((item, index) => {
-                  const isVid = getMediaType(item) === "video";
-                  const isActive = index === selectedItemIndex;
-                  return (
-                    <button
-                      key={`modal-thumb-${item.id}-${index}`}
-                      onClick={() => setSelectedItemIndex(index)}
-                      className={`relative flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border bg-neutral-950 transition-all duration-200 snap-center cursor-pointer ${
-                        isActive 
-                          ? "border-[#ff4d00] ring-2 ring-[#ff4d00]" 
-                          : "border-neutral-800 opacity-60 hover:opacity-100"
-                      }`}
-                      title={`Ver item ${index + 1}`}
-                    >
-                      {isVid ? (
-                        <div className="absolute inset-0 flex items-center justify-center bg-neutral-900">
-                          <Play className="w-4 h-4 text-[#ff4d00]" />
-                        </div>
-                      ) : (
-                        <img
-                          src={item.url}
-                          className="w-full h-full object-cover select-none pointer-events-none"
-                          referrerPolicy="no-referrer"
-                          loading="lazy"
-                        />
-                      )}
-                    </button>
-                  );
-                })}
+                {/* Horizontal thumbnail dock dock inside info panel */}
+                <div 
+                  ref={thumbDockRef}
+                  className="flex items-center gap-2 overflow-x-auto pt-2 border-t border-neutral-800/80 scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-transparent snap-x scroll-smooth touch-pan-x"
+                >
+                  {mediaItems.map((item, index) => {
+                    const isVid = getMediaType(item) === "video";
+                    const isActive = index === selectedItemIndex;
+                    return (
+                      <button
+                        key={`modal-thumb-${item.id}-${index}`}
+                        onClick={() => setSelectedItemIndex(index)}
+                        className={`relative flex-shrink-0 w-14 h-11 rounded-lg overflow-hidden border bg-neutral-950 transition-all duration-200 snap-center cursor-pointer ${
+                          isActive 
+                            ? "border-[#ff4d00] ring-2 ring-[#ff4d00]" 
+                            : "border-neutral-800 opacity-60 hover:opacity-100"
+                        }`}
+                        title={`Ver item ${index + 1}`}
+                      >
+                        {isVid ? (
+                          <div className="absolute inset-0 flex items-center justify-center bg-neutral-900">
+                            <Play className="w-3.5 h-3.5 text-[#ff4d00]" />
+                          </div>
+                        ) : (
+                          <img
+                            src={item.url}
+                            className="w-full h-full object-cover select-none pointer-events-none"
+                            referrerPolicy="no-referrer"
+                            loading="lazy"
+                          />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
